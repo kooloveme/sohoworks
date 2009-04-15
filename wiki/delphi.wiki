@@ -1,0 +1,6 @@
+数组操作
+
+||上||high||
+||下||low||
+||动态数组设置||setlength(array,length)||
+||数组拷贝||d=copy(s,start_index,length)||

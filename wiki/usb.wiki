@@ -2,6 +2,6 @@ quickusb C# 包装
 
 quickusb 并非是free的产品
 
-http://code.google.com/p/csquickusb/http://www.quickusb.com/store/index.php?main_page=page&id=13
+http://code.google.com/p/csquickusb/
 
-
+http://www.quickusb.com/store/index.php?main_page=page&id=13

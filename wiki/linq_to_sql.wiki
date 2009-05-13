@@ -1,0 +1,12 @@
+工具
+
+http://www.huagati.com/dbmltools/
+
+
+LINQ To SQL Synchronize Tool Beta
+
+http://www.dotblogs.com.tw/code6421/archive/2008/05/07/3889.aspx
+
+LINQ to SQL Debug Visualizer 
+
+http://weblogs.asp.net/scottgu/archive/2007/07/31/linq-to-sql-debug-visualizer.aspx

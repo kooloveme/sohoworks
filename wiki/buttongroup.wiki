@@ -1,0 +1,13 @@
+按钮组是一个flowPanel
+
+flowDirection 为 fsTopBottomLeftRight
+
+bevelOuter bvNone
+
+alignWithMargins 
+
+Margins 为3
+
+column sizeStyle ssAbsolute
+
+value 88

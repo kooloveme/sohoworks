@@ -4,10 +4,22 @@ delphi 被使用在对性能要求较高，机器配置无法达到现行配置�
 
 1. 一个内部的插件框架
 
+在单元的initialization 中注册窗体
+  registerClass(TCustomerManagementForm);
+
+在单元的finailization 中反注册窗体
+
+unregisterClass(TCustomerManagementForm);
+
 
 2. 一些实用类 
 
-信息日志
+信息日志 infolog 单元
+
+提供一个mdi子窗口，无模式的信息对话框
+
+info(string)/info(exception)/error(string)
+
 
 
 

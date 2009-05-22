@@ -1,0 +1,10 @@
+{{{
+
+New   |   ActiveX   |   ActiveX   Library新建库
+然后
+project   |   Options   |   Application   |   target   file   extenstion
+中指定后缀名为ocx
+接着使用
+New   |   ActiveX   |   Active   Form
+
+}}}

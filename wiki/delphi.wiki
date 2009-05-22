@@ -43,6 +43,8 @@ info(string)/info(exception)/error(string)
 
 [buttongroup]
 
+[activeform]
+
 数组操作
 
 ||上||high||

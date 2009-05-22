@@ -11,8 +11,27 @@ delphi 被使用在对性能要求较高，机器配置无法达到现行配置�
 
 unregisterClass(TCustomerManagementForm);
 
+2. 提供一些基本的数据表和表单，包括
 
-2. 一些实用类 
+
+SysUser 系统用户
+
+SysGroup 用户组
+
+SysDataArea 公司
+
+
+SysCurrency 货币
+
+SysCountry /SysState/SysCity 国家/省/市
+
+SysPermission 权限
+
+
+
+
+
+3. 一些实用类 
 
 信息日志 infolog 单元
 

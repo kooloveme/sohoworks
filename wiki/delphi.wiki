@@ -45,6 +45,11 @@ info(string)/info(exception)/error(string)
 
 [activeform]
 
+
+== 编译==
+
+xlreport 请使用 VER150
+
 数组操作
 
 ||上||high||

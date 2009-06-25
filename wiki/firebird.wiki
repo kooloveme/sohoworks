@@ -1,0 +1,9 @@
+=== 嵌入式 发布 ===
+
+     可以从FireBird的Bin文件夹下找到：
+      fbembed.dll
+      icudt30.dll
+      icuin30.dll
+      icuuc30.dll
+
+      把这几个文件拷贝到主程序EXE同级的文件夹下，然后把fbembed.dll 改名为gds32.dll

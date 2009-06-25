@@ -1,4 +1,5 @@
-基于delphi 的应用程序平台
+<wiki:toc max_depth="4" />
+== 基于delphi 的应用程序平台 ==
 
 1. 使用delphi win32构建 可能使用delphi 2007
 
@@ -54,4 +55,3 @@ columnName,caption,maxLength(size),allowEdit,allowEditOnCreate,helpText ...
 pascal ,dataabstract 内置的脚本
 
 python delphi for python 考虑中
-

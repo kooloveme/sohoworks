@@ -18,7 +18,7 @@
 
 2. 使用remobjects sdk /dataabstract 创建分布式架构
 
-3. 使用firebird  嵌入式数据库存储元数据
+3. 使用[firebird]  嵌入式数据库存储元数据
 
 4. 基础版版本包括财务，进销存 
 

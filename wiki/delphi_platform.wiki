@@ -26,6 +26,8 @@
   * 表单
   * 程序代码
 
+在元数据部分，表，字段，关系应该能同步到实际的数据库中
+
 ==== 表的元数据 ====
 
 tableName,caption,temporary,titleField1,titleField2

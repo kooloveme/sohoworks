@@ -1,11 +1,17 @@
 <wiki:toc max_depth="4" />
 == 基于delphi 的应用程序平台 ==
 
+=== 基本要求 ===
+
 1. 使用delphi win32构建 可能使用delphi 2007
 
 2. 使用remobjects sdk /dataabstract 创建分布式架构
 
 3. 使用firebird  嵌入式数据库存储元数据
+
+4. 基础版版本包括财务，进销存 
+
+
 
 
 === 元数据 ===

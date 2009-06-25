@@ -71,4 +71,4 @@ columnName,caption,maxLength(size),allowEdit,allowEditOnCreate,helpText ...
 
 === 脚本 ===
 
-pascal ,dataabstract 内置的脚本
+pascal ,dataabstract 内置的脚本，主要用于写事件代码

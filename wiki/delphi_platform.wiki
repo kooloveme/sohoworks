@@ -1,0 +1,55 @@
+基于delphi 的应用程序平台
+
+1. 使用delphi win32构建 可能使用delphi 2007
+
+2. 使用remobjects sdk /dataabstract 创建分布式架构
+
+3. 使用firebird  嵌入式数据库存储元数据
+
+
+=== 元数据 ===
+
+以下数据将作为元数据存储
+
+  * 表，字段，关系
+  * 枚举值
+  * 菜单项，菜单，安全键，以后的配置键
+  * 表单
+
+==== 表的元数据 ====
+
+tableName,caption,temporary,titleField1,titleField2
+
+==== 字段的元数据 ====
+
+columnName,caption,maxLength(size),allowEdit,allowEditOnCreate,helpText ...
+
+==== 表单 ====
+
+表单允许使用xml构造，比方说
+
+{{{
+<form rows='1' cols='2'>
+<tab name='tab'>
+<page name='overview' text='概览'>
+<grid>
+	<column field='name'/>
+</grid>
+<page>
+</tab>
+
+<buttongroup col="2">
+<button name='' click=""/>
+
+</buttongroup>
+</form>
+}}}
+<tab>
+
+
+}}}
+
+=== 脚本 ===
+
+pascal ,dataabstract 内置的脚本
+

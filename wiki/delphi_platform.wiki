@@ -43,8 +43,8 @@ columnName,caption,maxLength(size),allowEdit,allowEditOnCreate,helpText ...
 
 </buttongroup>
 </form>
-}}}
-<tab>
+
+</tab>
 
 
 }}}
@@ -52,4 +52,6 @@ columnName,caption,maxLength(size),allowEdit,allowEditOnCreate,helpText ...
 === 脚本 ===
 
 pascal ,dataabstract 内置的脚本
+
+python delphi for python 考虑中
 

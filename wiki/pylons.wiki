@@ -1,0 +1,17 @@
+在外部使用plyons的model
+
+{{{
+
+paster shell development.ini
+
+from paste.deploy import appconfig
+from pylons import config
+from proj.config.environment import load_environment
+
+conf=appconfig('config:项目的ini绝对路径')
+
+load_environment(config['global_conf',conf.local_conf)
+
+from myapp.model import *
+
+}}}

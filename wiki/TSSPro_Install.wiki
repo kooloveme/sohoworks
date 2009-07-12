@@ -1,0 +1,114 @@
+Note: The following installation instructions are valid for both Scripter Studio
+and Scripter Studio Pro, except when explicity indicated.
+
+-----------------------------------------------------------------------------------------------------
+Installing the Scripter Studio trial version in Delphi 5,6,7,2005,2006,2007 or C++Builder 6,2006,2007
+-----------------------------------------------------------------------------------------------------
+
+1) Close the IDE, run the installer (file name in format tmsscriptersetupXXX.exe 
+  (where XXX is your Delphi/C++Builder version) and restart the IDE
+
+
+
+--------------------------------------------------------------------------------------
+Installing the Scripter Studio registered version in Delphi or C++Builder
+--------------------------------------------------------------------------------------
+
+1) Unzip the files included into a separate directory {$SS}
+
+2) From Delphi, C++Builder
+
+   Add the directory where the files are unzipped {$SS} to the Delphi library path
+   under Tools, Environment options, Directories
+
+   a) All Delphi/C++Builder Versions:
+   Add the directory {$SS}\source to the library path
+   Add the directory {$SS}\source\AdvMemo to the library path
+   Add the directory {$SS}\source\Designer to the library path (if installing Scripter Studio PRO)
+
+   b) For specific Delphi/C++Builder version
+   Delphi 5        : Add the directory {$SS}\source\Imports\Delphi5 to the library path
+   Delphi 6        : Add the directory {$SS}\source\Imports\Delphi6 to the library path
+   Delphi 7        : Add the directory {$SS}\source\Imports\Delphi7 to the library path
+   BCB 6           : Add the directory {$SS}\source\Imports\Delphi6 to the library path
+   Delphi 2005     : Add the directory {$SS}\source\Imports\Delphi2005 to the library path
+   Delphi/BCB 2006 : Add the directory {$SS}\source\Imports\Delphi2006 to the library path
+   Delphi/BCB 2007 : Add the directory {$SS}\source\Imports\Delphi2007 to the library path
+
+
+3) From Delphi, C++Builder
+
+   Choose : File, Open and browse for the correct aScriptX.dpk 
+   package file for Delphi or aScriptcX.bpk for C++Builder:
+
+   Scripter Studio Pro:
+   aScriptpro5.dpk     : Delphi 5
+   aScriptpro6.dpk     : Delphi 6
+   aScriptpro7.dpk     : Delphi 7
+   aScriptpro2005.dpk  : Delphi 2005
+   aScriptpro2006.dpk  : Delphi 2006/C++Builder 2006
+   aScriptpro2007.dpk  : Delphi 2007/C++Builder 2007
+   aScriptproc6.bpk    : C++Builder 6
+
+   Scripter Studio:
+   aScript5.dpk     : Delphi 5
+   aScript6.dpk     : Delphi 6
+   aScript7.dpk     : Delphi 7
+   aScript2005.dpk  : Delphi 2005
+   aScript2006.dpk  : Delphi 2006/C++Builder 2006
+   aScript2007.dpk  : Delphi 2007/C++Builder 2007
+   aScriptc6.bpk    : C++Builder 6
+
+
+4) Demos
+  
+   All demos are available in subdirectory Demos. Just open the project and run it.
+
+
+
+
+--------------------------------------------------------------------------------------
+Installing the integration with Greatis Designer and Inspector (not in Pro version)
+--------------------------------------------------------------------------------------
+
+1) Make sure that Greatis Form Designer, Object Inspector and Runtime Fusion 
+   are installed. To install the Runtime Fusion support, it might be required
+   to create a package for the Runtime Fusion components.
+   See also: www.greatis.com
+
+2) Add the folder {$SS}\source\Greatis to the environment library path
+
+3) Open and install the Greatis integration support package
+
+   ssgreatis5.dpk : Delphi 5
+   ssgreatis6.dpk : Delphi 6
+   ssgreatis7.dpk : Delphi 7
+   ssgreatis2005.dpk : Delphi 2005
+   ssgreatis2006.dpk : Delphi 2006
+   ssgreatis2007.dpk : Delphi 2007
+
+   Upon install , two additional components are added to the Scripter Studio tab:
+   SSInspector and SSEventSaver
+   
+4) Check the demo in the Greatis folder that shows how to build a Delphi like IDE
+   with Greatis and Scripter Studio.
+
+
+
+--------------------------------------------------------------------------------------
+Notes for users of the TMS Component Pack
+--------------------------------------------------------------------------------------
+
+If the TAdvMemo component (latest version v2.0) is already
+installed as part of the TMS Component Pack, the Scripter
+Studio can be installed in following way.
+
+1) Make sure it is the latest version of the TMS Component pack
+   that is installed, including TAdvMemo v1.5 or higher
+
+2) Remove AdvMemo*, AdvCode*, uMemoEdit* file references from the Scripter Studio package file
+
+3) Install the Scripter Studio package file. Delphi or C++Builder will
+   automatically add a reference to the TMS Component Pack in the
+   Scripter Studio package and all components will install as expected.
+

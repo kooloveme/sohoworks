@@ -1,1 +1,2 @@
 [TSSPro_Install]
+[workflow_install]

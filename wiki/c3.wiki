@@ -1,0 +1,7 @@
+=== server ===
+
+server 使用django ,通过json-rpc 调用
+
+=== client ===
+
+client 使用delphi ，使用python for delphi 或superobject 调用json-rpc

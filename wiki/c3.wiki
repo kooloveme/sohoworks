@@ -6,6 +6,11 @@ json-rpc 使用
 
 http://github.com/samuraisam/django-json-rpc/tree/master
 
+或
+
+http://code.google.com/p/django-json-rpc-server/
+
+
 
 === client ===
 

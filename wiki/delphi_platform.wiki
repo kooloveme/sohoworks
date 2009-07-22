@@ -1,6 +1,12 @@
 <wiki:toc max_depth="4" />
 == 基于delphi 的应用程序平台 ==
 
+===服务端===
+
+服务端使用repoze.bfg ，建立在zope3的基础之上
+
+
+
 === 为什么使用delphi ===
 
 1. win32 本地应用，分发和速度有优势

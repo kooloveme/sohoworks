@@ -4,14 +4,14 @@ server 使用django ,通过json-rpc 调用
 
 json-rpc 使用
 
-http://github.com/samuraisam/django-json-rpc/tree/master
+http://github.com/samuraisam/django-json-rpc/tree/master  修改
 
-或
 
-http://code.google.com/p/django-json-rpc-server/
+
+
 
 
 
 === client ===
 
-client 使用delphi ，使用python for delphi 或superobject 调用json-rpc
+client 使用delphi ，目前superobject 调用json-rpc

@@ -15,3 +15,11 @@ http://github.com/samuraisam/django-json-rpc/tree/master  修改
 === client ===
 
 client 使用delphi ，目前superobject 调用json-rpc
+
+=== database ===
+
+mysql 计划转向pgsql
+
+=== 其它===
+
+django workflow http://github.com/maaku/django-workflow/tree/master

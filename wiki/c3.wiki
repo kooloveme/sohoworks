@@ -66,3 +66,15 @@ fields/local_fields/virtual_fields  搞清三者的关系
 
 abstract -是否抽象model
 
+
+字段
+||null||是否允许null||
+||blank||是否允许空白||
+||unique||是否是唯一||
+||choices||选择||
+||db_column||数据库列||
+||db_index||索引||
+||verbose_name||描述||
+||type||字段类型||
+||attname||属性名||
+||max_length||最大长度||

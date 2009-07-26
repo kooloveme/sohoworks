@@ -33,3 +33,4 @@ django json model格式
 ]
 
 }}}
+感觉字段名也是过于重复

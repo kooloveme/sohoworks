@@ -42,3 +42,5 @@ from django.db.models.loading import get_model
 model_class=get_model(app,model_name)
 
 app为应用名，通常为最后一个单词，比方说django.contrib.auth为auth
+
+model 元数据

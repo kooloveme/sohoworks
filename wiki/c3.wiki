@@ -44,3 +44,25 @@ model_class=get_model(app,model_name)
 app为应用名，通常为最后一个单词，比方说django.contrib.auth为auth
 
 model 元数据
+
+verbose_name
+
+verbose_name_plural
+
+verbose_name_raw
+
+pk - 指向 主键定义，通常同auto_field 一致
+
+db_table
+
+object_name
+
+module_name
+
+ordering
+
+
+fields/local_fields/virtual_fields  搞清三者的关系
+
+abstract -是否抽象model
+

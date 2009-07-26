@@ -23,3 +23,13 @@ mysql 计划转向pgsql
 === 其它===
 
 django workflow http://github.com/maaku/django-workflow/tree/master
+
+
+django json model格式
+{{{
+[{'pk':1,'model':'core.Menu','fields':{'field1':field1value,不包含pk}
+
+
+]
+
+}}}

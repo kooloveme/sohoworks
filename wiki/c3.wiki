@@ -34,3 +34,11 @@ django json model格式
 
 }}}
 感觉字段名也是过于重复
+
+model获取
+
+from django.db.models.loading import get_model
+
+model_class=get_model(app,model_name)
+
+app为应用名，通常为最后一个单词，比方说django.contrib.auth为auth

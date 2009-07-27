@@ -91,4 +91,7 @@ abstract -是否抽象model
 ||FloatField||ftFloat||
 ||DecimalField||ftCurrency||
 
-扩展column 的元数据 ，比方说display_size 之类的
+扩展column 的元数据 ，比方说display_size 之类的，通过扩展Field类
+
+增加的元数据
+||display_size||显示的长度，默认为-1,表示未设置||

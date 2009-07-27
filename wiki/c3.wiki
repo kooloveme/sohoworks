@@ -78,3 +78,13 @@ abstract -是否抽象model
 ||type||字段类型||
 ||attname||属性名||
 ||max_length||最大长度||
+
+字段映射
+
+||CharField||ftString||
+||IntegerField||ftInteger||
+||AutoField||ftInteger||
+||BooleanField||ftBoolean||
+||DateField||ftDate||
+||DateTimeField||ftDateTime||
+||TimeField||ftTime||

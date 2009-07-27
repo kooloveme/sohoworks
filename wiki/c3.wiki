@@ -83,8 +83,10 @@ abstract -是否抽象model
 
 ||CharField||ftString||
 ||IntegerField||ftInteger||
-||AutoField||ftInteger||
+||AutoField||ftAutoInc,必须是默认的||
 ||BooleanField||ftBoolean||
 ||DateField||ftDate||
 ||DateTimeField||ftDateTime||
 ||TimeField||ftTime||
+||FloatField||ftFloat||
+||DecimalField||ftCurrency||

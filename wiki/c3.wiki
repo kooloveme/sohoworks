@@ -90,3 +90,5 @@ abstract -是否抽象model
 ||TimeField||ftTime||
 ||FloatField||ftFloat||
 ||DecimalField||ftCurrency||
+
+扩展column 的元数据 ，比方说display_size 之类的

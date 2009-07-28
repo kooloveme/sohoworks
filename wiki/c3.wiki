@@ -115,3 +115,129 @@ abstract -是否抽象model
 ||TFormTreeViewControl||TcxTreeView||cxTreeView||..||
 ||TFormTabControl||TcxPageControl||cxPc||..||
 ||TFormLayoutControl||TdxLayoutControl||dxLayoutControl||..||
+
+=== server ===
+
+server 使用django ,通过json-rpc 调用
+
+json-rpc 使用
+
+http://github.com/samuraisam/django-json-rpc/tree/master  修改
+
+
+
+
+
+
+
+=== client ===
+
+client 使用delphi ，目前superobject 调用json-rpc
+
+=== database ===
+
+mysql 计划转向pgsql
+
+=== 其它===
+
+django workflow http://github.com/maaku/django-workflow/tree/master
+
+
+django json model格式
+{{{
+[{'pk':1,'model':'core.Menu','fields':{'field1':field1value,不包含pk}
+
+
+]
+
+}}}
+感觉字段名也是过于重复
+
+model获取
+
+from django.db.models.loading import get_model
+
+model_class=get_model(app,model_name)
+
+app为应用名，通常为最后一个单词，比方说django.contrib.auth为auth
+
+model 元数据
+
+verbose_name
+
+verbose_name_plural
+
+verbose_name_raw
+
+pk - 指向 主键定义，通常同auto_field 一致
+
+db_table
+
+object_name
+
+module_name
+
+ordering
+
+
+fields/local_fields/virtual_fields  搞清三者的关系
+
+abstract -是否抽象model
+
+
+字段
+||null||是否允许null||
+||blank||是否允许空白||
+||unique||是否是唯一||
+||choices||选择||
+||db_column||数据库列||
+||db_index||索引||
+||verbose_name||描述||
+||type||字段类型||
+||attname||属性名||
+||max_length||最大长度||
+
+字段映射
+
+||CharField||ftString||
+||IntegerField||ftInteger||
+||AutoField||ftAutoInc,必须是默认的||
+||BooleanField||ftBoolean||
+||DateField||ftDate||
+||DateTimeField||ftDateTime||
+||TimeField||ftTime||
+||FloatField||ftFloat||
+||DecimalField||ftCurrency||
+
+扩展column 的元数据 ，比方说display_size 之类的，通过扩展Field类
+
+增加的元数据
+||display_size||显示的长度，默认为-1,表示未设置||
+
+
+控件
+
+||控件||继承自||单元||针对字段类型||
+||TFormGridControl||TcxGrid||cxGrid||列表||
+||TFormStringControl||TcxDBTextEdit||cxDBEdit||CharField||
+||TFormCheckBoxControl||TcxDBCheckBox||cxDBEdit||BooleanField||
+||TFormDateControl||TcxDBDateEdit||cxDBEdit||DateField||
+||TFormTimeControl||TcxDBTimeEdit||cxDBEdit||TimeField||
+||TFormStaticTextContro||TcxDBLabel||cxDBLabel||无,可用于editable=False的东西||
+||TFormTextControl||TcxDBMemo||cxDBEdit||TextField||
+||TFormListBoxControl||TcxDBListBox||cxDBEdit||无||
+||TFormComboBoxControl||TcxDbComboBox||cxDBEdit||无||
+||TFormButtonControl||TcxButton||cxButtons||无||
+||TFormMenuButtonControl||TFormButtonControl||设置kind=cxbkDropDownButton,自动创建DropDownMenu,用DropDownMenu.createMenuItem或DropDownMenu.items.add设置值即可||..||
+||TFormListViewControl||TcxListView||cxListView||..||
+||TFormTreeViewControl||TcxTreeView||cxTreeView||..||
+||TFormTabControl||TcxPageControl||cxPc||..||
+||TFormLayoutControl||TdxLayoutControl||dxLayoutControl||..||
+
+TFormDataSource  继承自TDataSource 扩展以下属性
+
+||AllowCreate||boolean||是否允许创建新记录||
+||AllowEdit||boolean||是否允许编辑||
+||AutoQuery||boolean||是否自动创建查询对象||
+||StartPosition||enum ||spLast,spFirst,开始位置||
+||AutoSearch||boolean||是否自动执行查询||

@@ -111,3 +111,7 @@ abstract -是否抽象model
 ||TFormComboBoxControl||TcxDbComboBox||cxDBEdit||无||
 ||TFormButtonControl||TcxButton||cxButtons||无||
 ||TFormMenuButtonControl||TFormButtonControl||设置kind=cxbkDropDownButton,自动创建DropDownMenu,用DropDownMenu.createMenuItem或DropDownMenu.items.add设置值即可||..||
+||TFormListViewControl||TcxListView||cxListView||..||
+||TFormTreeViewControl||TcxTreeView||cxTreeView||..||
+||TFormTabControl||TcxPageControl||cxPc||..||
+||TFormLayoutControl||TdxLayoutControl||dxLayoutControl||..||

@@ -52,7 +52,7 @@ http://github.com/samuraisam/django-json-rpc/tree/master  修改
 
 查询字段使用
 {'filter':{filter dictionary},
-'exclude':{exclude dictionary},、
+'exclude':{exclude dictionary},}
 
 }}}
 

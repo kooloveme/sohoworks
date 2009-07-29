@@ -7,6 +7,38 @@ json-rpc 使用
 http://github.com/samuraisam/django-json-rpc/tree/master  修改
 
 
+=== 数据通讯格式 ===
+
+列表返回格式
+
+{'fields':
+[{'attname':'field1','type':'BooleanField','verbose_name':'field1'},
+{'attname':'field2','type':'BooleanField','verbose_name':'field2'}
+{'attname':'field3','type':'BooleanField','verbose_name':'field3'}
+...]
+'page':page,
+'page_count':page_count,
+'record_count':record_count,
+
+,'list':[(field1,field2,field3,)..]
+
+单一记录更新格式
+{'model':'model name',
+'op':'Insert|Update|Delete',
+'record':{}
+}
+
+多记录格式
+{'model':'model name',
+'op':'Insert|Update|Delete',
+'record':[{}]
+}
+
+
+查询格式
+
+单一model查询格式
+
 
 
 

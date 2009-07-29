@@ -26,16 +26,20 @@ http://github.com/samuraisam/django-json-rpc/tree/master  修改
 }}}
 
 单一记录更新格式
-{'model':'model name',
-'op':'Insert|Update|Delete',
-'record':{}
-}
+{{{
+[model_name,pk,data dictionary]
+}}}
 
-多记录格式
-{'model':'model name',
-'op':'Insert|Update|Delete',
-'record':[{}]
-}
+单一记录删除格式
+{{{
+[model_name,pk]
+
+}}}
+
+单一记录插入格式
+{{{
+[model_name,data dictionary]
+}}}
 
 
 查询格式

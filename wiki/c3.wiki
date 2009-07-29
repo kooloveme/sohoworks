@@ -46,6 +46,15 @@ http://github.com/samuraisam/django-json-rpc/tree/master  修改
 
 单一model查询格式
 
+{{{
+
+[model_name,查询dictionary]
+
+查询字段使用
+{'filter':{filter dictionary},
+'exclude':{exclude dictionary},、
+
+}}}
 
 
 

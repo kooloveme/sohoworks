@@ -6,6 +6,26 @@ json-rpc 使用
 
 http://github.com/samuraisam/django-json-rpc/tree/master  修改
 
+=== 窗体流程 ===
+
+===打开窗体===
+
+form.init
+
+datasource1.init
+
+form.run
+
+datasource1.executeQuery
+
+===新建记录 ===
+
+datasource1.create call server.model_create 新建记录，调用initValue,返回dict ，增加记录
+
+datasource1.initValue - server.model_initValue
+
+
+
 
 === 数据通讯格式 ===
 
@@ -20,7 +40,7 @@ http://github.com/samuraisam/django-json-rpc/tree/master  修改
 'page_count':page_count,
 'record_count':record_count,
 
-,'list':[(field1,field2,field3,)..]
+,'queryset':[(field1,field2,field3,)..]
 
 
 }}}

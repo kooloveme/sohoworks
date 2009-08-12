@@ -7,4 +7,6 @@
 outlookbar是遍历actionList中的 action,根据action的category和caption生成page和item
 
 
- 
+②添加自动更新
+
+③添加工作流

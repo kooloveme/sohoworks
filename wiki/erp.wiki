@@ -1,0 +1,10 @@
+1. 改进
+
+从一个元数据库自动生成导航
+
+原系统有一个MainMenu,ActionList 每个功能需要手动添加到MainMenu和在actionList中添加action,并将menu的Action设置为 ActionList 中的action
+
+outlookbar是遍历actionList中的 action,根据action的category和caption生成page和item
+
+
+ 

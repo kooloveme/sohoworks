@@ -1,13 +1,22 @@
 
-
 表格
 
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
 ||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||
-||dagoodsclass||默认为插入商品分类
+||dagoodsclass||默认为插入商品分类||
 ||mscurrency||货币，默认为插入人民币,isLocation=true||
 ||DAArea||区域，默认会插入所有地区||
+||STWarehouse||仓库,默认会插入所有仓库||
+||FNAccounts||资金账户,默认为插入1,业主资金帐户，业主资金，但这里硬编码货币编号为1,可能存在问题||
+
+
+有权限判断
+
+如果userid为1,有所有权限，不好
+
+用userid为roleid查询MSRolePermissions表，有则有权限，否则无
+
 
 
 

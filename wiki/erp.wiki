@@ -1,10 +1,14 @@
-创建一个tstrings并返回，要释放该tstrings,否则有内存泄漏
 
 
 表格
 
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
+||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||
+||dagoodsclass||默认为插入商品分类
+||mscurrency||货币，默认为插入人民币,isLocation=true||
+||DAArea||区域，默认会插入所有地区||
+
 
 
 

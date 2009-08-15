@@ -1,9 +1,30 @@
+创建一个tstrings并返回，要释放该tstrings,否则有内存泄漏
+
+
 表格
 
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
+||MSPostionClass||职位类别||
+
 
 
 TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
+
+部门窗体在打开时会检查msdepartment是否存在记录，如果不存在，则插入以公司名为部门名的记录
+（CreateUserId=1,upid=-1)
+
+属性词典窗体在打开时如果检查为无记录，会自动插入商品属性资料，学历属性资料
+
+职位类别窗体无记录时会自动插入职别工种记录
+
+问题
+1.部门编辑点击确定没有关闭？
+
+2. msbremployee窗口部门和员工变量名称不规范 tblgoods,tblDaGoods
+
+3. 职别工种点击确定无效
+
+
 
 1. 改进
 

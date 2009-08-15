@@ -1,3 +1,10 @@
+表格
+
+||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
+
+
+TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
+
 1. 改进
 
 从一个元数据库自动生成导航

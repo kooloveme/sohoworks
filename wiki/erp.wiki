@@ -45,7 +45,8 @@
 ||复核||复核||
 
 
-提交-审批-注销 均视为递交状态
+提交-审批-注销 均视为递交状态 保存时会检查此状态
+
 
 
 
@@ -94,6 +95,10 @@ VoucherIDField 注意默认取MasterDataSet的第一个字段,按命名规范通
 VoucherTableName 不包括前后缀的表名，如销售开单就是SLSale(自动转换为SLSaleMaster,SLSaleDetail按命名规范)
 
 新增，删除明细操作DetailDataSet.append,DetailDataSet.delete
+
+保存操作 首先检查RecordState是否提交，然后调用InternalSave,将InternalSave操作包装在一次事务中。
+
+InternalSave很重要，为子类覆盖，在其中执行业务逻辑
 
 MasterDataSet commandText规范
 {{{

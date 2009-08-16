@@ -95,10 +95,19 @@ VoucherTableName 不包括前后缀的表名，如销售开单就是SLSale(自�
 新增，删除明细操作DetailDataSet.append,DetailDataSet.delete
 
 MasterDataSet commandText规范
+{{{
+select * from {voucherTableName}Master where {voucherIdField} = :{vocherIdField}
 
-select * from voucherTableNameMaster where voucherIdField = :vocherIdField
+select * from {voucherTableName}Detail where  MasterId=:{vocherIdField}
 
-select * from voucherTableNameDetail where  MasterId=:vocherIdField
+}}}
+
+实现MasterDetaset的AfterPost事件MasterDatasetAfterPost  ，将主表的Idx循环填充到明细表所有记录的MasterId字段
+
+
+
+
+
 
 
 ①引用

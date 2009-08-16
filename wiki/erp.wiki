@@ -61,6 +61,12 @@
 ||SLSaleClientMaster/SLSaleClientDetail||连锁加盟销售||
 
 
+=== 财务模块====
+
+||FNAccount||科目||
+
+
+
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
 ||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||
@@ -124,7 +130,13 @@ select * from {voucherTableName}Detail where  MasterId=:{vocherIdField}
 ①引用
 
 
+=== 销售模块 ===
 
+====销售开单 ====
+
+将记录插入到销售出库表 SLGoodsOutMaster/SLGoodsOutDetail)
+
+当核选 收现款和现款折扣时 ，会将billMode修改为 现款销售 对于该类单据，会自动将记录插入到销售结算表中 (FNClearSLMaster/FNClearSLDetail). 收款账户默认为accountsId科目表中的accounttype=现金科目
 
 有权限判断
 

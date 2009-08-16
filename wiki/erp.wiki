@@ -66,12 +66,17 @@
 
 ||MSUnit||单位||
 ||MSEmployee||员工||
+||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
+||MSPostionClass||职位类别||
+||mscurrency||货币，默认为插入人民币,isLocation=true||
+||mssysparameter||系统参数||
 
 === 基本数据 ===
 ||DAGoods||货品||
 ||DAClient||客户 clientType<>'厂商'||
-
-
+||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||
+||dagoodsclass||默认为插入商品分类||
+||DAArea||区域，默认会插入所有地区||
 
 
 === 销售模块 ===
@@ -84,27 +89,32 @@
 ||SLGoodsOutMaster/SLGoodsOutDetail||销售出库||
 ||SLSaleClientMaster/SLSaleClientDetail||连锁加盟销售||
 
+=== 采购 ===
+
+||PCGoodsInMaster/PcgoodsInDetail||采购入库||
 
 === 财务模块===
 
 ||FNAccount||科目||
 
+||FNAccounts||资金账户,默认为插入1,业主资金帐户，业主资金，但这里硬编码货币编号为1,可能存在问题||
+
+
 === 仓库模块 ===
 
 ||STWareHouse||仓库||
+||STGoodsOutInMaster/STGoodsOutInDetail||库存调拨||
+||STGoodsCountOffMaster/STGoodsCountOffDetail||盘盈盘亏，依赖billmode 区分库存库存盘盈和不为库存盘盈||
+
+=== 生产 ===
+
+||YDGoodsInMaster/YDGoodsInDetail||生产入库||
+||YDGoodsOutMaster/YDGoodsOutDetail||生产出库||
 
 
 
 
-||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
-||MSPostionClass||职位类别||
-||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||
-||dagoodsclass||默认为插入商品分类||
-||mscurrency||货币，默认为插入人民币,isLocation=true||
-||DAArea||区域，默认会插入所有地区||
-||STWarehouse||仓库,默认会插入所有仓库||
-||FNAccounts||资金账户,默认为插入1,业主资金帐户，业主资金，但这里硬编码货币编号为1,可能存在问题||
-||mssysparameter||系统参数||
+
 
 
 == 表单 ==

@@ -28,6 +28,18 @@
 
 5. 所有表格均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
 
+
+=== 销售模块 ===
+
+||表||说明||
+||SLContract||销售合同||
+||SLOrderMaster/SLOrderDetail||销售订单和明细||
+||SLSaleMaster/SLSaleDetail||销售开单和明细||
+||FNClearSLMaster/FNClearSLDetail||销售结算||
+||SLGoodsOutMaster/SLGoodsOutDetail||销售出库||
+||SLSaleClientMaster/SLSaleClientDetail||连锁加盟销售||
+
+
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
 ||DAExpenseClass||费用类别，如果为空，默认为插入费用项目||

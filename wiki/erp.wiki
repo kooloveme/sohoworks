@@ -32,6 +32,9 @@
 
 6. 明细表引用主表字段强制为MasterId ,int not null
 
+7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值
+
+
 === RecordState 字段 ===
 ||取值||说明||
 ||临时||新增加||

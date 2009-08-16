@@ -30,6 +30,20 @@
 
 5. 所有表格(排除明细表)均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
 
+6. 明细表引用主表字段强制为MasterId ,int not null
+
+=== RecordState 字段 ===
+||取值||说明||
+||临时||新增加||
+||提交||编辑-提交||
+||审批||||
+||注销||||
+||删除||已经被删除||
+
+
+提交-审批-注销 均视为递交状态
+
+
 
 === 销售模块 ===
 
@@ -68,6 +82,24 @@ WSCustomForm -> TWSEditForm -> TWSVoucherEditForm -> TBaseVoucherEditForm
 增加Edit/Enter(重载)方法
 
 ====TWSVoucherEditForm ====
+
+属性 MasterDataSet,DetailDataSet TADODataSet类型，从MasterDataSource,DetailDataSource 的DataSet属性而来
+
+VoucherIDField 注意默认取MasterDataSet的第一个字段,按命名规范通常是ID
+
+VoucherTableName 不包括前后缀的表名，如销售开单就是SLSale(自动转换为SLSaleMaster,SLSaleDetail按命名规范)
+
+新增，删除明细操作DetailDataSet.append,DetailDataSet.delete
+
+MasterDataSet commandText规范
+
+select * from voucherTableNameMaster where voucherIdField = :vocherIdField
+
+select * from voucherTableNameDetail where  MasterId=:vocherIdField
+
+
+①引用
+
 
 
 

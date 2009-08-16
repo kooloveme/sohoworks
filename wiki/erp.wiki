@@ -48,6 +48,20 @@
 提交-审批-注销 均视为递交状态 保存时会检查此状态
 
 
+=== 包装单位和标准单位支持 ===
+
+为了支持包装单位和标准单位，设计货品数量的地方均按如下设计
+
+||quantity||数量，按包装单位统计的数量||
+||PackUnitId||包装单位||
+||PriceBase||按包装单位统计的单价||
+||Amount||quantity*PriceBase||
+||GoalQuantity||标准数量||
+||GoalUnitId||标准单位||
+||PriceGoal||标准单价||
+||PriceCost||成本，标准成本.money 缺省0||
+
+
 
 
 === 销售模块 ===

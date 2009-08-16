@@ -53,6 +53,24 @@
 ||mssysparameter||系统参数||
 
 
+== 表单 ==
+
+=== 表单继承体系 ===
+
+WSCustomForm -> TWSEditForm -> TWSVoucherEditForm -> TBaseVoucherEditForm
+
+==== WSCustomForm ====
+
+实现OnClose事件，如果FormStyle为 fsMdiChild,则 action为faFree
+
+==== TWSEditForm ====
+
+增加Edit/Enter(重载)方法
+
+====TWSVoucherEditForm ====
+
+
+
 有权限判断
 
 如果userid为1,有所有权限，不好

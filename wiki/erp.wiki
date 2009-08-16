@@ -62,6 +62,16 @@
 ||PriceCost||成本，标准成本.money 缺省0||
 
 
+=== 数据维护 ===
+
+||MSUnit||单位||
+||MSEmployee||员工||
+
+=== 基本数据 ===
+||DAGoods||货品||
+||DAClient||客户 clientType<>'厂商'||
+
+
 
 
 === 销售模块 ===
@@ -124,6 +134,12 @@ VoucherTableName 不包括前后缀的表名，如销售开单就是SLSale(自�
 保存操作 首先检查RecordState是否提交，然后调用InternalSave,将InternalSave操作包装在一次事务中。
 
 InternalSave很重要，为子类覆盖，在其中执行业务逻辑
+
+新增操作 New ,MasterDataSet.append,DetailDataSet.open ,注意Code在这里已经被设置
+{{{
+ FieldByName('Code').AsString := GetMaxCode('Code', VoucherTableName + 'Master', number);
+   
+}}}
 
 MasterDataSet commandText规范
 {{{
@@ -188,6 +204,9 @@ TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
 
 5. 提交后 界面记录还是可以修改，只是在保存时才提示不能修改
 
+6. 子类中New方法重复设置代码
+
+SLEdGoodsOut
 
 
 

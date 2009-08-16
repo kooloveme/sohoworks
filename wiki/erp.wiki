@@ -32,7 +32,7 @@
 
 6. 明细表引用主表字段强制为MasterId ,int not null
 
-7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值
+7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值，ModeC字段(-1为红字)
 
 
 === RecordState 字段 ===
@@ -42,6 +42,7 @@
 ||审批||||
 ||注销||||
 ||删除||已经被删除||
+||复核||复核||
 
 
 提交-审批-注销 均视为递交状态
@@ -106,6 +107,11 @@ select * from {voucherTableName}Detail where  MasterId=:{vocherIdField}
 
 
 
+====TBaseVoucherEditForm====
+
+红字 -将BillMode 加上{{{[红字]}}}后缀，ModeC修改为-1
+
+复核 - 将RecordState 设置为复核
 
 
 

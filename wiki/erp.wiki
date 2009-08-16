@@ -61,9 +61,14 @@
 ||SLSaleClientMaster/SLSaleClientDetail||连锁加盟销售||
 
 
-=== 财务模块====
+=== 财务模块===
 
 ||FNAccount||科目||
+
+=== 仓库模块 ===
+
+||STWareHouse||仓库||
+
 
 
 

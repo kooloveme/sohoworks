@@ -1,5 +1,19 @@
+模块
 
-表格
+||SL||销售||
+||PC||采购||
+||MS||维护||
+||DA||基础数据||
+||FN||财务||
+||YD||生产||
+||ST||仓库||
+||SR||工资||
+||FA||资产||
+||EG||工程项目||
+||OA||办公||
+||||通讯||
+
+表
 
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
@@ -9,6 +23,7 @@
 ||DAArea||区域，默认会插入所有地区||
 ||STWarehouse||仓库,默认会插入所有仓库||
 ||FNAccounts||资金账户,默认为插入1,业主资金帐户，业主资金，但这里硬编码货币编号为1,可能存在问题||
+||mssysparameter||系统参数||
 
 
 有权限判断

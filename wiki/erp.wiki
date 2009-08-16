@@ -32,7 +32,7 @@
 
 6. 明细表引用主表字段强制为MasterId ,int not null
 
-7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值，ModeC字段(-1为红字)
+7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值，ModeC字段(-1为红字),ModeDC (负操作时为-1,如销售退货或采购退货) . *在求值时通常需要用ModeC*ModeDC*Quantity/ModeC*ModeDC*Amount之类的操作获取正确的值
 
 
 === RecordState 字段 ===

@@ -1,4 +1,4 @@
-模块
+== 模块 ==
 
 ||SL||销售||
 ||PC||采购||
@@ -13,7 +13,20 @@
 ||OA||办公||
 ||||通讯||
 
-表
+
+== 表 ==
+
+=== 命名规范===
+
+1. 所有表以模块名为前缀
+
+2. 命名主要采用单数，如MSUSER
+
+3. 主键均命名为id,identity
+
+4. master -detail 表加上Master,Detail后缀，如SLOrderMaster,SLOrderDetail 表示销售订单和销售订单明细
+
+5. 所有表格均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
 
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||

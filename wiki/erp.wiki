@@ -26,7 +26,7 @@
 
 4. master -detail 表加上Master,Detail后缀，如SLOrderMaster,SLOrderDetail 表示销售订单和销售订单明细
 
-5. 所有表格均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
+5. 所有表格(排除明细表)均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
 
 
 === 销售模块 ===
@@ -70,12 +70,18 @@ TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
 
 职位类别窗体无记录时会自动插入职别工种记录
 
-问题
+== 已知问题 ===
+
 1.部门编辑点击确定没有关闭？
 
 2. msbremployee窗口部门和员工变量名称不规范 tblgoods,tblDaGoods
 
 3. 职别工种点击确定无效
+
+4. 生产入库提示缺少标准单位成本字段(PriceCost)
+
+
+
 
 
 

@@ -186,6 +186,8 @@ TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
 
 4. 生产入库提示缺少标准单位成本字段(PriceCost)
 
+5. 提交后 界面记录还是可以修改，只是在保存时才提示不能修改
+
 
 
 

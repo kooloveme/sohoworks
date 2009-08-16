@@ -83,15 +83,16 @@
 
 ||表||说明||
 ||SLContract||销售合同||
-||SLOrderMaster/SLOrderDetail||销售订单和明细||
+||SLOrderMaster/SLOrderDetail||销售订单和明细,销售退货 billmode为销售退货modedc为-1||
 ||SLSaleMaster/SLSaleDetail||销售开单和明细||
 ||FNClearSLMaster/FNClearSLDetail||销售结算||
-||SLGoodsOutMaster/SLGoodsOutDetail||销售出库||
+||SLGoodsOutMaster/SLGoodsOutDetail||销售出库，库存统计表||
 ||SLSaleClientMaster/SLSaleClientDetail||连锁加盟销售||
 
 === 采购 ===
 
-||PCGoodsInMaster/PcgoodsInDetail||采购入库||
+||PCGoodsInMaster/PcgoodsInDetail||采购入库，库存统计表||
+||PCPurchaseMaster/PcPurchaseDetail||采购开单，采购退货 billMode为采购退货,modedc为-1||
 
 === 财务模块===
 

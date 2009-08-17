@@ -197,11 +197,12 @@ UserId+RoleId 为unique
 
 === 表单继承体系 ===
 
-WSCustomForm -> TWSEditForm -> TWSVoucherEditForm -> TBaseVoucherEditForm
+TCustomForm -> TEditForm -> TVoucherEditForm -> TBaseVoucherEditForm
 
-==== WSCustomForm ====
+==== TCustomForm ====
 
 实现OnClose事件，如果FormStyle为 fsMdiChild,则 action为faFree
+
 
 ==== TWSEditForm ====
 

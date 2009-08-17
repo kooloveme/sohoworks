@@ -66,12 +66,55 @@
 
 === 数据维护 ===
 
+||MSMenu||导航菜单||
+||MSUser||用户||
 ||MSUnit||单位||
 ||MSEmployee||员工||
 ||mscompanyuser||请理解成company,TGuarder.GetCompanyUserName 取其名称||
 ||MSPostionClass||职位类别||
 ||mscurrency||货币，默认为插入人民币,isLocation=true||
 ||mssysparameter||系统参数||
+
+==== MsMenu ====
+
+导航菜单
+
+||Name||nvarchar(255)||菜单名，使用/分隔||
+
+{{{
+
+总账
+
+总账/设置
+
+总账/设置/期限
+
+}}}
+
+
+
+====MSUser ====
+
+系统用户
+
+||UserName||nvarchar(50) not null||用户名，唯一 ||
+||Password||nvarchar(50) not null||口令，用md5加密||
+||Email||nvarchar(255)||电子邮件||
+
+==== MSRole====
+角色
+
+||Name||nvarchar(50) not null ||角色名称||
+
+====MSUserRole====
+
+用户角色对应关系
+||UserId||用户编号||
+||RoleId||角色id||
+
+UserId+RoleId 为unique
+
+
 
 === 基本数据 ===
 ||DAGoods||货品||

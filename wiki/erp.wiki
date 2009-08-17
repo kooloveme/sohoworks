@@ -28,7 +28,9 @@
 
 4. master -detail 表加上Master,Detail后缀，如SLOrderMaster,SLOrderDetail 表示销售订单和销售订单明细
 
-5. 所有表格(排除明细表)均包括 RecordState/CreateUserId/CreateDate(getdate()默认值) 字段
+5. 所有表格CreateUserId/CreateDate(getdate()默认值) 字段
+
+5.1 所有单据表均包括RecordState 字段
 
 6. 明细表引用主表字段强制为MasterId ,int not null
 

@@ -8,6 +8,8 @@
 
 3. 支持二次开发
 
+4. 允许按用户，用户组，角色设置权限
+
 
 
 == 模块 ==
@@ -75,7 +77,7 @@
 
 
 === 数据维护 ===
-
+||MSApplication||应用程序||
 ||MSMenu||导航菜单||
 ||MSUser||用户||
 ||MSUnit||单位||
@@ -89,7 +91,18 @@
 
 导航菜单
 
-||Name||nvarchar(255)||菜单名，使用/分隔||
+||Text||nvarchar(255)||菜单文本，使用/分隔||
+||SecurityKeyId||int null||菜单对应的安全键，允许为空||
+||menuItemId||int null||菜单对应的菜单项，允许为空||
+||HelpText||nvarchar(255)|| 菜单帮助文本||
+
+====MSMenuItem====
+菜单项
+||Text||菜单项文本||
+||MenuItemType||int ||0 - 窗体，1-报表 2- action||
+||MenuItemTypeName||nvarchar(255)||窗体名或报表名或脚本名||
+||HelpText||nvarchar(255)||帮助文本||
+
 
 {{{
 
@@ -124,6 +137,13 @@
 
 UserId+RoleId 为unique
 
+====MSSecurityKey====
+||Name||用/分隔||
+
+====MSPermission====
+权限设定
+||roleId||角色id||
+||securityKeyId||安全键id||
 
 
 === 基本数据 ===

@@ -163,10 +163,18 @@ UserId+RoleId 为unique
 ||Name||用/分隔||
 
 ====MSPermission====
-权限设定
+用户权限设定
+||userid||用户id||
+||securityKeyId||安全键id||
+====MSRolePermission====
+角色权限设定
 ||roleId||角色id||
 ||securityKeyId||安全键id||
 
+====MSGroupPermission====
+组权限设定
+||groupId||组id||
+||securityKeyId||安全键id||
 
 === 基本数据 ===
 ||DAGoods||货品||

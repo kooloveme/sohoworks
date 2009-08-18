@@ -219,11 +219,14 @@ UserId+RoleId 为unique
 
 === 表单继承体系 ===
 
-TCustomForm -> TEditForm -> TVoucherEditForm -> TBaseVoucherEditForm
+TBaseForm-> TEditForm -> TVoucherEditForm -> TBaseVoucherEditForm
 
-==== TCustomForm ====
+==== TBaseForm====
 
 实现OnClose事件，如果FormStyle为 fsMdiChild,则 action为faFree
+
+实现OnKeyPress事件，将回车转换为tab
+
 
 
 ==== TWSEditForm ====

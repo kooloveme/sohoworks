@@ -10,6 +10,9 @@
 
 4. 允许按用户，用户组，角色设置权限
 
+5. 自动更新或手动更新支持
+
+
 
 
 == 模块 ==
@@ -86,6 +89,20 @@
 ||MSPostionClass||职位类别||
 ||mscurrency||货币，默认为插入人民币,isLocation=true||
 ||mssysparameter||系统参数||
+
+
+====msapplication ====
+保存应用程序定义
+||name||应用程序名||
+||text||应用程序详细描述||
+||version||应用程序当前版本，系统将依次对比文件版本以提示是否自动更新||
+||helpFile||帮助文件路径||
+||copyright||版权||
+||author||作者||
+||email||联系邮件||
+||supportUrl||技术支持url||
+||upgradeUrl||自动更新文件的url 如file:///c:\e6\update\e6.inf||
+
 
 ==== MsMenu ====
 
@@ -309,5 +326,14 @@ outlookbar是遍历actionList中的 action,根据action的category和caption生�
 
 
 ②添加自动更新
+
+1. 读取当前文件版本
+
+2. 读取msapplication.upgradeUrl
+
+3. 读取msapplication.version,比较1,如果大于，提示是否自动更新
+
+4. 注意，打包upgrade4.exe 
+
 
 ③添加工作流

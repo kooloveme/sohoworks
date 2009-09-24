@@ -1,0 +1,23 @@
+=== 框架基础类===
+==== formrun====
+
+||Init|| 初始化||
+||Run||运行||
+
+所有窗体的基础类
+==== xRecord=== 
+
+所有实体的基础类
+
+|| InitValue|| 在窗体新建记录时触发||
+||Insert||插入记录时触发||
+||Update||更新记录时触发||
+||Delete||删除记录时触发||
+||DoInsert||跳过Insert处理||
+||DoUpdate||跳过Update处理||
+||DoDelete||跳过Delete 处理||
+||ModifiedField||字段记录改变时触发||
+||Write||根据情况调用Insert或Update||
+||ValidateWrite||在Write时触发||
+||ValidateDelete||在Delete时触发||
+||ValidateField||在更新field时触发||

@@ -24,4 +24,4 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 
 5. fix Form 缺省代码
 
-6. 
+6. 移除JobDelegate,MyFunc

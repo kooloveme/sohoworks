@@ -20,3 +20,28 @@ ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在�
 === db4o ===
 
 不正确的关系存储可能导致不可思议的问题
+
+===form===
+
+动态form创建
+{{{
+def job1(args):
+  form=Form()
+  ds=form.AddDataSource('Table1')
+  tab=form.Design.AddControl(FormControlType.Tab,'Tab')
+  tabpage=tab.AddControl(FormControlType.TabPage,'OverviewTabPage')
+  grid=tabpage.AddControl(FormControlType.Grid,'Grid')
+  grid.AddDataField(ds,ds.Table.Fields[0])
+  grid.AddDataField(ds,ds.Table.Fields[1])
+  
+  args=Args()
+  args.Object=form
+  
+  formrun=ClassFactory.FormRunClass(args)
+  formrun.Init()
+  formrun.Run()
+  formrun.Wait()
+  
+}}}
+  
+  

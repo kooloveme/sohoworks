@@ -17,4 +17,11 @@
 
 3. 为节点增加上下文菜单继承体系
 
+ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
+
+
 4. 字段删除时重新编译Table
+
+5. fix Form 缺省代码
+
+6. 

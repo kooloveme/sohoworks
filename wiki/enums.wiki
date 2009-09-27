@@ -8,3 +8,4 @@ enums.cs
 ||JoinMode||
 ||ObjectType||
 ||MenuItemType||
+||ArrangeMethod||排列方向，水平，垂直,对应layoutControl的layoutType,TabPage和Group默认为垂直，而Design默认为水平||

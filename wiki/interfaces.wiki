@@ -1,0 +1,13 @@
+interfaces.cs 文件
+
+IRunable --指示 aot 节点可运行
+
+ICompilable -- 指示aot 节点可编译
+
+RunBase -- FormRun,QueryRun,DialogRun,ReportRun等实现的接口
+
+ISupportingBinding 支持datasource 绑定
+
+ISupportingBinding2 -支持datasource field绑定  todo 增加dataMethod 绑定
+
+

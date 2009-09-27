@@ -10,4 +10,4 @@ ISupportingBinding 支持datasource 绑定
 
 ISupportingBinding2 -支持datasource field绑定  todo 增加dataMethod 绑定
 
-
+FormControl 泛型接口

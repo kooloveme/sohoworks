@@ -7,7 +7,7 @@
 {{{
 
   def New${table.Name}(self,**kwargs):
-    row=this.NewRow()
+    row=self.NewRow()
     for key,value in kwargs.items():
       row[key]=value
     return row

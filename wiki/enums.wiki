@@ -1,0 +1,10 @@
+enums.cs
+
+
+||FormWidth||
+||FormHeight||
+||LinkType||
+||StartPosition||
+||JoinMode||
+||ObjectType||
+||MenuItemType||

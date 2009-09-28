@@ -25,3 +25,7 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 5. fix Form 缺省代码
 
 6. 移除JobDelegate,MyFunc
+
+===2009.9.28===
+
+1. 创建ScriptHelper,分离脚本相关代码

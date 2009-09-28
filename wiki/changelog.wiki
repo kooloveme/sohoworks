@@ -28,4 +28,4 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 
 ===2009.9.28===
 
-1. 创建ScriptHelper,分离脚本相关代码
+1. 创建ScriptHelper,分离脚本相关代码，在新线程中进行初始化和编译

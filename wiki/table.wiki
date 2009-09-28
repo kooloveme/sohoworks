@@ -9,4 +9,5 @@
 ||time||datetime||||
 ||datetime||datetime||
 ||guid||guid||
+||boolean||bit||
 ||enum||int, axapta 的UseEnumValue 应该是指使用对象内部的id还是用enumValue属性||

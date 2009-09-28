@@ -1,3 +1,5 @@
 1. 使用BaseEnum
 
-当创建字段时指定了BaseEnum 值，则该字段会尝试使用BaseEnum的设置展示
+当创建字段时指定了enum 字段，则该字段会尝试使用BaseEnum的设置展示
+
+

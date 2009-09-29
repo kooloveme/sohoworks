@@ -59,11 +59,11 @@ category.Insert()
 
 {{{
 
-category=Session.FindById<Category>(9)
+category=Session.FindById[Category](9)
 
 当传入一个列表时返回一个数组
 
-categories=Session.FindById<Category>([1,2,3,4,5])
+categories=Session.FindById[Category]([1,2,3,4,5])
 for categoy in categories:
   print category.name
 
@@ -74,7 +74,7 @@ for categoy in categories:
 
 {{{
 
-result=Session.Find<Goods>(conditons='id like @id',params={'@id':'0702%'})
+result=Session.Find[Goods](conditons='id like @id',params={'@id':'0702%'})
 
 for goods in result:
   print goods.id,goods.name

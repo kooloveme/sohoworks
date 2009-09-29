@@ -1,5 +1,5 @@
-dataTable serilaize问题
+1. dataTable serilaize问题
 
-虽然借助 ClrTypeMetaclass可以在ironpython class上施加Serializable Attribute,但是在反串行 化时会提示 不能找到assmelby的提示 
+虽然借助 ClrTypeMetaclass可以在ironpython class上施加Serializable Attribute,并能成功串行化。但是在反串行化时会提示 不能找到assmelby的提示 
 
 Unable to find assembly 'Snippets.scripting,version=0.0.0.0,culture=neutral,publicKeyToken=null'

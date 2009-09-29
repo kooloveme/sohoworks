@@ -51,5 +51,13 @@ category.Insert()
 ==== 查找记录 ====
 
 
+=== 批量提交 ===
+
+1. 创建新行，加入到datatable Rows集合或更新行，或删除行
+
+2. 调用datatable SubmitChanges
+
+*批量提交跳过Insert,Update,Delete过程*
+
 
 ①对于kwargs,c#需在kwargs参数前施加 ParamDictionary attribute,但ScriptScope.SetVariable时，无法将这个attribute施加在Func类型上

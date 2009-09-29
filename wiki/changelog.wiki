@@ -32,3 +32,9 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 
 ===2009.9.29===
 1. 创建SqlHelper,分离数据库操作
+
+2. 删除menu时移除下级
+
+3. 创建导入c3 菜单的job
+
+4. 能导入导出table 定义

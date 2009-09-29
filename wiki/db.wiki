@@ -3,7 +3,6 @@
 ||TtsBegin||开始事务||
 ||TtsCommit||提交事务||
 ||TtsRollback||回退事务||
-
 ||ExecuteNonQuery||执行sql 查询，返回int||
 ||ExecuteDataTable||查询指定name的数据表，name是aot中定义的table名||
 ||Insert||传递DataRow[]数组||

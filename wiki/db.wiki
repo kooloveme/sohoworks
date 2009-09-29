@@ -2,9 +2,9 @@
 
 ||Find||
 ||FindById||
-||Udpate||
+||Udpate||同实例Update方法命名冲突||
 ||UpdateAll||
-||Delete||
+||Delete||同DataRow.Delete方法命名冲突,Destory已用于 实例方法||
 ||DeleteAll||
 ||Clear||
 ||Create||

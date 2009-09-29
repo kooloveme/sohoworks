@@ -69,6 +69,9 @@ DataTable方法
 
 
 ===Session ===
+||Begin||SqlHelper.TTSBegin||
+||Commit||SqlHelper.TTSCommit||
+||About||SqlHelper.TTSAbout||
 ||Create||创建新记录||
 ||FindById||根据主键||
 ||Find||查询||

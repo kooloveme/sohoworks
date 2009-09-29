@@ -41,6 +41,17 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 
+DataTable由于从TypedDataTableBase继承，因此可以 直接 对datatable进行迭代 
+{{{
+
+for goods in Session.Find[Goods]():
+  print goods.id
+}}}
+
+||Count||相当于DataTable.Rows.Count||
+||this[int]||相当 于DataTable.Rows[int]||
+||SubmitChanges||全部递交||
+
 ===Session ===
 
 ====创建新记录===

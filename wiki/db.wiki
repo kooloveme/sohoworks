@@ -22,6 +22,8 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 
 首先，通过名称加上Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。Category 其实就是DataRow
 
+对象方法
+
 ||Insert||插入,可覆盖||
 ||Update||更新，可覆盖||
 ||Destory||删除，可覆盖||
@@ -39,8 +41,42 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 
+===Session ===
 
-====创建新记录====
+====创建新记录===
+
+{{{
+
+category=Session.Create[Category](id=id,name=name)
+category.Insert()
+
+
+}}}
+
+====查询记录===
+
+根据id查找，每个表均有一个recid identity int64字段,不存在将触发RecordNotFoundException
+
+{{{
+
+category=Session.FindById<Category>(9)
+
+}}}
+
+
+返回强类型datatable,可传递conditions,limit,offset,joins,from,group,select,order,params 模拟ActiveRecord.Find
+
+{{{
+
+result=Session.Find<Goods>(conditons='id like @id',params={'@id':'0702%'})
+
+for goods in result:
+  print goods.id,goods.name
+
+}}}
+
+
+====创建新记录直接通过dataTable====
 
 categories=CategoryTable()
 category=categories.NewCategory(id='a',name='test') # 或者category.NewRow()
@@ -48,7 +84,7 @@ category=categories.NewCategory(id='a',name='test') # 或者category.NewRow()
 cateogries.Rows.Add(category) #可选，Insert方法会自动执行
 category.Insert()  
 
-==== 查找记录 ====
+
 
 
 === 批量提交 ===

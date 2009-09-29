@@ -35,6 +35,7 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 ||ValidateInsert||验证插入，可覆盖||
 ||ValidateDestory||验证删除，可覆盖||
 ||ValidateUpdate||验证更新，可覆盖||
+||NewXXX||xxx是表名，允许传递kwargs||
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 

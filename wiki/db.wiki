@@ -1,9 +1,10 @@
+下面所有的Table对象，是指在aot中定义的Table对象，它其实 是基于DataRow的.不要同DataTable相混扰。在ebf,可以通过Table对象 名加上 Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。
+
 ===orm ===
 ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造了一个orm类的层
 
-首先，通过名称加上Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。Category 其实就是DataRow
 
-对象实例方法
+Table对象实例方法
 
 ||Insert||插入,可覆盖||
 ||Update||更新，可覆盖||
@@ -22,16 +23,16 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 
-对象类方法
+Table对象类方法
 
-||Find||
-||FindById||
-||Udpate||同实例Update方法命名冲突||
-||UpdateAll||
-||Delete||同DataRow.Delete方法命名冲突,Destory已用于 实例方法||
-||DeleteAll||
-||Clear||
-||Create||
+||Find||映射到Session.Find||
+||FindById||映射到Session.FindById||
+||UpdateById||同实例Update方法命名冲突,映射到Session.Update||
+||UpdateAll||映射到Session.UpdateAll
+||DeleteById||同DataRow.Delete方法命名冲突,Destory已用于 实例方法,映射到Session.Delete||
+||DeleteAll||映射到Session.DeleteAll||
+||Clear||映射到Session.Clear||
+||Create|映射到Session.Create||
 
 
 
@@ -46,8 +47,7 @@ Goods.Update(goods.recId,id='12',name='12')
 Goods.Delete(goods.recId)
 
 
-
-
+====Table对象对应的DataTable ====
 }}}
 
 DataTable由于从TypedDataTableBase继承，因此可以 直接 对datatable进行迭代 
@@ -58,6 +58,7 @@ for goods in Session.Find[Goods]():
 }}}
 
 DataTable方法
+
 ||Count||相当于DataTable.Rows.Count||
 ||this[int]||相当 于DataTable.Rows[int]||
 ||SubmitChanges||全部递交||
@@ -71,7 +72,11 @@ DataTable方法
 ||Delete||根据id删除||
 ||DeleteAll||根据conditions条件删除||
 ||Update||根据id和kwargs更新单条记录||
-||Update
+||UpdateAll||按条件更新||
+||ClearAll||清除全部||
+
+除了 ClearAll等一些特定的方法，大部分Session的方法均需要你传递类型参数 ，需要简便的话直接调用 Table对象的静态方法 
+
 ====创建新记录===
 
 {{{
@@ -130,6 +135,9 @@ category.Insert()
 
 
 === sql ===
+
+如果需要直接操作sql,请通过SqlHelper
+
 ||函数名称||作用||
 ||TtsBegin||开始事务||
 ||TtsCommit||提交事务||
@@ -141,15 +149,7 @@ category.Insert()
 ||Delete||传递DataRow[]数组||
 ||SubmitChanges||传递DataTable或DataSet||
 
-
-
 这些方法由SqlHelper提供,ebf 将常用的方法注册到ironpython，你可以直接用函数名调用而不是SqlHelper.xxx,一些扩展的方法当前必须通过SqlHelper前缀调用，如SqlHelper.ExecuteNonQuery('delete from table1 where field1=@field1',field1='test') *①这是由于ironpython注册函数时的一些不足造成的*
-
-
-
-
-
-
 
 
 

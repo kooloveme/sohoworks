@@ -61,6 +61,12 @@ category.Insert()
 
 category=Session.FindById<Category>(9)
 
+当传入一个列表时返回一个数组
+
+categories=Session.FindById<Category>([1,2,3,4,5])
+for categoy in categories:
+  print category.name
+
 }}}
 
 
@@ -74,6 +80,12 @@ for goods in result:
   print goods.id,goods.name
 
 }}}
+
+==== 更新记录 ====
+{{{
+goods.Update()
+}}}
+
 
 
 ====创建新记录直接通过dataTable====

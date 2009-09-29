@@ -64,7 +64,7 @@ for goods in Session.Find[Goods]():
 DataTable方法
 
 ||Count||相当于DataTable.Rows.Count||
-||this\[int\]||相当 于DataTable.Rows[int]||
+||this|相当 于DataTable.Rows 数组调用||
 ||SubmitChanges||全部递交||
 
 

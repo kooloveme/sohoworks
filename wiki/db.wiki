@@ -48,11 +48,12 @@ Goods.UpdateById(goods.recId,id='12',name='12')
 Goods.DeleteById(goods.recId)
 
 
+
+}}}
+
 *静态方法可能会引发冲突 ，比方 说删除了一个相应的记录但DataRow还是存在，或是更新了一个行但数据行并不会反映变化*
 
 ====Table对象对应的DataTable ====
-}}}
-
 DataTable由于从TypedDataTableBase继承，因此可以 直接 对datatable进行迭代 
 {{{
 

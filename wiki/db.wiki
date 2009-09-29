@@ -77,12 +77,14 @@ for goods in result:
 
 
 ====创建新记录直接通过dataTable====
-
+{{{
 categories=CategoryTable()
 category=categories.NewCategory(id='a',name='test') # 或者category.NewRow()
 
 cateogries.Rows.Add(category) #可选，Insert方法会自动执行
 category.Insert()  
+
+}}}
 
 
 

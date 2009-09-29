@@ -143,9 +143,9 @@ category.Insert()
 如果需要直接操作sql,请通过SqlHelper
 
 ||函数名称||作用||
-||TtsBegin||开始事务||
-||TtsCommit||提交事务||
-||TtsRollback||回退事务||
+||TTSBegin||开始事务||
+||TTSCommit||提交事务||
+||TTSAbout||回退事务||
 ||ExecuteNonQuery||执行sql 查询，返回int||
 ||ExecuteDataTable||查询指定name的数据表，name是aot中定义的table名||
 ||Insert||传递DataRow[]数组||

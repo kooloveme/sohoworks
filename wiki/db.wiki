@@ -1,5 +1,5 @@
 <wiki:toc max_depth="4" />
-下面所有的Table对象，是指在aot中定义的Table对象，它其实 是基于DataRow的.不要同DataTable相混扰。在ebf,可以通过Table对象 名加上 Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。
+下面所有的Table对象，是指在aot中定义的Table对象，它其实 是基于DataRow的.不要同DataTable相混扰。在ebf,可以通过Table对象 名加上 Table后缀来访问对应的DataTable,如Category表，可以通过CategoryTable来访问datatable对象。
 
 ===orm ===
 ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造了一个orm类的层
@@ -43,10 +43,12 @@ goods=Goods.Create(id='11',name='11')
 goods.Insert()
 
 
-Goods.Update(goods.recId,id='12',name='12')
+Goods.UpdateById(goods.recId,id='12',name='12')
 
-Goods.Delete(goods.recId)
+Goods.DeleteById(goods.recId)
 
+
+*静态方法可能会引发冲突 ，比方 说删除了一个相应的记录但DataRow还是存在，或是更新了一个行但数据行并不会反映变化*
 
 ====Table对象对应的DataTable ====
 }}}

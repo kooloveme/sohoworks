@@ -1,4 +1,28 @@
-===orm 通过aot Table对象 ===
+===orm ===
+ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造了一个orm类的层
+
+首先，通过名称加上Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。Category 其实就是DataRow
+
+对象实例方法
+
+||Insert||插入,可覆盖||
+||Update||更新，可覆盖||
+||Destory||删除，可覆盖||
+||Write||插入或更新，可覆盖||
+||DoInsert||插入||
+||DoUpdat||更新||
+||DoDestory||删除||
+||DoWrite||插入或更新||
+||ModifiedField||字段改变,可覆盖||
+||ValidateField||验证字段，可覆盖||
+||ValidateInsert||验证插入，可覆盖||
+||ValidateDestory||验证删除，可覆盖||
+||ValidateUpdate||验证更新，可覆盖||
+||NewXXX||xxx是表名，允许传递kwargs||
+
+Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
+
+对象类方法
 
 ||Find||
 ||FindById||
@@ -26,50 +50,6 @@ Goods.Delete(goods.recId)
 
 }}}
 
-=== sql ===
-||函数名称||作用||
-||TtsBegin||开始事务||
-||TtsCommit||提交事务||
-||TtsRollback||回退事务||
-||ExecuteNonQuery||执行sql 查询，返回int||
-||ExecuteDataTable||查询指定name的数据表，name是aot中定义的table名||
-||Insert||传递DataRow[]数组||
-||Update||传递DataRow[]数组||
-||Delete||传递DataRow[]数组||
-||SubmitChanges||传递DataTable或DataSet||
-
-
-
-这些方法由SqlHelper提供,ebf 将常用的方法注册到ironpython，你可以直接用函数名调用而不是SqlHelper.xxx,一些扩展的方法当前必须通过SqlHelper前缀调用，如SqlHelper.ExecuteNonQuery('delete from table1 where field1=@field1',field1='test') *①这是由于ironpython注册函数时的一些不足造成的*
-
-
-
-
-=== orm ===
-
-ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造了一个orm类的层
-
-首先，通过名称加上Table后缀来访问对应的DataTable,如Category表，可以通过CategoryDataTable来访问datatable对象。Category 其实就是DataRow
-
-对象方法
-
-||Insert||插入,可覆盖||
-||Update||更新，可覆盖||
-||Destory||删除，可覆盖||
-||Write||插入或更新，可覆盖||
-||DoInsert||插入||
-||DoUpdat||更新||
-||DoDestory||删除||
-||DoWrite||插入或更新||
-||ModifiedField||字段改变,可覆盖||
-||ValidateField||验证字段，可覆盖||
-||ValidateInsert||验证插入，可覆盖||
-||ValidateDestory||验证删除，可覆盖||
-||ValidateUpdate||验证更新，可覆盖||
-||NewXXX||xxx是表名，允许传递kwargs||
-
-Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
-
 DataTable由于从TypedDataTableBase继承，因此可以 直接 对datatable进行迭代 
 {{{
 
@@ -77,9 +57,11 @@ for goods in Session.Find[Goods]():
   print goods.id
 }}}
 
+DataTable方法
 ||Count||相当于DataTable.Rows.Count||
 ||this[int]||相当 于DataTable.Rows[int]||
 ||SubmitChanges||全部递交||
+
 
 ===Session ===
 ||Create||创建新记录||
@@ -144,6 +126,29 @@ cateogries.Rows.Add(category) #可选，Insert方法会自动执行
 category.Insert()  
 
 }}}
+
+
+
+=== sql ===
+||函数名称||作用||
+||TtsBegin||开始事务||
+||TtsCommit||提交事务||
+||TtsRollback||回退事务||
+||ExecuteNonQuery||执行sql 查询，返回int||
+||ExecuteDataTable||查询指定name的数据表，name是aot中定义的table名||
+||Insert||传递DataRow[]数组||
+||Update||传递DataRow[]数组||
+||Delete||传递DataRow[]数组||
+||SubmitChanges||传递DataTable或DataSet||
+
+
+
+这些方法由SqlHelper提供,ebf 将常用的方法注册到ironpython，你可以直接用函数名调用而不是SqlHelper.xxx,一些扩展的方法当前必须通过SqlHelper前缀调用，如SqlHelper.ExecuteNonQuery('delete from table1 where field1=@field1',field1='test') *①这是由于ironpython注册函数时的一些不足造成的*
+
+
+
+
+
 
 
 

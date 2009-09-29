@@ -1,3 +1,31 @@
+===orm 通过aot Table对象 ===
+
+||Find||
+||FindById||
+||Udpate||
+||UpdateAll||
+||Delete||
+||DeleteAll||
+||Clear||
+||Create||
+
+
+
+{{{
+
+goods=Goods.Create(id='11',name='11')
+goods.Insert()
+
+
+Goods.Update(goods.recId,id='12',name='12')
+
+Goods.Delete(goods.recId)
+
+
+
+
+}}}
+
 === sql ===
 ||函数名称||作用||
 ||TtsBegin||开始事务||
@@ -9,6 +37,7 @@
 ||Update||传递DataRow[]数组||
 ||Delete||传递DataRow[]数组||
 ||SubmitChanges||传递DataTable或DataSet||
+
 
 
 这些方法由SqlHelper提供,ebf 将常用的方法注册到ironpython，你可以直接用函数名调用而不是SqlHelper.xxx,一些扩展的方法当前必须通过SqlHelper前缀调用，如SqlHelper.ExecuteNonQuery('delete from table1 where field1=@field1',field1='test') *①这是由于ironpython注册函数时的一些不足造成的*
@@ -53,7 +82,14 @@ for goods in Session.Find[Goods]():
 ||SubmitChanges||全部递交||
 
 ===Session ===
-
+||Create||创建新记录||
+||FindById||根据主键||
+||Find||查询||
+||Clear||清除||
+||Delete||根据id删除||
+||DeleteAll||根据conditions条件删除||
+||Update||根据id和kwargs更新单条记录||
+||Update
 ====创建新记录===
 
 {{{

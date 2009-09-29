@@ -1,0 +1,3 @@
+dataTable serilaize问题
+
+虽然借助 ClrTypeMetaclass可以在ironpython class上施加Serializable Attribute,但是在反串行 化时会提示 不能找到assmelby的提示 （估计assembly是动态的缘故)

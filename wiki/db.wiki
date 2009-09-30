@@ -84,13 +84,13 @@ DataTable方法
 ||UpdateAll||按条件更新||
 ||ClearAll||清除全部||
 
-除了 ClearAll等一些特定的方法，大部分Session的方法均需要你传递类型参数 ，需要简便的话直接调用 Table对象的静态方法 
+除了 ClearAll等一些特定的方法，大部分Session的方法均需要你传递类型参数(由于ironpython生成的类型名有问题，而ClrTypeMetaclass在解决这个 问题时又带来的新问题，所以这里表参数直接通过字符串传递) ，需要简便的话直接调用 Table对象的静态方法 
 
 ====创建新记录===
 
 {{{
 
-category=Session.Create[Category](id=id,name=name)
+category=Session.Create("Category",id=id,name=name)
 category.Insert()
 
 
@@ -102,11 +102,11 @@ category.Insert()
 
 {{{
 
-category=Session.FindById[Category](9)
+category=Session.FindById("Category",9)
 
 当传入一个列表时返回一个数组
 
-categories=Session.FindById[Category]([1,2,3,4,5])
+categories=Session.FindById('Category',[1,2,3,4,5])
 for categoy in categories:
   print category.name
 
@@ -117,7 +117,7 @@ for categoy in categories:
 
 {{{
 
-result=Session.Find[Goods](conditons='id like @id',params={'@id':'0702%'})
+result=Session.Find('Goods',conditons='id like @id',params={'@id':'0702%'})
 
 for goods in result:
   print goods.id,goods.name

@@ -1,5 +1,10 @@
 1. dataTable serilaize问题
 
 虽然借助 ClrTypeMetaclass可以在ironpython class上施加Serializable Attribute,并能成功串行化。但是在反串行化时会提示 不能找到assmelby的提示 
+{{{
 
-Unable to find assembly 'Snippets.scripting,version=0.0.0.0,culture=neutral,publicKeyToken=null'
+Unable to find assembly 'Snippets.scripting, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null'. (Anonymously Hosted DynamicMethods Assembly)
+
+}}}
+
+使用pickle 时也是如此

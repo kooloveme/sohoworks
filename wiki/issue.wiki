@@ -8,3 +8,16 @@ Unable to find assembly 'Snippets.scripting, Version=0.0.0.0, Culture=neutral, P
 }}}
 
 使用pickle 时也是如此
+
+{{{
+
+  import pickle,StringIO
+  f=StringIO.StringIO()
+  pickle.dump(dt,f)
+  
+  f.pos=0
+  
+  dt2=pickle.load(f)
+  print dt2.Count
+  
+}}}

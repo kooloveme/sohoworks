@@ -38,3 +38,7 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 3. 创建导入c3 菜单的job
 
 4. 能导入导出table 定义
+
+===2009.9.30 ===
+
+1. 导入info窗体，splash窗体，about窗体

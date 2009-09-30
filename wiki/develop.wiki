@@ -10,6 +10,16 @@ ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在�
 
 3. 缩进使用空格，约定为2个空格1缩进
 
+
+=== 代码编译下载原理===
+
+1. 检查时间戳，源代码是否更新
+
+2. 下载代码，调用clr.CompileModule进行编译
+
+3. clr.AddReference/import 
+
+
 === TreeNode 体系===
 
 1. GroupTreeNode 

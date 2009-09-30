@@ -66,6 +66,8 @@ DataTable方法
 ||Count||相当于DataTable.Rows.Count||
 ||this|相当 于DataTable.Rows 数组调用||
 ||SubmitChanges||全部递交||
+||Add||DataTable.Rows.Add(row)||
+||Remove||DataTable.Rows.Remove||
 
 
 ===Session ===

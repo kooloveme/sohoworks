@@ -12,3 +12,4 @@ enums.cs
 ||AutoMode||长度或高度模式，有自动，固定两值||
 ||FormControlType||Grid/StringEdit.../Group||
 ||BaseEnumStyle||ComboBox,RadioButton||
+||AccessLevel||访问级别||

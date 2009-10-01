@@ -69,6 +69,14 @@ def job1(args):
 
 
 
+===linktype  Delayed, Active===
+
+1. 目前仅支持active
+
+2. 挂接 CurrentChanged事件
+3. 查询formbuilddatasource的datasources,查看是否存在delayed,active的linktype的datasource,如果存在，则查找对应的FormDataSource,取出关系字段的值，添加hidden querybuildRange,并执行其ExecuteQuery
+
+
 
 
   

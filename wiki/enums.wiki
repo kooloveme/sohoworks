@@ -13,3 +13,6 @@ enums.cs
 ||FormControlType||Grid/StringEdit.../Group||
 ||BaseEnumStyle||ComboBox,RadioButton||
 ||AccessLevel||访问级别||
+||SortOrder||排序方向||
+||SelectionField||选择字段类型,database或是统计字段||
+||RangeStauts||Hide,Lock,Open 默认是Open||

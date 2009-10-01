@@ -24,6 +24,11 @@ ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造�
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 
+对于 ModifiedField,Validatefield,InitValue等方法 ，存在着是ui调用还是table对象自动调用的问题。ui调用即重载 控件的的validating,validated方法 。在新增 ，保存，删除时调用
+
+而table对象 自动调用则是通过Table的NewRow,ColumnChanging,ColumnChanged等事件。两者更有优点和缺点，前者需要更多的基础代码，后者要求的代码少，但面积太广，比方有时不想让其触发了，或是在修改事件中再修改会导致重复触发的。从最终操作上来看，前者更倒是更加简单一些。
+
+
 ====Table对象类方法====
 
 ||Find||映射到Session.Find||

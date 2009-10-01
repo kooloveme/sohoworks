@@ -54,4 +54,21 @@ def job1(args):
   
 }}}
   
+
+=== FormBuildDatasource 转换到QueryBuildDataSource的流程===
+
+1. 设置FormDataSource的BuildDataSource属性
+
+2. 如果AutoQuery为true，为FormDataSource创建查询对象
+
+3. 增加QueryBuildDataSource，table为formbuilddatasource的table
+
+4. 遍历formbuildDatasource的DataSources属性，查看是否存在join类型的formdatasource，如果存在，则加为子querydatasource,并且设置子querybuilddatasource的joinMode属性（根据formbuilddatasource的linktype中的join部分)
+
+查询aot 中的关系，将关系内容添加为QueryBuildLink(仅为标准关系)
+
+
+
+
+
   

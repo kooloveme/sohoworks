@@ -44,3 +44,7 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 1. 导入info窗体，splash窗体，about窗体,login form
 
 2. 增加accessLevel enum
+
+===2009.10.1===
+
+1.初步完成分布式操作，单一对象crud操作，添加LoginService

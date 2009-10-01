@@ -1,11 +1,11 @@
-<wiki:toc max_depth="4" />
+<wiki:toc max_depth="5" />
 下面所有的Table对象，是指在aot中定义的Table对象，它其实 是基于DataRow的.不要同DataTable相混扰。在ebf,可以通过Table对象 名加上 Table后缀来访问对应的DataTable,如Category表，可以通过CategoryTable来访问datatable对象。
 
 ===orm ===
 ebf 通过自动生成强类型的datatable ，在  ado.net 的基础上构造了一个orm类的层
 
 
-Table对象实例方法
+====Table对象实例方法====
 
 ||Insert||插入,可覆盖||
 ||Update||更新，可覆盖||
@@ -24,7 +24,7 @@ Table对象实例方法
 
 Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 
-Table对象类方法
+====Table对象类方法====
 
 ||Find||映射到Session.Find||
 ||FindById||映射到Session.FindById||
@@ -35,7 +35,7 @@ Table对象类方法
 ||Clear||映射到Session.Clear||
 ||Create|映射到Session.Create||
 
-
+==== samples====
 
 {{{
 
@@ -53,7 +53,7 @@ Goods.DeleteById(goods.recId)
 
 *静态方法可能会引发冲突 ，比方 说删除了一个相应的记录但DataRow还是存在，或是更新了一个行但数据行并不会反映变化*
 
-====Table对象对应的DataTable ====
+==== Table对象对应的DataTable ====
 DataTable由于从TypedDataTableBase继承，因此可以 直接 对datatable进行迭代 
 {{{
 
@@ -61,7 +61,7 @@ for goods in Session.Find[Goods]():
   print goods.id
 }}}
 
-DataTable方法
+=====DataTable方法=====
 
 ||Count||相当于DataTable.Rows.Count||
 ||this|相当 于DataTable.Rows 数组调用||

@@ -1,3 +1,5 @@
+<wiki:toc max_depth="4" />
+
 === 代码生成===
 
 ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在。 应用程序元素(form,job,table)在新增，更新，删除时，系统将自动生成代码并编译。用户的自定义代码将无缝的连接到生成的代码中。
@@ -79,4 +81,10 @@ def job1(args):
 
 
 
-  
+===核心服务 ===
+
+1. LoginService
+
+2. SqlService  
+
+3. MetaService

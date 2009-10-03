@@ -25,6 +25,8 @@ ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在�
 
 4. 不要在一个返回中返回null,如
 
+5. 使用windows cr/lf 行格式
+
 {{{
 $control.BuildSource()
 

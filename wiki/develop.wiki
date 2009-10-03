@@ -23,6 +23,14 @@ ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在�
 
 3. clr.AddReference/import 
 
+4. 不要在一个返回中返回null,如
+
+{{{
+$control.BuildSource()
+
+如果BuildSource返回null, $control.BuildSource()将存在而不是被替换为空白
+}}
+
 
 === TreeNode 体系===
 

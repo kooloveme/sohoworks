@@ -4,6 +4,15 @@
 ||Init||初始化||
 ||Print||打印||
 ||PrintPreview||打印预览||
+||Run||run||
+||Wait||Thread.Sleep||
+||LoadUserSetting||todo||
+||SaveUserSetting||todo||
+||CloseCancel||todo||
+||ClosedCancel||todo||
+||CloseOk||todo||
+||ClosedOk||todo||
+
 
 === formdatasource===
 

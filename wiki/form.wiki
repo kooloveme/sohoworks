@@ -1,0 +1,22 @@
+===form 方法==
+
+||方法||说明||
+||Init||初始化||
+||Print||打印||
+||PrintPreview||打印预览||
+
+=== formdatasource===
+
+每个datasource都会有三个对应的变量
+
+formdatasourcename_ds formdatasource 对象
+formdatasourcename_table datatable对象 
+
+formdatasourcename datarow 对象
+
+
+===控件事件===
+
+controlName_eventname
+
+||FormButtonControl||Click||

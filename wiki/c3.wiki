@@ -42,3 +42,8 @@ bank-> cashBank
 ||balInit||InitBalance||
 ||depid||deparmentId||
 ||IsONRoad||||
+
+lookup lookuptype=3-> Deparment
+
+||name||name||
+||subId||accountId||

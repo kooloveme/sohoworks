@@ -50,6 +50,14 @@ FormTreeNode,TableTreeNode,ClassTreeNode,JobTreeNode,SecurityKeyTreeNode
 
 AOTNode 是根对象，AOTSourceNode 说明这个节点可以用源代码表示,实现AOTSourceNode的有Form,Class,Job ,Report,Query
 
+
+AOTNode 的方法和属性
+
+
+所有派生类必须实现Serializable attribute
+
+同一类别名称相同将视为一致
+
 === db4o ===
 
 不正确的关系存储可能导致不可思议的问题

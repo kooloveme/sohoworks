@@ -15,7 +15,7 @@ Unit
 ||Name||Name||8||
 ||||recId||||
 
-Subject
+Subject -> account
 ||subid||id||
 ||name||name||
 ||dcFlag||dcFlag||
@@ -28,3 +28,17 @@ Subject
 ||relevantId||relevantId||
 ||helpCode||helpCode||
 ||rest||rest||
+
+
+bank-> cashBank
+
+||bankId||recId||
+||name||mame||
+||bankName||bankName||
+||bankCode||bankCode||
+||subId||accountId||
+||falg||falg ,CashBankType||
+||balance||balance||
+||balInit||InitBalance||
+||depid||deparmentId||
+||IsONRoad||||

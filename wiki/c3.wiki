@@ -20,7 +20,7 @@ Subject -> account
 ||name||name||
 ||dcFlag||dcFlag||
 ||hsCash||checkCash||
-||hsWb||checkCurrency||
+||hsWb|||checkCurrency||
 ||moneyId||currencyId||
 ||detailFlag|detailFlag||
 ||attrFlag||||

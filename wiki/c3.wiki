@@ -14,3 +14,14 @@ Currency
 Unit
 ||Name||Name||8||
 ||||recId||||
+
+Subject
+||subid||id||
+||name||name||
+||dcFlag||dcFlag||
+||detailFlag|detailFlag||
+||attrFlag||||
+||specialCode||specialCode||
+||relevantId||relevantId||
+||helpCode||helpCode||
+||rest||rest||

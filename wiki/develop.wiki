@@ -40,6 +40,8 @@ $control.BuildSource()
 |                  
 FormsTreeNode ,TablesTreeNode,ClassesTreeNode,JobsTreeNode,SecurityKeysTreeNode,
 
+GroupTreeNode 有Add,Refresh,ObjectName等方法，有strip protected 上下文菜单字段
+
 2. ElementTreeNode
 
 === db4o ===

@@ -19,6 +19,9 @@ Subject
 ||subid||id||
 ||name||name||
 ||dcFlag||dcFlag||
+||hsCash||checkCash||
+||hsWb||checkCurrency||
+||moneyId||currencyId||
 ||detailFlag|detailFlag||
 ||attrFlag||||
 ||specialCode||specialCode||

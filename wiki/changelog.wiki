@@ -52,3 +52,7 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 ===2009.10.5===
 
 1. 移出AOTNode.db到Db4oHelper 静态帮助类
+
+===2009.10.6===
+
+增加index,index 导入，生成创建表时的index 

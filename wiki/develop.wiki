@@ -46,6 +46,8 @@ GroupTreeNode 有Add,Refresh,ObjectName等方法，有strip protected 上下文�
 
 FormTreeNode,TableTreeNode,ClassTreeNode,JobTreeNode,SecurityKeyTreeNode
 
+所有节点必须支持Clone
+
 ===aos ===
 
 AOTNode 是根对象，AOTSourceNode 说明这个节点可以用源代码表示,实现AOTSourceNode的有Form,Class,Job ,Report,Query
@@ -107,8 +109,19 @@ def job1(args):
 2. 挂接 CurrentChanged事件
 3. 查询formbuilddatasource的datasources,查看是否存在delayed,active的linktype的datasource,如果存在，则查找对应的FormDataSource,取出关系字段的值，添加hidden querybuildRange,并执行其ExecuteQuery
 
+4. 在新建记录时，从关系datasource获取关系值，自动增加到当前datasource新记录中
 
+=== form 状态 ===
 
+1. 如果没有记录，所有控件enabled=false
+
+2. 新建记录，控件状态按AllowEditOnCreate 设定
+
+3. 保存记录，控件状态按AllowEdit设定
+
+4. 删除记录，重新按当前记录设定控件状态
+
+5. formrun init 后，按当前记录设定控件状态
 
 ===核心服务 ===
 

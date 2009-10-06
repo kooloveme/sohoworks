@@ -48,6 +48,8 @@ FormTreeNode,TableTreeNode,ClassTreeNode,JobTreeNode,SecurityKeyTreeNode
 
 所有节点必须支持Clone
 
+仅ElementTreeNode支持拖放
+
 ===aos ===
 
 AOTNode 是根对象，AOTSourceNode 说明这个节点可以用源代码表示,实现AOTSourceNode的有Form,Class,Job ,Report,Query

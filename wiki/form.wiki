@@ -38,4 +38,7 @@ controlName_eventname
 ||FormGridControl||GridControl||
 ||FormStaticStringControl||LabelControl||
 ||FormStringControl||TextEdit||
-||FormRealControl||CalcEdit
+||FormRealControl||CalcEdit||
+||FormIntControl||CalcEdit||
+||FormInt64Control||CalcEdit||
+

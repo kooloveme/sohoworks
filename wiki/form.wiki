@@ -29,3 +29,8 @@ formdatasourcename datarow 对象
 controlName_eventname
 
 ||FormButtonControl||Click||
+
+
+=== 控件 ===
+
+目前，使用devexpress.xtraeditor. 这个控件的继承体系的基类是BaseEdit 。有一个重要的属性EditValue和事件EditValueChanged，具体的类有特定的属性表示其特定类型的值，如CheckEdit有Checked,CheckState,DateEdit有DateTime,TextEdit有Text.CalcEdit有Value(decimal).TimeEdit有Time(datetime)

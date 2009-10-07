@@ -39,6 +39,5 @@ controlName_eventname
 ||FormStaticStringControl||LabelControl||
 ||FormStringControl||TextEdit||
 ||FormRealControl||CalcEdit||
-||FormIntControl||CalcEdit||
-||FormInt64Control||CalcEdit||
-
+||FormIntControl||SpinEdit||
+||FormInt64Control|| SpinEdit ,IsFloating=false,EditMask=N00,MinValue,MaxValue||

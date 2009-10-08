@@ -21,3 +21,8 @@ Unable to find assembly 'Snippets.scripting, Version=0.0.0.0, Culture=neutral, P
   print dt2.Count
   
 }}}
+
+
+2. Absolute path information is required
+
+当每控件子类表示时出现该错误

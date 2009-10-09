@@ -26,9 +26,9 @@ class Form1(FormRun):  # 所有窗体继承自FormRun
 ||Wait||Thread.Sleep||
 ||LoadUserSetting||todo||
 ||SaveUserSetting||todo||
-||CloseCancel||todo||
+||ClosingCancel||todo||
 ||ClosedCancel||todo||
-||CloseOk||todo||
+||ClosingOk||todo||
 ||ClosedOk||todo||
 
 

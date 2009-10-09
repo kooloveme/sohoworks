@@ -53,12 +53,13 @@ controlName_eventname
 
 目前，使用devexpress.xtraeditor. 这个控件的继承体系的基类是BaseEdit 。有一个重要的属性EditValue和事件EditValueChanged，具体的类有特定的属性表示其特定类型的值，如CheckEdit有Checked,CheckState,DateEdit有DateTime,TextEdit有Text.CalcEdit有Value(decimal).TimeEdit有Time(datetime)
 
-||FormGridControl||GridControl||
-||FormStaticStringControl||LabelControl||
-||FormStringControl||TextEdit||
-||FormRealControl||CalcEdit||
-||FormIntControl||SpinEdit||
-||FormInt64Control|| SpinEdit ,IsFloating=false,EditMask=N00,MinValue,MaxValue||
-||FormComboBoxControl||LookUpEdit||
-||FormCheckBoxControl||CheckEdit||
-||FormLookUpControl||GridLookUpEdit||
+||build control||ebf 中的控件||继承自||
+||FormBuildGridControl||FormGridControl||GridControl||
+||FormBuildStaticStringControl||FormStaticStringControl||LabelControl||
+||FormBuildStringControl||FormStringControl||TextEdit||
+||FormBuildRealControl||FormRealControl||CalcEdit||
+||FormBuildIntControl||FormIntControl||SpinEdit||
+||FormBuildInt64Control||FormInt64Control|| SpinEdit ,IsFloating=false,EditMask=N00,MinValue,MaxValue||
+||FormBuildComboBoxControl||FormComboBoxControl||LookUpEdit||
+||FormBuildCheckBoxControl||FormCheckBoxControl||CheckEdit||
+||无，动态选择||FormLookUpControl||GridLookUpEdit||

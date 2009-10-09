@@ -78,3 +78,8 @@ controlName_eventname
 ||FormBuildTreeViewControl||FormTreeViewControl||System.Windows.Forms.TreeView||||
 ||FormBuildListViewControl||FormListViewControl||System.Windows.Forms.ListView||||
 ||FormBuildListBoxControl||FormListBoxControl||ListBoxControl||||
+
+
+==== FormLookupControl====
+
+如果一个控件（通常是int,int64,string) 实现了LookUp 方法签名，则系统使用FormLookUpControl来显示。你可以使用SysLookupTable 类来组装lookup内容，或是简单的设置sender.DataSource,sender.DisplayMember,sender.ValueMember,sender.View.Columns 等属性来控制LookUp内容

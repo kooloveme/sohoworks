@@ -59,3 +59,6 @@ controlName_eventname
 ||FormRealControl||CalcEdit||
 ||FormIntControl||SpinEdit||
 ||FormInt64Control|| SpinEdit ,IsFloating=false,EditMask=N00,MinValue,MaxValue||
+||FormComboBoxControl||LookUpEdit||
+||FormCheckBoxControl||CheckEdit||
+||FormLookUpControl||GridLookUpEdit||

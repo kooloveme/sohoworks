@@ -93,4 +93,9 @@ def Init(self):
   super(CashBankForm,self).Init()
   
 
+def IntEdit1_LookUp(self,sender,e):
+  sender.DataSource=self.departments
+  sender.ValueMember="RecId"
+  sender.DisplayMember="name"
+
 }}}

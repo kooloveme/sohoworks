@@ -75,4 +75,6 @@ controlName_eventname
 ||FormBuildMenuItemButtonControl||FormMenuItemButtonControl||FormButtonControl||||
 ||FormBuildCommandButtonControl||FormCommandButtonControl||FormButtonControl||||
 ||FormBuildRadioControl||FormRadioControl||RadioGroup||RepositoryItemRadioGroup||
-||
+||FormBuildTreeViewControl||FormTreeViewControl||System.Windows.Forms.TreeView||||
+||FormBuildListViewControl||FormListViewControl||System.Windows.Forms.ListView||||
+||FormBuildListBoxControl||FormListBoxControl||ListBoxControl||||

@@ -59,7 +59,20 @@ controlName_eventname
 ||FormBuildStringControl||FormStringControl||TextEdit||RepositoryItemTextEdit||
 ||FormBuildRealControl||FormRealControl||CalcEdit||REpositoryItemCalcEdit||
 ||FormBuildIntControl||FormIntControl||SpinEdit||RepositoryItemSpinEdit||
-||FormBuildInt64Control||FormInt64Control|| SpinEdit \|,IsFloating=false,EditMask=N00,MinValue,MaxValue||RepositoryItemSpinEdit||
+||FormBuildInt64Control||FormInt64Control|| SpinEdit,IsFloating=false,EditMask=N00,MinValue,MaxValue||RepositoryItemSpinEdit||
 ||FormBuildComboBoxControl||FormComboBoxControl||LookUpEdit||RepositoryItemLookUpEdit||
 ||FormBuildCheckBoxControl||FormCheckBoxControl||CheckEdit||RepositoryItemCheckEdit||
 ||无，动态选择||FormLookUpControl||GridLookUpEdit||RepositoryItemGridLookUpEdit||
+||FormBuildDateControl||FormDateControl||DateEdit||RepositoryItemDateEdit||
+||FormBuildDateTimeControl||FormDateTimeControl||DateEdit||RepositoryItemDateEdit||
+||FormBuildTimeControl||FormTimeControl||TimeEdit||RepositoryItemTimeEdit||
+||FormBuildTabPageControl||FormTabPageControl||LayoutControlGroup||||
+||FormBuildTabControl||FormTabControl||TabbedControlGroup||||
+||FormBuildGroupControl||FormGroupControl||LayoutControlGroup||||
+||FromBuildButtonGroupControl||FormButtonGroupControl||LayoutControlGroup||||
+||FormBuildButtonControl||FormButtonControl||SimpleButton||||
+||FormBuildMenuButtonControl||FormMenuButtonControl||DropDownButton||||
+||FormBuildMenuItemButtonControl||FormMenuItemButtonControl||FormButtonControl||||
+||FormBuildCommandButtonControl||FormCommandButtonControl||FormButtonControl||||
+||FormBuildRadioControl||FormRadioControl||RadioGroup||RepositoryItemRadioGroup||
+||

@@ -38,7 +38,7 @@ Table对象也可以添加新的方法，业务逻辑可以尽量在这里处理
 ||DeleteById||同DataRow.Delete方法命名冲突,Destory已用于 实例方法,映射到Session.Delete||
 ||DeleteAll||映射到Session.DeleteAll||
 ||Clear||映射到Session.Clear||
-||Create|映射到Session.Create||
+||Create||映射到Session.Create||
 
 ==== samples====
 

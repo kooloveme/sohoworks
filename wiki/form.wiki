@@ -26,10 +26,10 @@ class Form1(FormRun):  # 所有窗体继承自FormRun
 ||Wait||Thread.Sleep||
 ||LoadUserSetting||todo||
 ||SaveUserSetting||todo||
-||ClosingCancel||todo||
-||ClosedCancel||todo||
-||ClosingOk||todo||
-||ClosedOk||todo||
+||ClosedCancel||相当于DialogResult==DialogResult.Cancel||
+||CloseCancel||关闭窗体，DialogResult设置为Cancel||
+||ClosedOk||相当于DialogResult==DialogResult.OK||
+||CloseOk||关闭窗体，DialogResult设置为OK||
 
 
 === formdatasource===

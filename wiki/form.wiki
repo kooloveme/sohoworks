@@ -85,3 +85,12 @@ controlName_eventname
 ==== FormLookupControl====
 
 如果一个控件（通常是int,int64,string) 实现了LookUp 方法签名，则系统使用FormLookUpControl来显示。你可以使用SysLookupTable 类来组装lookup内容，或是简单的设置sender.DataSource,sender.DisplayMember,sender.ValueMember,sender.View.Columns 等属性来控制LookUp内容
+
+LookUp方法在Init过程中被调用，如果有多个控件需要lookup内容，请将获取该内容的代码放在Init过程前
+{{{
+def Init(self):
+  self.departments=Department.Find()
+  super(CashBankForm,self).Init()
+  
+
+}}}

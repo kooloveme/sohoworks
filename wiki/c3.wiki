@@ -8,6 +8,7 @@
 
 Currency
 ||MoneyId||recId||
+||||code nvarchar(3),unique||
 ||Name||name||
 ||Rate||exchangeRate||
 
@@ -21,7 +22,7 @@ Subject -> account
 ||dcFlag||dcFlag||
 ||hsCash||checkCash||
 ||hsWb|||checkCurrency||
-||moneyId||currencyId||
+||moneyId||currencyCode||
 ||detailFlag|detailFlag||
 ||attrFlag||||
 ||specialCode||specialCode||

@@ -50,6 +50,10 @@ controlName_eventname
 
 ||FormButtonControl||Click||
 
+====FormCheckedControl====
+
+EditValueChanged
+
 
 === 控件 ===
 

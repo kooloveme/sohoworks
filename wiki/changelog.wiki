@@ -58,3 +58,9 @@ ElementTreeNode 增加 strip, 修改ControlContextMenuStrip 为适配器模式
 增加index,index 导入，生成创建表时的index 
 
 导入form
+
+===2009.10.10===
+
+1. 延迟装载 FormDesign节点
+
+2. 导入extended data type

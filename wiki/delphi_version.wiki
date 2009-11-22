@@ -1,0 +1,10 @@
+TButton
+
+Click -> OnClick
+
+
+TcxDBExtLookupComboBox /TcxDBTextEdit /TcxDbCheckBox/ TcxDbCalcEdit / TcxDbLookupComboBox
+
+Editing
+
+Focuschanged

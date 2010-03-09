@@ -1,5 +1,31 @@
 控件说明
 
+===支持控件===
+||类||继承自||
+||TFormListViewControl||TListView||
+||TFormTreeViewControl||TTreeView||
+||TFormDBIntControl||cxDBSplitEdit||
+||TFormDBRealControl||cxDBCalc||
+||TFormDBDateControl||cxDBDateEdit||
+||TFormDBTimeControl||cxDBTimeEdit||
+||TFormDBCheckBoxControl||cxDBCheckEdit||
+||TFormDBRadioGroupControl||cxDBRadioGroup||
+||TFormDBLookupComboBoxControl||||
+||TFormDBComboBoxControl||||
+||TFormDBListBoxControl||||
+||TFormLabelControl||||
+||TFormSplitControl||||
+||TFormTabPageControl||||
+||TFormTabPageControl||TdxLayoutGroup||
+||TFormButtonGroupControl||TdxLayoutGroup||
+||TFormButtonControl||TcxButton||
+||TFormMenuButtonControl||TcxButton||
+|
+
+
+
+
+
 === FormQuery ===
 
 继承自TUniQuery，覆盖DoAfterOpen过程，增加从元数据设置数据集的功能,增加AutoAdaptive属性，指示是否从元数据设置数据集

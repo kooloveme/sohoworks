@@ -20,7 +20,7 @@
 ||TFormButtonGroupControl||TdxLayoutGroup||
 ||TFormButtonControl||TcxButton||
 ||TFormMenuButtonControl||TcxButton||
-|
+
 
 
 

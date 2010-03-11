@@ -27,7 +27,9 @@
 TFormIntControl-> TFormIntControlNode
 
 
-
+=== 窗体===
+||init|| 在formcreated后，可用于设置缺省值||
+||run||在form show后||
 
 
 

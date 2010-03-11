@@ -20,7 +20,7 @@
 ||TFormButtonGroupControl||TdxLayoutGroup||
 ||TFormButtonControl||TcxButton||
 ||TFormMenuButtonControl||TcxButton||
-||[TFormTimerControl||||
+||[TFormTimerControl]||||
 
 每个db控件均有对应的不带db的控件，如TFormRealControl,TFormIntControl,TFormDateControl,TFormTimeControl,TFormListBoxControl,TFormComBoBoxControl,TFormLookupComBoBoxControl,所有的控件均对应一个节点类，如
 

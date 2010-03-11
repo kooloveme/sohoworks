@@ -1,0 +1,5 @@
+属性
+enabled/interval
+
+事件
+property OnTimer: TNotifyEvent;

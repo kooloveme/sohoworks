@@ -18,7 +18,7 @@
 ||TFormTabPageControl||||
 ||TFormTabPageControl||TdxLayoutGroup||
 ||TFormButtonGroupControl||TdxLayoutGroup||
-||TFormButtonControl||TcxButton||
+||[TFormButtonControl]||TcxButton||
 ||[TFormMenuButtonControl]||TcxButton||
 ||[TFormTimerControl]||||
 

@@ -1,15 +1,12 @@
-interfaces.cs 文件
+将合并到 uInterface.pas文件
 
-IRunable --指示 aot 节点可运行
+IRunableNode --指示 aot 节点可运行  uNodes.pas
 
-ICompilable -- 指示aot 节点可编译
 
-RunBase -- FormRun,QueryRun,DialogRun,ReportRun等实现的接口
+IHost -- host 实现该接口 uSBF.pas
 
-ISupportingBinding 支持datasource 绑定
+IObjectRun -- FormRun,QueryRun,DialogRun,ReportRun等实现的接口
 
-ISupportingBinding2 -支持datasource field绑定  todo 增加dataMethod 绑定
 
-FormControl 泛型接口
 
-IPlugin 同host 通讯，FormRun 实现该接口
+IPlugin 同host 通讯，FormRun 实现该接口 uSBF.pas

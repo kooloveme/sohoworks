@@ -1,3 +1,5 @@
 ===2010-3-18===
 
 将connection 变量修改为ActiveConnection,避免在dataset类中同connection 属性冲突，避免在with 子句中同connection 属性冲突
+
+table node 增加autobeforepost boolean 属性

@@ -10,3 +10,7 @@ table node 增加autobeforepost boolean 属性
 1. 字段属性增加lookup和baseenum ，自动生成时需要，SaveContents 是否持久该字段值，保留待用
 
 2. 表格属性增加temporary和syncMode 属性(smNo,smManual,smAutomation),SystemTable 标识重要性
+
+3. Table节点和Form节点实现重复功能，简化相近窗体和表格的创建
+
+4. TTableField 改名为TTableFieldNode ,保持命名一致性

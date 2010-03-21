@@ -18,3 +18,5 @@ table node 增加autobeforepost boolean 属性
 ===2010-3-21==
 
 1. 修正试图对非绑定列设置摘要属性导致的null错误
+
+2. 增加FormDbChartControl 简单的数据库图表支持

@@ -9,7 +9,7 @@ IObjectRun -- FormRun,QueryRun,DialogRun,ReportRun等实现的接口
 
 
 
-IPlugin 同host 通讯，FormRun 实现该接口 uSBF.pas
+IPlugin 同host 通讯，FormRun 实现该接口
 
 
 IControlConfig 配置控件

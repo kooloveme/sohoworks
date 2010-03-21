@@ -20,3 +20,7 @@ table node 增加autobeforepost boolean 属性
 1. 修正试图对非绑定列设置摘要属性导致的null错误
 
 2. 增加FormDbChartControl 简单的数据库图表支持
+
+3. 修改aot menus 排序实现，增加sbf_menu_tree表
+
+4. 修改TFormTreeViewControl从TcnCheckTreeView继承

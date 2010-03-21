@@ -14,3 +14,7 @@ table node 增加autobeforepost boolean 属性
 3. Table节点和Form节点实现重复功能，简化相近窗体和表格的创建
 
 4. TTableField 改名为TTableFieldNode ,保持命名一致性
+
+===2010-3-21==
+
+1. 修正试图对非绑定列设置摘要属性导致的null错误

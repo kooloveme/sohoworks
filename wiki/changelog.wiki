@@ -32,4 +32,4 @@ table node 增加autobeforepost boolean 属性
 
 2. 修正一些细节bug
 
-3. 窗口如果处于编辑状态则提示
+3. 窗口如果处于编辑状态则在退出时提示

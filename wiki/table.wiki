@@ -14,5 +14,5 @@
 
 ===系统字段===
 
-||recid||identity bigint||
+
 ||dataareaid||nvarchar 3||

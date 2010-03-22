@@ -24,3 +24,12 @@ table node 增加autobeforepost boolean 属性
 3. 修改aot menus 排序实现，增加sbf_menu_tree表
 
 4. 修改TFormTreeViewControl从TcnCheckTreeView继承
+
+
+===2010-3-21==
+
+1. TFormQuery 增加ScriptPostError 
+
+2. 修正一些细节bug
+
+3. 窗口如果处于编辑状态则提示

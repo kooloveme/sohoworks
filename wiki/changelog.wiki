@@ -33,3 +33,5 @@ table node 增加autobeforepost boolean 属性
 2. 修正一些细节bug
 
 3. 窗口如果处于编辑状态则在退出时提示
+
+4. TFormQuery,TBaseForm增加logicalName,以后规定用logicalname引用aot 元素，目前用classfactory.datatableclass,formRunclass会自动设置logicalName

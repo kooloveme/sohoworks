@@ -11,4 +11,4 @@
 
 如2627就是该记录已存在
 
-由于paxcompiler中的一个莫名的exit问题，目前约定需要更新的从TFormDataTable继承 ，查询从TFormquery继承 Scriptxx系列 方法变为事件
+由于paxcompiler中的一个莫名的exit问题，目前约定需要更新的从TFormDataTable继承 ，查询从TFormquery继承 Scriptxx系列 中无法使用exit

@@ -10,3 +10,5 @@
 其三，转换异常为更明白的表示，一般的格式是 无法创建 caption(tablename)中的记录。 中文原因，代码:xxx,详细异常
 
 如2627就是该记录已存在
+
+由于paxcompiler中的一个莫名的exit问题，目前约定需要更新的从TFormDataTable继承 ，查询从TFormquery继承 Scriptxx系列 方法变为事件

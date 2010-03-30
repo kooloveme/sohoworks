@@ -35,3 +35,12 @@ table node 增加autobeforepost boolean 属性
 3. 窗口如果处于编辑状态则在退出时提示
 
 4. TFormQuery,TBaseForm增加logicalName,以后规定用logicalname引用aot 元素，目前用classfactory.datatableclass,formRunclass会自动设置logicalName
+
+
+2010-3-30
+
+平台-当父控件不存在时不创建子控件（控件安全键的引入)
+
+平台-创建控件时判断是否持有安全键（如果有安全键则用户必须有相应的安全键才能访问)
+
+应用- 库存过账时关闭导入过账和新增按钮

@@ -14,3 +14,9 @@ silverlight和windows forms都是属于客户端开发技术。windows forms 应
 === 目标===
 
 本项目的目标是开发二个silverlight 例子程序，从中摸索出一套silverlight 的开发框架和手段。目前研究第三方程序是devforce /componentone,以及ms 的silverlight toolkit.
+
+=== 组件评价===
+
+*C1TreeView*
+
+C1TreeVeiwItem有Click时间，对比toolkit的TreeViewItem有Selected事件，从性能上凭感觉C1TreeView要快许多

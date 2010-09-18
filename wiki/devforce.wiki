@@ -16,13 +16,13 @@ Injected Base Type- 所有生成的类都从这个类继承
 Validation Attribute mode- 使用.net 还是devforce的validation机制
 
 
-===Type Level===
+====Type Level====
 
 Can Query 生成ClientCanQuery attribute
 
 Can Save 生成ClientCanSave attribute
 
 
-===Property level ===
+====Property level ====
 
 Binable/Display/Concurrency strategy

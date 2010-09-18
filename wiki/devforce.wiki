@@ -1,0 +1,28 @@
+===代码生成方面===
+
+====Entity Model Level====
+
+DataSourceKey 这个值用于在生成代码中创建 DataSourceKey attribute ,在运行时,在connectionStrings/或eemdKeys 元素中查找连接字符串
+
+EntityManager Name 生成代码中的EntityManager名称
+
+Generate Binding Attributes 是否合成Bindable/Dispaly/Editable,ReadOnly这些属性. 还可以在属性级别进行控制
+
+如果是外键，则Display的AutoGenerateField为false,Binable为false
+
+
+Injected Base Type- 所有生成的类都从这个类继承
+
+Validation Attribute mode- 使用.net 还是devforce的validation机制
+
+
+===Type Level===
+
+Can Query 生成ClientCanQuery attribute
+
+Can Save 生成ClientCanSave attribute
+
+
+===Property level ===
+
+Binable/Display/Concurrency strategy

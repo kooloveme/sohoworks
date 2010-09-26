@@ -24,3 +24,11 @@ silverlight和windows forms都是属于客户端开发技术。windows forms 应
 *C1TreeView*
 
 C1TreeVeiwItem有Click时间，对比toolkit的TreeViewItem有Selected事件，从性能上凭感觉C1TreeView要快许多
+
+
+1. 在调试器中运行时，执行id set 时会生成An entity with this key: Category: D already exists in this EntityManager， 实际运行中该错误没有出现
+
+
+1. 解决radSplitContainer中radPaneGroup的宽度问题  telerik:ProportionalStackPanel.RelativeSize="35, 0"
+
+2. 解决radGridView 的row 改变事件，跟踪绑定集合的 CurrentChanged

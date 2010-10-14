@@ -32,3 +32,7 @@ C1TreeVeiwItem有Click时间，对比toolkit的TreeViewItem有Selected事件，�
 1. 解决radSplitContainer中radPaneGroup的宽度问题  telerik:ProportionalStackPanel.RelativeSize="35, 0"
 
 2. 解决radGridView 的row 改变事件，跟踪绑定集合的 CurrentChanged
+
+
+3. xp  下字体有明暗
+http://www.microsoft.com/downloads/details.aspx?FamilyID=b15774c0-5b42-48b4-8ba8-9293fdc72099&displaylang=zh-cn

@@ -1,48 +1,5 @@
-===2010-3-18===
+===2011-11-21===
 
-将connection 变量修改为ActiveConnection,避免在dataset类中同connection 属性冲突，避免在with 子句中同connection 属性冲突
+1. 增加对strUtils的支持，移除原来的leftstr等全局注册函数
 
-table node 增加autobeforepost boolean 属性
-
-增加strstartswith,strendswith ,同delphi strutils ansistartsstr,ansiendsstr参数顺序想法
-
-===2010-3-20===
-1. 字段属性增加lookup和baseenum ，自动生成时需要，SaveContents 是否持久该字段值，保留待用
-
-2. 表格属性增加temporary和syncMode 属性(smNo,smManual,smAutomation),SystemTable 标识重要性
-
-3. Table节点和Form节点实现重复功能，简化相近窗体和表格的创建
-
-4. TTableField 改名为TTableFieldNode ,保持命名一致性
-
-===2010-3-21==
-
-1. 修正试图对非绑定列设置摘要属性导致的null错误
-
-2. 增加FormDbChartControl 简单的数据库图表支持
-
-3. 修改aot menus 排序实现，增加sbf_menu_tree表
-
-4. 修改TFormTreeViewControl从TcnCheckTreeView继承
-
-
-===2010-3-21==
-
-1. TFormQuery 增加ScriptPostError 
-
-2. 修正一些细节bug
-
-3. 窗口如果处于编辑状态则在退出时提示
-
-4. TFormQuery,TBaseForm增加logicalName,以后规定用logicalname引用aot 元素，目前用classfactory.datatableclass,formRunclass会自动设置logicalName
-
-
-2010-3-30
-
-平台-当父控件不存在时不创建子控件（控件安全键的引入)
-
-平台-创建控件时判断是否持有安全键（如果有安全键则用户必须有相应的安全键才能访问)
-
-应用- 库存过账时关闭导入过账和新增按钮
-
-应用-修正仓库的操作员和缺省状态 值，修正过账前后时数据源的状态
+2. TDABaseField增加AsSmallInt注册

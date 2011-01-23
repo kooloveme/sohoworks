@@ -3,3 +3,8 @@
 1. 增加对strUtils的支持，移除原来的leftstr等全局注册函数
 
 2. TDABaseField增加AsSmallInt注册
+
+
+===2011-11-23===
+
+1. 字段增加regexpression,decimalPrecision,decimalScale,Calculated ,sqlexpression,expression属性

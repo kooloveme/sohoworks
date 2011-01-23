@@ -8,3 +8,7 @@
 ===2011-11-23===
 
 1. 字段增加regexpression,decimalPrecision,decimalScale,Calculated ,sqlexpression,expression属性
+
+2. 增加对menus 单元的支持
+
+3. 报告paxcompiler bug

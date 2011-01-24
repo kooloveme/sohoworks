@@ -21,3 +21,9 @@
 2. SizableHorz/SizableVert 控制增加到控件节点
 
 3. fix 当窗体数据改变关闭窗体 会确认两次
+
+4. 同步窗体和aot中form的version_number,modified_date属性，使用version_number来判断是否需要重新load设置
+
+5. 保存读取窗体customProperties到本地
+
+6. import_sysUtils增加strtobool

@@ -11,8 +11,8 @@
 
 2. 增加对menus 单元的支持
 
-3. 报告paxcompiler bug
-
+3. 报告paxcompiler bug http://www.paxcompiler.com/phpbb/viewtopic.php?f=3&t=739&sid=5808351310801f45c82eb68409cdf042
+ 
 
 === 2011-11-24===
 

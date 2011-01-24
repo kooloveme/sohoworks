@@ -27,3 +27,5 @@
 5. 保存读取窗体customProperties到本地,例子 日数据中的树状查看的状态保存功能
 
 6. import_sysUtils增加strtobool
+
+7. 增加每个控件所在的layoutItem自动声明，

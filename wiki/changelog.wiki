@@ -24,6 +24,6 @@
 
 4. 同步窗体和aot中form的version_number,modified_date属性，使用version_number来判断是否需要重新load设置
 
-5. 保存读取窗体customProperties到本地
+5. 保存读取窗体customProperties到本地,例子 日数据中的树状查看的状态保存功能
 
 6. import_sysUtils增加strtobool

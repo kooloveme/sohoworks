@@ -20,4 +20,4 @@
 
 2. SizableHorz/SizableVert 控制增加到控件节点
 
-3. fix 当窗体改变时 会确认两次
+3. fix 当窗体数据改变关闭窗体 会确认两次

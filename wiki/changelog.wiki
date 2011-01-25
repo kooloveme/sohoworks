@@ -16,7 +16,7 @@
 
 === 2011-11-24===
 
-1. 将DoInit及以后的处理过程从DoCreate中移到DoShow,这样能使用args属性传递参数
+1. 将DoInit以后的处理过程从DoCreate中移到DoShow,这样能使用args属性传递参数
 
 2. SizableHorz/SizableVert 控制增加到控件节点
 

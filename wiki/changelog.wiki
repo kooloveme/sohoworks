@@ -29,3 +29,7 @@
 6. import_sysUtils增加strtobool
 
 7. 增加每个控件所在的layoutItem自动声明，形式如 control_name_item:TdxLayoutitem;
+
+=== 2011-11-25===
+
+1. 同步

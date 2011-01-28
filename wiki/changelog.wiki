@@ -41,3 +41,8 @@
 同步窗体的menuitem 的安全键，同步安全键和访问级，没有安全键触发异常，有安全键访问级为NoAccess触发异常。 否则同步数据源的allowCreate,allowEdit,allowDelete属性
 
 3. host.execute 加入对安全键和访问级的判断
+
+
+=== 2011-11-28===
+
+1.  字段增加isreadonly属性，同

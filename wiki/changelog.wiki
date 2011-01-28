@@ -45,4 +45,6 @@
 
 === 2011-11-28===
 
-1.  字段增加isreadonly属性，同savecontents 区分开来，参考我的blog
+1.  字段增加isreadonly属性，同savecontents 区分开来，参考blog
+
+2. tformdbRaidoGroupControl/formraidoGroupControl 增加items和columns属性,当使用items时，对应值从0开始

@@ -48,3 +48,9 @@
 1.  字段增加isreadonly属性，同savecontents 区分开来，参考blog
 
 2. tformdbRaidoGroupControl/formraidoGroupControl 增加items和columns属性,当使用items时，对应值从0开始
+
+===2011-11-30===
+
+1. 更新paxcompiler
+
+2. 更新devexpress vcl 5.4

@@ -19,3 +19,43 @@ MacroByRawString 替换宏定义,宏定义是用{}括起来的内容
 
 
 注Report提供Getsql方法，返回report 的query定义，report管理这些tsql对象的生存器，无需释放这些对象
+
+{{{
+
+
+
+var
+    dt:TDAMemDataTable;        
+    cmd:TSql;
+begin
+
+
+    dt:=TDAMemDataTable.Create(nil);
+    
+    cmd:=TSql.Create;
+    cmd.Text:='select * from sbf_tables where name=:name';
+    cmd.ParamByName('name').value:='days';
+      
+    cmd.ExecdataTable(dt);
+    
+    info(dt.recordcount);  
+    
+    dt.free;
+    
+    cmd.clear;
+    cmd.text:='select count(*) from sbf_tables';
+    info(cmd.execScalar); 
+    
+    cmd.clear;
+    cmd.text:='delete from tasks';
+    info(cmd.execsql);
+    
+    cmd.text:='delete from task_groups';
+    info(cmd.execSql);
+    
+    
+    cmd.free;
+
+end.
+
+}}}

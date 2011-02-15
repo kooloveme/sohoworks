@@ -1,4 +1,4 @@
-TSql 用来简化sql 查询的执行,你可以将其看作sqlcommand之类的等价物
+TSql 用来简化sql 查询的执行,你可以将其看作sqlcommand之类的等价物，tsql继承自tstringlist,因此可以使用tstringlist的所有方法，clear方法已经被重载，同时清除fparams和fmacros
 
 
 1. 从aot 获取查询定义-目前仅sql 文本
@@ -15,7 +15,7 @@ ExecScalar 返回一个值
 ExecDataTable 填充指定的datatable
 execSql 执行sql 
 
-MacroByRawString 替换宏定义
+MacroByRawString 替换宏定义,宏定义是用{}括起来的内容
 
 
 注Report提供Getsql方法，返回report 的query定义，report管理这些tsql对象的生存器，无需释放这些对象

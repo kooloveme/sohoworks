@@ -1,0 +1,18 @@
+TSql 用来简化sql 查询的执行
+
+
+1. 从aot 获取查询定义-目前仅sql 文本
+
+2. 提供一些执行方法
+
+
+常用方法
+
+
+paramByname 返回DataParameter
+
+ExecScalar 返回一个值
+ExecDataTable 填充指定的datatable
+execSql 执行sql 
+
+MacroByRawString 替换宏定义

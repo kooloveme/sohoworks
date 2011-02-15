@@ -61,3 +61,5 @@
 1. 增加ExecScalar, 切换ExecuteScalar调用此方法
 
 2. 切换FillDataTable调用ExecDataTable方法
+
+3. [TSql] 调整

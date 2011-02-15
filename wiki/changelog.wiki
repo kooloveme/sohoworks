@@ -58,4 +58,6 @@
 
 ===2011-2-25===
 
-1. 
+1. 增加ExecScalar, 切换ExecuteScalar调用此方法
+
+2. 切换FillDataTable调用ExecDataTable方法

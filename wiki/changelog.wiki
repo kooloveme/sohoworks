@@ -54,3 +54,8 @@
 1. 更新paxcompiler
 
 2. 更新devexpress vcl 5.4,  应该已经解决窗口关闭时grid报av的错误
+
+
+===2011-2-25===
+
+1. 

@@ -75,3 +75,5 @@ tformdatatable增加table_id私有字段
 增加对index allowduplicates=false 的检查
 
 改进tformdatatable.internalbeforepost
+
+修正ie 刷新后aot 窗口会av异常问题。原因是刷新后aot窗口已经释放，但assigned还是返回true,因为aotform没有设置为null,解决方法是在dodestroy中是指aotform为nil,singleton非模态窗口可使用这种模式

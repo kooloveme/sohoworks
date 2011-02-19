@@ -72,4 +72,6 @@
 
 tformdatatable增加table_id私有字段
 
+增加对index allowduplicates=false 的检查
+
 改进tformdatatable.internalbeforepost

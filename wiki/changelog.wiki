@@ -63,3 +63,7 @@
 2. 切换FillDataTable调用ExecDataTable方法
 
 3. [TSql] 调整
+
+===2011-2-19===
+
+补充dataparameterarray注册

@@ -67,3 +67,9 @@
 ===2011-2-19===
 
 补充dataparameterarray注册
+
+修正aot index fields 创建
+
+tformdatatable增加table_id私有字段
+
+改进tformdatatable.internalbeforepost

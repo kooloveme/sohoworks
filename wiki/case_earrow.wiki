@@ -4,3 +4,11 @@
 ||year||4||
 ||month||2||
 ||sel||2||
+||category_id||2||
+||circuitry_name||20||
+||today||12||
+||max_v_time.min_v_time 日数据||6||
+
+
+
+category_id太常见了，不以查找表的方式出现，直接显示

@@ -85,3 +85,5 @@ tformdatatable增加table_id私有字段
 2. 修正index allow_duplicates问题
 
 3. 修正开发模式查询执行环境问题
+
+4. 修正 字段节点 readonly 属性的装载错误

@@ -56,7 +56,7 @@
 2. 更新devexpress vcl 5.4,  应该已经解决窗口关闭时grid报av的错误
 
 
-===2011-2-25===
+===2011-1-25===
 
 1. 增加ExecScalar, 切换ExecuteScalar调用此方法
 
@@ -77,3 +77,11 @@ tformdatatable增加table_id私有字段
 改进tformdatatable.internalbeforepost
 
 修正ie 刷新后aot 窗口会av异常问题。原因是刷新后aot窗口已经释放，但assigned还是返回true,因为aotform没有设置为null,解决方法是在dodestroy中是指aotform为nil,singleton非模态窗口可使用这种模式
+
+===2011-2-20==
+
+1. 删除记录前检查从表记录
+
+2. 修正index allow_duplicates问题
+
+3. 修正开发模式查询执行环境问题

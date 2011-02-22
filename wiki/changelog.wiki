@@ -93,3 +93,5 @@ tformdatatable增加table_id私有字段
 1. 修正清空查找缓存的bug
 
 2. 修正buildlayout没有安全键控件创建问题
+
+3. tbaseform 添加firstfield

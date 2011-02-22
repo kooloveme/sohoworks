@@ -87,3 +87,9 @@ tformdatatable增加table_id私有字段
 3. 修正开发模式查询执行环境问题
 
 4. 修正 字段节点 readonly 属性的装载错误
+
+===2011-2-22===
+
+1. 修正清空查找缓存的bug
+
+2. 修正buildlayout没有安全键控件创建问题

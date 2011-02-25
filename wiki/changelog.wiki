@@ -1,3 +1,5 @@
+<wiki:toc max_depth="4" />
+
 ===2011-11-21===
 
 1. 增加对strUtils的支持，移除原来的leftstr等全局注册函数
@@ -95,3 +97,10 @@ tformdatatable增加table_id私有字段
 2. 修正buildlayout没有安全键控件创建问题
 
 3. tbaseform 添加firstfield
+
+
+===2011-2-25===
+
+1. 编译完成后加提示
+
+2. 

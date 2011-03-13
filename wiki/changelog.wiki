@@ -110,4 +110,8 @@ tformdatatable增加table_id私有字段
 
 1. 编译完成后加提示
 
-2. 
+===2011-3-13===
+
+1. aot 中增加views 节点
+
+2. grid 增加ShowFooter,ShowGroupByBox

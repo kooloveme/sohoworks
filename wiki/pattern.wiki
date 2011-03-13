@@ -1,0 +1,10 @@
+=== view 模式===
+
+在aot 中table/view两个节点其实是一样的，只是view的StatementType被标识为stSQL
+
+在实际的编程中，光表无法达成实际需要，因为通常需要引用查找表，引用关系表，过滤数据，这需要写一些sql来完成，这就是view 的实际作用
+
+在页面中，通常会引用view
+
+
+在使用view时，如果需要更新，则必须指定target_table,并将非来自target_table的其它字段的savecontents设置为false

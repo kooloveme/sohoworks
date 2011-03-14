@@ -123,3 +123,7 @@ tformdatatable增加table_id私有字段
 5. 框架更新 - 对网格中的下拉选择进行缓存
 
 6. 框架更新 - 修正table 浏览器
+
+7. 框架更新- 在状态栏显示版本号和build number 
+
+8. 框架更新 -从数据库同步字段到aot 

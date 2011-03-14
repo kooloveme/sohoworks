@@ -115,3 +115,11 @@ tformdatatable增加table_id私有字段
 1. aot 中增加views 节点
 
 2. grid 增加ShowFooter,ShowGroupByBox
+
+3. 框架更新 -分离table和view
+
+4. 框架更新 - 升级高级查询 ctrl+f3
+
+5. 框架更新 - 对网格中的下拉选择进行缓存
+
+6. 框架更新 - 修正table 浏览器

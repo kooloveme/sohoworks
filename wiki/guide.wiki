@@ -40,8 +40,6 @@
 
 {{{ 
 
-case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
+(case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
 
 }}}
-
-

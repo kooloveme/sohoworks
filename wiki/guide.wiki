@@ -30,16 +30,18 @@
 
 月报表时
 
-{{{ (case when total_time=0 then 0 else (total_time-hi_time-low_time)/total_time end ) as pass_rate
+{{{
+
+ (case when total_time=0 then 0 else (total_time-hi_time-low_time)/total_time end ) as pass_rate
 
 }}}
 
 或汇总时
 
-{{{ case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
+{{{ 
+
+case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
 
 }}}
-
-
 
 

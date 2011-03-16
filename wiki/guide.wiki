@@ -154,6 +154,13 @@ StartYear/StartMonth/EndYear/EndMonth/StartDate/EndDate等变量
       
 }}}
 
+====日期范围条件写法====
+{{{
+
+(a.year>@start_year or (a.year=@start_year and a.month>=@start_month)) and (a.year<@end_year or (a.year=@end_year and a.month<=@end_month))
+
+}}}
+
 ====建议=====
 
 1. 不建议在sql 中计算超限率和合格率

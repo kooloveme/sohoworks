@@ -80,9 +80,9 @@ begin
 
 }}}
 
-5. 创建menuitem,引用该报表
+5. 创建menuitem,如TutorialReportMenuItem, ObjectType为otReport,ObjectId 引用该报表
 
-6. 创建menu ,引用menuitem
+6. 创建menu ,menuItemId引用TutorialReportMenuitem
 
 7. 刷新导航，测试
 

@@ -43,14 +43,17 @@
 
 1. aot - reports - 新建
 
-设置name/template 属性
+设置name/template 属性，如 TutorialReport/reports/tutorial.xls
 
 编辑代码，将TReportRun修改为TFlexReportRun,表示使用flexcel 引擎
 
-2. 点击querites, -新建 创建查询
+2. 点击querites, -新建 创建查询 months
+{{{
+select * from months order by year,month
+}}}
 
-3.  创建excel文件定义模板
 
+3.  创建tutorial.xls excel文件并定义模板
 
 .net <#数据集名称.字段名>  <#变量名>
 
@@ -61,6 +64,21 @@ marsx <##数据集名称##字段名> <#.变量名>
 注：如果使用报表变量，则报表变量必须在一个名称中，一般建议使用__main__
 
 4.  在BeforeRun中写代码
+{{{
+
+var
+    sql:TSql;   
+    dt:TDAMemDataTable;
+begin
+    inherited;
+    sql:=GetSql('months');
+    dt:=TDAMemDataTable.Create(self);  
+    sql.ExecDataTable(dt);          
+    dt.Dataset.name:='months';
+    DataModule.insertComponent(dt.dataSet); 
+    addReportVariable('test1','this is test1');
+
+}}}
 
 5. 创建menuitem,引用该报表
 

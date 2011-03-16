@@ -129,6 +129,28 @@ StartYear/StartMonth/EndYear/EndMonth/StartDate/EndDate等变量
      addReportVariable('general_qualifed_rate',sql.execScalar);
 }}}
 
+==== 原始数据和显示空记录====
+
+建议使用macroAsRawString来解决
+
+在sql 中使用{months} 和 {show_null},然后再代码中进行替换
+
+{{{
+
+ if dlg.chkShowNull.checked then begin
+          sql.MacroAsRawString('{show_null}','1=1');
+      end else begin
+          sql.MacroAsRawString('{show_null}','months.device_id is not null');
+          
+      end;  
+      
+      if dlg.chkOriginal.checked then begin
+          sql.macroAsRawString('{months}','original_months');
+      end else
+        sql.macroAsRawString('{months}','months');
+      
+}}}
+
 ====建议=====
 
 1. 不建议在sql 中计算超限率和合格率

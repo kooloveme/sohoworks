@@ -141,7 +141,7 @@ select  months.*,devices.display_name,devices.category_id,add_up_months.qualifie
 on devices.id=months.device_id  left outer join
 
 --- 累计合格率
- (select device_id,(sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time) as qualified_rate from months where year=:start_year and (month>=1 and month<=:start_month) group by device_id) as add_up_months
+ (select device_id,(case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time) end) as qualified_rate from months where year=:start_year and (month>=1 and month<=:start_month) group by device_id) as add_up_months
  on devices.id=add_up_months.device_id
  
 inner join circuitry on devices.circuitry_id=circuitry.id

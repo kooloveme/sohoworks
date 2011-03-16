@@ -103,6 +103,31 @@ begin
 7. 刷新导航，测试
 
 
+====可用变量====
+
+DataAreaName 用户所属单位
+CurUserFullName 用户姓名
+
+CurUserName 用户登录名
+
+当使用TDateRangePicker时，可以使用
+
+StartYear/StartMonth/EndYear/EndMonth/StartDate/EndDate等变量
+
+例子
+{{{
+
+  AddReportVariable('start_date',datetostr(dlg.DateRange.StartDate));
+     AddReportVariable('end_date',datetostr(dlg.DateRange.EndDate));
+     addReportVariable('Company',DataAreaName);  
+     addReportVariable('user',CurUserFullName);     
+                                               
+     sql:=GetSql('general_qualified_rate');                  
+     sql.ParamByName('user_id').value:=curuserId;
+      sql.ParamByName('start_year').value:=dlg.DateRange.StartYear;
+      sql.ParamByname('start_month').value:=dlg.DateRange.StartMonth;   
+     addReportVariable('general_qualifed_rate',sql.execScalar);
+}}}
 
 ====建议=====
 

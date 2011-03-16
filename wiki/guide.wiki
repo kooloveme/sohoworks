@@ -31,6 +31,22 @@
 
 4. 仪表所在类别的排除为0
 
+下面是例子的sql
+{{{
+
+declare @user_id int
+
+select @user_id=1
+select  * from devices 
+
+inner join circuitry on devices.circuitry_id=circuitry.id
+
+inner join dataarea on circuitry.dataarea_id=dataarea.id
+where device_report_status=1 and devices.category_id in (select id from category where exclude=0)     and dataarea.lcode like (select lcode from users inner join dataarea on users.dataarea_id=dataarea.id where users.id=@user_id)+'%'  and 
+ (not exists(select * from circuitry_permission where user_id=@user_id) or 
+ (devices.circuitry_id in (select circuitry_id from circuitry_permission where user_id=@user_id)))
+
+}}}
 
 
 ====约定====
@@ -109,3 +125,6 @@ begin
 (case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
 
 }}}
+
+
+2. 显示所有仪表，则必须将数据部分放到子查询中

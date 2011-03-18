@@ -1,5 +1,28 @@
 <wiki:toc max_depth="4" />
 
+===数据访问===
+
+对aot table/view的访问
+
+①引用单元
+
+②创建对象
+
+③设置Where条件，Open
+
+sql 查询
+
+通过execDataTable,execScalar,execSql进行操作
+
+helper 类TSql
+
+{{{
+
+
+
+}}}
+
+
 ===报表===
 
 

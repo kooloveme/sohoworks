@@ -1,5 +1,10 @@
 <wiki:toc max_depth="4" />
 
+===编程规范===
+
+1. 始终用用error(ex:exception);
+
+
 ===数据访问===
 
 对aot table/view的访问

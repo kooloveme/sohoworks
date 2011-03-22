@@ -130,6 +130,76 @@ begin
 
 7. 刷新导航，测试
 
+====对话框====
+
+1. 从TDialogForm继承
+
+{{{
+
+TVoltageQualifiedRateStatisticsReportDialog=class(TDialogForm)
+    dateRange:TDateRangePicker;
+    category:TFormLookupComboBoxControl;
+    
+    constructor Create(owner:TComponent);override;    
+end;
+
+
+用对话框
+
+constructor  TVoltageQualifiedRateStatisticsReportDialog.Create(owner:TComponent);
+begin
+    inherited;
+    Caption:='供电电话合格率报表';
+    dateRange:=TDateRangePicker.Create(self);
+    dateRange.Caption:='日期';
+    dateRange.Mandatory:=true;
+    category:=TFormLookupComboBoxControl.Create(self);
+    category.Lookup:='category_lookup';
+    category.Caption:='类别'; 
+    category.Mandatory:=true;
+    
+    
+    
+end;
+procedure TVoltageQualifiedRateStatisticsReport.BeforeRun(var cancel:boolean);
+var
+    dlg:TVoltageQualifiedRateStatisticsReportDialog;
+    sql:TSql;
+    dt:TDAMemDataTable;
+begin
+    inherited;  
+    dlg:=TVoltageQualifiedRateStatisticsReportDialog.Create(nil);
+    try
+      if FormShowModal(dlg)<>mrOK then begin
+          cancel:=true;
+          exit;
+      end;  
+      
+      sql:=GetSql('months');
+      
+      sql.ParamByName('year').value:=dlg.dateRange.StartYear;
+      sql.ParamByName('month').value:=dlg.dateRange.StartMonth;
+      sql.ParamByName('category_id').value:=dlg.category.value;
+      
+      dt:=TDAmemDataTable.Create(self);
+      sql.execDataTable(dt);
+      
+      dt.dataset.name:='months';
+      DataModule.insertComponent(dt.dataset);
+      
+      
+        
+      
+      
+    finally
+        dlg.Free;
+    end;     
+    
+end;
+
+
+
+}}}
 
 ====可用变量====
 

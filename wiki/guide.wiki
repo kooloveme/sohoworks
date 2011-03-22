@@ -182,6 +182,26 @@ StartYear/StartMonth/EndYear/EndMonth/StartDate/EndDate等变量
       
 }}}
 
+===master/detail 报表===
+
+1. 定义name 范围
+
+2. 代码
+{{{
+
+       ds:=TFormDataSource.Create(self);
+        ds.DataTable:=dt1; //master;
+        
+        dt2.MasterSource:=ds;    //detail
+        dt2.MasterFields:='id';
+        dt2.DetailFields:='category_id';
+        
+        DataModule.InsertComponent(dt1.DataSet);
+        DataModule.InsertComponent(dt2.DataSet);
+         
+}}}
+
+
 ====日期范围条件写法====
 {{{
 

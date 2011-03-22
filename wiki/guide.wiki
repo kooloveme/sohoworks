@@ -139,12 +139,14 @@ begin
 TVoltageQualifiedRateStatisticsReportDialog=class(TDialogForm)
     dateRange:TDateRangePicker;
     category:TFormLookupComboBoxControl;
+    chkOriginal:TFormCheckBoxControl;
+    chkShowNull:TFormCheckBoxControl;
     
     constructor Create(owner:TComponent);override;    
 end;
 
 
-用对话框
+
 
 constructor  TVoltageQualifiedRateStatisticsReportDialog.Create(owner:TComponent);
 begin
@@ -170,6 +172,8 @@ begin
     
     
 end;
+
+用对话框
 procedure TVoltageQualifiedRateStatisticsReport.BeforeRun(var cancel:boolean);
 var
     dlg:TVoltageQualifiedRateStatisticsReportDialog;

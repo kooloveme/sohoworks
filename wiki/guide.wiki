@@ -149,14 +149,23 @@ end;
 constructor  TVoltageQualifiedRateStatisticsReportDialog.Create(owner:TComponent);
 begin
     inherited;
-    Caption:='供电电话合格率报表';
+    Caption:='供电电压合格率报表';
     dateRange:=TDateRangePicker.Create(self);
     dateRange.Caption:='日期';
     dateRange.Mandatory:=true;
     category:=TFormLookupComboBoxControl.Create(self);
     category.Lookup:='category_lookup';
     category.Caption:='类别'; 
-    category.Mandatory:=true;
+    category.Mandatory:=true;      
+    
+    chkOriginal:=TFormCheckBoxControl.Create(self);
+    chkOriginal.Caption:='原始数据';
+    chkShowNull:=TFormCheckBoxControl.Create(self);
+    chkShowNull.Caption:='显示空白记录';
+    AddField(dateRange);
+    AddField(category);
+    AddField(chkOriginal);
+    AddField(chkShowNull);
     
     
     

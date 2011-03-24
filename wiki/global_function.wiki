@@ -4,6 +4,7 @@
 TDADataTable/TDAMemDataTable
 DataParameter/DataParameterArray
 TSql
+TBaseForm/TBasePluginForm/TDialogForm
 
 
 ===可用单元===

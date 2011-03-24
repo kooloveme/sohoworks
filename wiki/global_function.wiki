@@ -1,3 +1,5 @@
+===杂项===
+
 ||procedure ParseURL(const url : String;var Proto, User, Pass, Host, Port, Path : String);||解析url||
 ||function FormShowModal(Form: TForm): integer;||ie兼容||
 ||function DosCommand(const CommandLine: WideString; const aLocal: boolean = false): WideString;||执行dos命令||
@@ -9,7 +11,7 @@
 
 
 
-消息
+===消息===
 
 ||procedure info(const s: string); overload;||
 ||procedure info(const s: string;const args:array of const); overload;||
@@ -18,3 +20,18 @@
 ||procedure error(const s: string);||
 ||procedure error(const s:string;const args:array of const);overload;||
 ||function YesNo(s:string):integer;||
+
+
+===数据访问===
+||function ExecScalar(const aSQltext: string; const aParams: DataParameterArray = nil): variant;||返回null表示无返回或null||
+||function ExecuteScalar(const aSqlText:string;const args:array of const):variant;||兼容性保留||
+||function ExecSQL(const aSQLText: string;const aParams: DataParameterArray=nil): integer;||
+||function ExecuteCommand(const aCommandName: string; aParamNames: array of string; aParamValues: array of variant): integer; overload;||
+||function ExecuteCommand(const aCommandName: string; aInputParameters: DataParameterArray): integer; overload;||
+||procedure ExecDataTable(dt: TDADataTable; const aSQLText: string; const aParams: DataParameterArray = nil; const isOpen: boolean = true);||
+||function GetDataTable(const logicalName: string; const owner: TComponent = nil): TDAMemDataTable;||
+||function GetFormQuery(const logicalName: string; const owner: TComponent = nil): TFormQuery;||
+||function GetFormDataTable(const logicalName: string; const owner: TComponent = nil): TFormDataTable;||
+||procedure FillDataTable(dt: TDAMemDataTable; const sql: string; const isOpen: Boolean = true);||兼容性保留||
+||function ApplyUpdates(aTables: array of TDADataTable; aRefetchAll: boolean = false): boolean;||同一事务更新||
+||procedure Fill(aTables: array of TDADataTable; aSaveCursor: boolean; aIncludeSchema: boolean; aAppendMode: Boolean = False);||批量填充||

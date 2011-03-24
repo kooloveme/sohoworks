@@ -1,0 +1,3 @@
+||procedure ParseURL(const url : String;var Proto, User, Pass, Host, Port, Path : String);||解析url||
+||function FormShowModal(Form: TForm): integer;||ie兼容||
+||function DosCommand(const CommandLine: WideString; const aLocal: boolean = false): WideString;||执行dos命令||

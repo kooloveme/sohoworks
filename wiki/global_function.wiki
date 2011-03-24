@@ -76,3 +76,4 @@ TBaseForm/TBasePluginForm/TDialogForm
 ||CurUserName||用户登录名||
 ||Host||||
 ||SiMain||调试对象||
+||RODataModule||||

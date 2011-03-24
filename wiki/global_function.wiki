@@ -1,3 +1,20 @@
 ||procedure ParseURL(const url : String;var Proto, User, Pass, Host, Port, Path : String);||解析url||
 ||function FormShowModal(Form: TForm): integer;||ie兼容||
 ||function DosCommand(const CommandLine: WideString; const aLocal: boolean = false): WideString;||执行dos命令||
+||function DataSetToExcel( DataSet: TDataSet;   FieldTagMax: Integer;   Visible: Boolean;  ExcelFileName: string = ''  ): Boolean;||导出excel||
+||function _(const s:string):string;||多语言处理||
+||function GetTheComputerName: string;||||
+||procedure chat(const msg:string);||||
+||function md5(const s:string):string;||||
+
+
+
+消息
+
+||procedure info(const s: string); overload;||
+||procedure info(const s: string;const args:array of const); overload;||
+||procedure info(ex: Exception); overload;||
+||procedure info(const s:variant); overload;||
+||procedure error(const s: string);||
+||procedure error(const s:string;const args:array of const);overload;||
+||function YesNo(s:string):integer;||

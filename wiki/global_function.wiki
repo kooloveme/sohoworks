@@ -1,3 +1,26 @@
+===可用单元===
+||SysUtils||
+||StrUtils||
+||DateUtils||
+||TypInfo||
+||Classes||
+||Variants||
+||Graphics||
+||activeX||
+||Forms||
+||ImgList||
+||Controls||
+||StdCtrols||
+||contnrs||
+||match||
+||Menus||
+||IniFiles||
+||ComCtrls||
+||dialogs||
+||Uni||直连数据库支持||
+||VirtualTable||内存dataset||
+
+
 ===杂项===
 
 ||procedure ParseURL(const url : String;var Proto, User, Pass, Host, Port, Path : String);||解析url||

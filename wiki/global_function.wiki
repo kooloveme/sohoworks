@@ -1,4 +1,10 @@
 <wiki:toc max_depth="4" />
+===主要对象===
+
+TDADataTable/TDAMemDataTable
+DataParameter/DataParameterArray
+TSql
+
 
 ===可用单元===
 ||SysUtils||

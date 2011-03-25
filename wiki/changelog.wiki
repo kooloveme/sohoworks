@@ -164,4 +164,11 @@ tformdatatable增加table_id私有字段
 
 3. 状态栏显示应用程序服务器地址 
 
-4. aot增加table /relations 节点
+4. aot增加table relations 节点
+
+
+===3 月25日===
+
+3. 框架更新-增加 separator/emptyspace/labeled等布局控件
+
+4. 框架更新 - 组增加ShowExpandButton 属性

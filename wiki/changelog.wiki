@@ -1,13 +1,13 @@
 <wiki:toc max_depth="4" />
 
-===2011-11-21===
+===2010-11-21===
 
 1. 增加对strUtils的支持，移除原来的leftstr等全局注册函数
 
 2. TDABaseField增加AsSmallInt注册
 
 
-===2011-11-23===
+===2010-11-23===
 
 1. 字段增加regexpression,decimalPrecision,decimalScale,Calculated ,sqlexpression,expression属性
 
@@ -16,7 +16,7 @@
 3. 报告paxcompiler bug http://www.paxcompiler.com/phpbb/viewtopic.php?f=3&t=739&sid=5808351310801f45c82eb68409cdf042
  
 
-=== 2011-11-24===
+=== 2010-11-24===
 
 1. 将DoInit以后的处理过程从DoCreate中移到DoShow,这样能使用args属性传递参数
 
@@ -25,7 +25,7 @@
 3. fix 当窗体数据改变关闭窗体 会确认两次
 
 
-===2011-3-3===
+===2010-3-3===
 
 代码编辑窗口find/replace
 
@@ -39,7 +39,7 @@ sql /help编辑窗口find/replace
 
 7. 增加每个控件所在的layoutItem自动声明，形式如 control_name_item:TdxLayoutitem;
 
-=== 2011-11-25===
+=== 2010-11-25===
 
 1. 同步formid和aot form id
 
@@ -52,20 +52,20 @@ sql /help编辑窗口find/replace
 3. host.execute 加入对安全键和访问级的判断
 
 
-=== 2011-11-28===
+=== 2010-11-28===
 
 1.  字段增加isreadonly属性，同savecontents 区分开来，参考blog
 
 2. tformdbRaidoGroupControl/formraidoGroupControl 增加items和columns属性,当使用items时，对应值从0开始
 
-===2011-11-30===
+===2010-11-30===
 
 1. 更新paxcompiler
 
 2. 更新devexpress vcl 5.4,  应该已经解决窗口关闭时grid报av的错误
 
 
-===2011-1-25===
+===2010-1-25===
 
 1. 增加ExecScalar, 切换ExecuteScalar调用此方法
 

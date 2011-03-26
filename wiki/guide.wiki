@@ -214,6 +214,16 @@ end;
 
 }}}
 
+
+注意事项
+
+# 选择日期使用TDateRangePicker ，当前引用uDateOptions,能分辨翻月日
+# 控件有Caption/Mandatory 属性，Mandatory表示必须输入
+
+
+
+
+
 ====可用变量====
 
 DataAreaName 用户所属单位

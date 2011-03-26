@@ -5,6 +5,28 @@
 1. 始终用用error(ex:exception);
 
 
+
+===图表===
+对象TFormDBChartControl/TFormChartControl
+
+TSeries 对象和派生TLineSeries
+
+遍历
+{{
+
+for i:=0 to chart.SeriesCount-1 do begin
+  chart.Series[i];
+end;
+
+
+或直接访问SeriesList属性
+
+}}}
+
+清除某一类型
+{{
+chart.FreeAllSeries(TSeriesClass);
+}}}
 ===数据访问===
 
 对aot table/view的访问

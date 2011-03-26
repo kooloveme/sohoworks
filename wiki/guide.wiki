@@ -24,7 +24,7 @@ end;
 }}}
 
 清除某一类型
-{{
+{{{
 chart.FreeAllSeries(TSeriesClass);
 }}}
 ===数据访问===

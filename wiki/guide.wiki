@@ -12,7 +12,7 @@
 TSeries 对象和派生TLineSeries
 
 遍历
-{{
+{{{
 
 for i:=0 to chart.SeriesCount-1 do begin
   chart.Series[i];

@@ -219,6 +219,9 @@ end;
 
   # 选择日期使用TDateRangePicker ，当前引用uDateOptions,能分辨翻月日
   # 控件有Caption/Mandatory 属性，Mandatory表示必须输入
+  # 对话框名用报表名+Dialog 约定
+  # 原始数据和显示空白用chkOriginal,chkShowNull约定
+  # 用FormShowModal显示对话框，保持ie客户端兼容性
 
 
 

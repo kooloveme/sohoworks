@@ -5,6 +5,10 @@
 1. 始终用用error(ex:exception);
 
 
+===窗体===
+
+布局
+  # 当子控件布局为client时，才能无限缩小
 
 ===图表===
 对象TFormDBChartControl/TFormChartControl

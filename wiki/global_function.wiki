@@ -26,6 +26,7 @@ TBaseForm/TBasePluginForm/TDialogForm
 ||IniFiles||
 ||ComCtrls||
 ||dialogs||
+||db||
 ||Uni||直连数据库支持||
 ||VirtualTable||内存dataset||
 

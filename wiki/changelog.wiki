@@ -172,3 +172,10 @@ tformdatatable增加table_id私有字段
 3. 框架更新-增加 separator/emptyspace/labeled等布局控件
 
 4. 框架更新 - 组增加ShowExpandButton 属性
+
+===3 月27日===
+
+1. 框架更新-开发模式下避免重复编译
+
+
+4. 框架更新- 对源代码进行加密

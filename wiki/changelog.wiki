@@ -179,3 +179,9 @@ tformdatatable增加table_id私有字段
 
 
 4. 框架更新- 对源代码进行加密
+
+===3 月28日===
+
+1. TFormComboBoxControl增加Items/DropDownListStyle 设定
+
+2. TFormMemoControl增加ScrollBars设定

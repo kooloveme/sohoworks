@@ -199,3 +199,15 @@ tformdatatable增加table_id私有字段
 5. 增加升级wizard
 
 6. 框架更新：允许定义按钮组宽度，允许定义按钮组layout direction
+
+===3月30日===
+
+1. 增加三种风格，桌面风格生效，ie 端使用build with runtime packages风格生效
+
+2. 处理tab 标题可能乱码问题
+
+===3月31日===
+
+1. 修正 检查logo文件是否存在
+
+2. 完成 按网格过滤

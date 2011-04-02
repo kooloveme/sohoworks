@@ -18,7 +18,12 @@
 
 插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin 和aot 固有的iplugin接口，能够兼容两者
 
-====扩展工具条====
+
+
+====扩展工具条/菜单====
+
+可以通过host全局对象的toolbar/menu属性来访问工具条和菜单，将command转换为toolbar 按钮和menuitem
+
 {{{
 
 uses uMXInterfaces,advToolBar ;

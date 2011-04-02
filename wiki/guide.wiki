@@ -5,6 +5,19 @@
 1. 始终用用error(ex:exception);
 
 
+
+=== 插件规范===
+
+插件开发是marsx 另一种开发形式，这种方式主要用于系统级的开发，开发工具使用delphi而不是marsx内置的aot 环境
+
+在以下情形时使用插件开发
+  # 向marsx内置编译器注册新类型
+  # 扩展marsx 客户端的菜单/工具条
+  # 通过menuitem的objectname属性，用delphi开发marsx能识别的插件
+  # 其它
+
+
+
 ===窗体===
 
 布局

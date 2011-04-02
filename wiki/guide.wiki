@@ -18,6 +18,31 @@
 
 插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin 和aot 固有的iplugin接口，能够兼容两者
 
+扩展菜单和工具条
+{{{
+
+uses uMXInterfaces,advToolBar ;
+
+}}}
+
+{{{
+
+var
+   b:TAdvToolbarButton;
+
+begin
+   b:=TAdvToolBarButton.Create(host);
+   b.caption:='test';
+   b.onclick:=xxxx;
+
+   host.ToolBar.InsertToolBarControl(index,b);
+
+
+
+end;
+
+}}}
+
 
 ===窗体===
 

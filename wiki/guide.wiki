@@ -6,7 +6,7 @@
 
 
 
-=== 插件规范===
+=== 插件开发===
 
 插件开发是marsx 另一种开发形式，这种方式主要用于系统级的开发，开发工具使用delphi而不是marsx内置的aot 环境
 
@@ -16,6 +16,7 @@
   # 通过menuitem的objectname属性，用delphi开发marsx能识别的插件
   # 其它
 
+插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin 和aot 固有的iplugin接口，能够兼容两者
 
 
 ===窗体===

@@ -211,3 +211,36 @@ tformdatatable增加table_id私有字段
 1. 修正 检查logo文件是否存在
 
 2. 完成 按网格过滤
+
+
+3. 桌面客户端skin生效，目前使用office2007blue/office2010blue/office2010silver 
+
+
+3. 修正安装文件 uninstall guid一致的问题 
+
+4. 更新进度条组件
+
+5. untitled.ini 生成到运行程序目录 
+
+===4月1日===
+
+1. ie客户端改变编译方式和安装文件 
+
+2. 网格增加卡片视图
+
+3. 代码清理，减少marsxserver.exe 体积到4M 
+
+4. 代码情理，移除大部分全局变量，增进ie客户端稳定性 
+
+===4月2日===
+
+
+1.框架更新：引入tms plugin framework 取代原有的插件机制 
+
+2. 框架更新： 当前ie/桌面客户端使用build with runtime packages 编译 
+
+3. 框架更新： 完全分离marsx 和应用系统的代码 
+
+4. 安装文件更新- 安装包目前增大1倍 
+
+5. 桌面客户端安装文件增强，允许在安装时指定应用程序服务器地址

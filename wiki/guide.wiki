@@ -13,16 +13,38 @@
 在以下情形时使用插件开发
   # 向marsx内置编译器注册新类型
   # 扩展marsx 客户端的菜单/工具条
+  # 扩展aot 功能
   # 通过menuitem的objectname属性，用delphi开发marsx能识别的插件
   # 其它
 
-插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin 和aot 固有的iplugin接口，能够兼容两者
+插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin，TBasePlugin则继承了TBaseDesignForm 和aot 固有的iplugin接口，能够兼容两者
+
+
+==== 扩展aot ====
+
+增加新控件,要求
+
+  # 以TFormxxxControl模式命名
+
+  #在initialization中注册类类型
+
+向aot 注册
+{{
+uses mxNodes;
+}}}
+
+{{{
+
+RegisterFormControlClass(TFormXXXControl);
+
+
+}}}
 
 
 
 ====扩展工具条/菜单====
 
-可以通过host全局对象的toolbar/menu属性来访问工具条和菜单，将command转换为toolbar 按钮和menuitem
+可以通过host全局对象的toolbar/menu属性来访问工具条和菜单，将tms plugin frmaework command转换为toolbar 按钮和menuitem
 
 {{{
 

@@ -135,6 +135,20 @@ end;
 
 }}}
 
+====扩展窗体====
+
+  # 继承TBaseDesignForm
+
+  # 编写代码
+
+  # 注册
+
+  # 创建MenuItem ,objectName为插件名称
+
+  # 创建菜单项
+
+
+
 
 ===窗体===
 

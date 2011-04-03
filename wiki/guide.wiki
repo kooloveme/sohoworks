@@ -79,6 +79,21 @@ Host.findComponent('ToolBarImageList') as TImageList
 
 }}}
 
+TbaseForm
+
+{{{
+
+self.ImageList ; //findComponent('ImageList9')
+
+}}}
+
+TBasePluginForm 层图标
+
+{{{
+
+self.findComponent('LayoutControlImageList')
+
+}}}
 
 ====扩展工具条/菜单====
 

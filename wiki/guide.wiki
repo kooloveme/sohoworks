@@ -33,6 +33,16 @@
   # paxcompiler 2.8
   # flexcel 3.4
   # xlreport 
+  # unidac
+  # avlock 4.1.0
+  # teechart 8.06
+  # tms plugin framework
+  # OverbyteIcsV7
+  # tms workflow
+  # econtrol
+  # dcpcrypt2
+  # barcode
+  # doscommand
 
 ==== 向编译器注册====
 

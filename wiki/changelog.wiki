@@ -250,4 +250,4 @@ tformdatatable增加table_id私有字段
 
 1. 修正 layout 状态保存
 
-2. 重构 窗体控件图形，增加NodeImageIndex到基础类
+2. 重构 aot 窗体控件图标，增加NodeImageIndex到基础类

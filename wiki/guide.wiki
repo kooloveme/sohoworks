@@ -23,6 +23,17 @@
 
 插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin，TBasePlugin则继承了TBaseDesignForm 和aot 固有的iplugin接口，能够兼容两者
 
+
+====创建插件开发环境====
+
+  # delphi 7
+  # cnpack
+  # devexpress 5.5
+  # tms component 6.0.20
+  # paxcompiler 2.8
+  # flexcel 3.4
+  # xlreport 
+
 ==== 向编译器注册====
 
 参考paxcompiler注册过程

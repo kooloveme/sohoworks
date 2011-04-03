@@ -26,10 +26,28 @@
 
   # 以TFormxxxControl模式命名
 
-  #在initialization中注册类类型
+  # 在initialization中注册类类型
+
+{{{
+
+registerClass(TFormXXControl);
+
+}}}
+
+增加新控件对应的aot 节点类型
+
+  # 以TformXXXControlNode模式命名
+  # 在initialization中注册类类型
+  # 可从TFormControlNode/TFormControlContainerNode/TFormDBControlNode等继承
+
+{{{
+
+RegisterClass(TFormXXControlNode);
+
+}}} 
 
 向aot 注册
-{{
+{{{
 uses mxNodes;
 }}}
 

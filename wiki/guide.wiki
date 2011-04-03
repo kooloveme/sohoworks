@@ -60,6 +60,25 @@ RegisterFormControlClass(TFormXXXControl);
 }}}
 
 
+====扩展图标====
+
+导航图标
+
+{{{
+
+Host.findComponent('NavPaneImageList') as TImageList //组图标
+
+Host.findComponent('TreeViewImageList') as TImageList //树图标
+
+}}}
+
+工具条/菜单
+{{{
+
+Host.findComponent('ToolBarImageList') as TImageList
+
+}}}
+
 
 ====扩展工具条/菜单====
 

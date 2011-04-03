@@ -19,8 +19,20 @@
 
 插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin，TBasePlugin则继承了TBaseDesignForm 和aot 固有的iplugin接口，能够兼容两者
 
+==== 向编译器注册====
+
+参考paxcompiler注册过程
+
+
+
 
 ==== 扩展aot ====
+
+===== 为节点增加处理插件=====
+
+===== 创建自己的元数据节点=====
+
+
 =====增加控件=====
 增加新控件,要求
 

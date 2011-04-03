@@ -87,7 +87,7 @@ self.ImageList ; //findComponent('ImageList9')
 
 }}}
 
-TBasePluginForm 层图标
+TBaseDesignForm 层图标
 
 {{{
 

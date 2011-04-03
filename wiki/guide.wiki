@@ -38,7 +38,7 @@ registerClass(TFormXXControl);
 
   # 以TformXXXControlNode模式命名
   # 在initialization中注册类类型
-  # 可从TFormControlNode/TFormControlContainerNode/TFormDBControlNode等继承
+  # 必须从TFormControlNode/TFormControlContainerNode/TFormDBControlNode等继承
 
 {{{
 

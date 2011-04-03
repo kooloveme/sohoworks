@@ -32,7 +32,7 @@
   # tms component 6.0.20
   # paxcompiler 2.8
   # flexcel 3.4
-  # xlreport 
+  # xlreport 4/ProOption
   # unidac
   # avlock 4.1.0
   # teechart 8.06

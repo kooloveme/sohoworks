@@ -25,6 +25,7 @@
 增加新控件,要求
 
   # 以TFormxxxControl模式命名
+  # 实现IControlConfig接口，根据元数据配置控件
 
   # 在initialization中注册类类型
 

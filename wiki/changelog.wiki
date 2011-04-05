@@ -251,3 +251,10 @@ tformdatatable增加table_id私有字段
 1. 修正 layout 状态保存
 
 2. 重构 aot 窗体控件图标，增加NodeImageIndex到基础类
+
+===4 月 4日===
+
+
+1. 改进 如果创建窗体时出错，不保存布局定义，避免下次进入空白屏幕
+
+2. 将TcxViewParams移动到Import_graphics 中注册，能正确获得Tcolor/tfont/tbitmap类型id,tcxGridTablleDataCellViewInfo.Parmas获取现在正常

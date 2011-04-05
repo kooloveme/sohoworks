@@ -8,9 +8,18 @@
 
 ===AOT 开发===
 
+使用ctrl+d 可进入aot 界面
+
+
 aot开发语言使用内置的编译器，现在允许使用javascript/vb.net/pascal三种语法，但实际上你只应使用pascal,因为当前代码生成仅对pascal语法有效。
 
+
+
 aot 开发包括两个部分，元数据的定义和程序代码的编写，这两个都整合在一个叫application object tree的环境中。
+
+在aot中，class/job/form/table/report 等都是可编程节点，双击该节点会进入代码编辑器界面
+
+
 
 
 

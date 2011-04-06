@@ -258,3 +258,11 @@ tformdatatable增加table_id私有字段
 1. 改进 如果创建窗体时出错，不保存布局定义，避免下次进入空白屏幕
 
 2. 将TcxViewParams移动到Import_graphics 中注册，能正确获得Tcolor/tfont/tbitmap类型id,tcxGridTablleDataCellViewInfo.Parmas获取现在正常
+
+===4 月5日===
+
+1. 增加tdamemdatatable/tdadatatable 方法声明
+
+2. 将GetDevelopModeLogicalName移到 Tbaseform 类protected
+
+3. tbaseform.createtable增加到protected ,方便插件开发使用createtable

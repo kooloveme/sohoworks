@@ -270,3 +270,5 @@ tformdatatable增加table_id私有字段
 4. 修正sp_getnextvalue 1跳到3的问题
 
 5. 工具菜单增加 清除个性化数据问题
+
+6. 增加对unique/index-allowduplicates=false的唯一性检查

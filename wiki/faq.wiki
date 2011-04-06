@@ -1,0 +1,16 @@
+1. 继承TBasePluginForm,打开窗体时 出现error creating form: ancestor for TBasePluginForm not found
+
+检查包源代码，例如代码为 
+
+{{{
+
+  uFrontForm in 'uFrontForm.pas' ,
+
+}}}
+修改为
+
+{{{
+
+  uFrontForm in 'uFrontForm.pas' {FrontForm},
+
+}}}

@@ -268,3 +268,5 @@ tformdatatable增加table_id私有字段
 3. tbaseform.createtable增加到protected ,方便插件开发使用createtable
 
 4. 修正sp_getnextvalue 1跳到3的问题
+
+5. 工具菜单增加 清除个性化数据问题

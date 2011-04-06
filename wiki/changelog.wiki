@@ -272,3 +272,9 @@ tformdatatable增加table_id私有字段
 5. 工具菜单增加 清除个性化数据问题
 
 6. 增加对unique/index-allowduplicates=false的唯一性检查
+
+===4 月6日===
+
+1. 增加正则检查和最大值，最小值检查
+
+2. 字段增加blank属性，待用

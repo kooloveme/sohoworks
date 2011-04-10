@@ -278,3 +278,15 @@ tformdatatable增加table_id私有字段
 1. 增加正则检查和最大值，最小值检查
 
 2. 字段增加blank属性，待用
+
+
+===4 月8===
+
+增加checkpassword 方法
+
+
+===4月10日===
+
+删除前先post改变
+
+按钮增加autopost 属性，如果设置为true,则在执行前先post活动数据源

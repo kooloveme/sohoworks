@@ -297,4 +297,6 @@ tformdatatable增加table_id私有字段
 
 ===4月11日===
 
-1. 增加TFormDBCurrencyControl/TFormCurrencyControl
+1. 增加TFormDBCurrencyControl/TFormCurrencyControl,TFormDBHyperLinkControl/TFormHyperLinkControl,TFormDBImageControl/TFormImageControl,TFormDBColorComboBoxControl/TFormColorComboBoxControl ,TFormDBProgressBarControl
+
+2. 修正TBaseDesignForm遵循FLoadSettings设定

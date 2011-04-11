@@ -6,6 +6,7 @@
 ||TFormDBLookupComboBoxControl||
 ||TFormDBIntControl||
 ||TFormDBRealControl||
+||TFormDBCurrencyControl||
 ||TFormDBDateControl||
 ||TFormDBTimeControl||
 ||TFormDBCheckBoxControl||
@@ -32,6 +33,7 @@
 ||TFormLookupComboBoxControl||
 ||TFormIntControl||
 ||TFormRealControl||
+||TFormCurrencyControl||
 ||TFormDateControl||
 ||TFormTimeControl||
 ||TFormCheckBoxControl||

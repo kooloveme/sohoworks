@@ -46,6 +46,7 @@ TBaseForm/TBasePluginForm/TDialogForm
 ===函数-权限===
 ||function HasSecurityKeyByName(const key: string): boolean;||安全键按名称||
 ||function hasSecurityKey(const key: integer): boolean;||安全键按id||
+||function checkPassword(const password:string):boolean;||检查口令是否等同登录口令||
 
 
 ===函数-消息===

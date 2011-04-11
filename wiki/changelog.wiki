@@ -296,3 +296,5 @@ tformdatatable增加table_id私有字段
 增加TFormDBStaticTextControl
 
 ===4月11日===
+
+1. 增加TFormDBCurrencyControl/TFormCurrencyControl

@@ -290,3 +290,9 @@ tformdatatable增加table_id私有字段
 删除前先post改变
 
 按钮增加autopost 属性，如果设置为true,则在执行前先post活动数据源
+
+增加默认的工具- 选项，允许重定义，通过uMxInterfaces.OptionsMenuItemName
+
+增加TFormDBStaticTextControl
+
+===4月11日===

@@ -20,6 +20,7 @@
 ||TFormDBImageControl||
 ||TFormDBHyperLinkControl||
 ||TFormDBColorComboBoxControl||
+||TFormDBProgressBarControl||
 
 
 

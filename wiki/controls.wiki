@@ -17,6 +17,9 @@
 ||TFormDbChartControl||
 ||TFormDBTreeComboBoxControl||
 ||TFormDBBarcodeControl||
+||TFormDBImageControl||
+||TFormDBHyperLinkControl||
+||TFormDBColorComboBoxControl||
 
 
 
@@ -54,3 +57,6 @@
 ||TFormChartControl||
 ||TFormPlaceHolderControl||
 ||TFormProgressBarControl||
+||TFormImageControl||
+||TFormHyperLinkControl||
+||TFormColorComboBoxControl||

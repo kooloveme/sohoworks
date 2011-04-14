@@ -300,3 +300,7 @@ tformdatatable增加table_id私有字段
 1. 增加TFormDBCurrencyControl/TFormCurrencyControl,TFormDBHyperLinkControl/TFormHyperLinkControl,TFormDBImageControl/TFormImageControl,TFormDBColorComboBoxControl/TFormColorComboBoxControl ,TFormDBProgressBarControl
 
 2. 修正TBaseDesignForm遵循FLoadSettings设定
+
+===4-14==
+
+控件增加 neededAccessLevel属性

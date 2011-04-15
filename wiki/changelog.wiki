@@ -301,6 +301,10 @@ tformdatatable增加table_id私有字段
 
 2. 修正TBaseDesignForm遵循FLoadSettings设定
 
-===4-14==
+===4-14===
 
 控件增加 neededAccessLevel属性
+
+===4-15===
+
+增加服务器端脚本能力

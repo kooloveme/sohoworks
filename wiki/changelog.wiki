@@ -308,3 +308,7 @@ tformdatatable增加table_id私有字段
 ===4-15===
 
 增加服务器端脚本能力
+
+===4-16===
+
+支持job 在menuitem/menu中使用

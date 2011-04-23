@@ -312,3 +312,9 @@ tformdatatable增加table_id私有字段
 ===4-17===
 
 支持job 在menuitem/menu中使用
+
+===4-23===
+
+修正delete actions /delete action属性保存问题
+
+实现delete action

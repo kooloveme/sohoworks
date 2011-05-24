@@ -332,3 +332,5 @@ tformdatatable增加table_id私有字段
 修正级联删除时target_table空白的问题
 
 分离devexpress 注册
+
+升级到devexpress 5.6

@@ -318,3 +318,17 @@ tformdatatable增加table_id私有字段
 修正delete actions /delete action属性保存问题
 
 实现delete action
+
+
+===5-24===
+
+
+增加数据库备份，数据库脚本执行功能
+
+升级到paxcompiler 2.9 2011-5-23日版本
+
+修正开发模式下编译list out index的问题
+
+修正级联删除时target_table空白的问题
+
+分离devexpress 注册

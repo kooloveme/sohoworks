@@ -334,3 +334,7 @@ tformdatatable增加table_id私有字段
 分离devexpress 注册
 
 升级到devexpress 5.6
+
+===5-26===
+
+更新到paxcompiler 2.9 2011-5-25 版本

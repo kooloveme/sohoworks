@@ -348,3 +348,8 @@ tformdatatable增加table_id私有字段
 ===6-12===
 
 更新到paxcompiler 6-9日版本
+
+
+===6-20===
+
+修正表浏览器

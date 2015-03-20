@@ -1,0 +1,15 @@
+将合并到 uK9Interfaces.pas文件
+
+IRunableNode --指示 aot 节点可运行
+
+
+IHost -- host 实现该接口 引用了一个TFormDataSource,通过将tformDatasource引入到uk9interfaces
+
+IObjectRun -- FormRun,QueryRun,DialogRun,ReportRun等实现的接口
+
+
+
+IPlugin 同host 通讯，FormRun 实现该接口
+
+
+IControlConfig 配置控件

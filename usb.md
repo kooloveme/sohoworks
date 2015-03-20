@@ -1,0 +1,17 @@
+quickusb C# 包装
+
+quickusb 并非是free的产品
+
+http://code.google.com/p/csquickusb/
+
+http://www.quickusb.com/store/index.php?main_page=page&id=13
+
+
+libusb dotnet 包装
+
+http://sourceforge.net/projects/libusbdotnet/
+
+
+其他
+
+[usb\_windows\_message](usb_windows_message.md)

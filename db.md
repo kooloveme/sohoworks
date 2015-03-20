@@ -1,0 +1,14 @@
+
+下面所有的Table对象，是指在aot中定义的Table对象，它基于TDataSet的.
+
+目前的设计是基于这样的层次 TFormQuery-TFormDataTable->
+
+数据层更多的是一种规范，转换delphi的datamodule中很多table为每class一dataset，首先是一系列方法，均以script开头，提供tdataset事件的替代品
+
+其次，提供了一个autobeforepost ，进行数据验证
+
+其三，转换异常为更明白的表示，一般的格式是 无法创建 caption(tablename)中的记录。 中文原因，代码:xxx,详细异常
+
+如2627就是该记录已存在
+
+由于paxcompiler中的一个莫名的exit问题，目前约定需要更新的从TFormDataTable继承 ，查询从TFormquery继承 Scriptxx系列 中无法使用exit

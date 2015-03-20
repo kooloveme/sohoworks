@@ -1,0 +1,20 @@
+### 字段类型 ###
+
+目前支持string,integer(int),int64,real,date,time,datetime,guid ,enum 几种字段，在sql server中的对应关系是
+
+|string|nvarchar|默认为10|
+|:-----|:-------|:----------|
+|integer|int|  |
+|int64|bigint|  |
+|date|datetime|目前未支持|
+|time|datetime|目前未支持|
+|datetime|datetime|
+|guid|guid|目前未支持|
+|boolean|bit|
+|enum|int, axapta 的UseEnumValue 应该是指使用对象内部的id还是用enumValue属性|转为字段的属性|
+
+### 系统字段 ###
+
+
+|dataareaid|nvarchar 3|
+|:---------|:---------|

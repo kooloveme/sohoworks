@@ -1,0 +1,56 @@
+控件说明
+
+### 支持控件 ###
+|类|继承自|
+|:--|:--------|
+|TFormListViewControl|TListView|
+|TFormTreeViewControl|TTreeView|
+|TFormDBIntControl|cxDBSplitEdit|
+|TFormDBRealControl|cxDBCalc|
+|TFormDBDateControl|cxDBDateEdit|
+|TFormDBTimeControl|cxDBTimeEdit|
+|TFormDBCheckBoxControl|cxDBCheckEdit|
+|TFormDBRadioGroupControl|cxDBRadioGroup|
+|TFormDBLookupComboBoxControl|  |
+|TFormDBComboBoxControl|  |
+|TFormDBListBoxControl|  |
+|TFormLabelControl|  |
+|TFormSplitControl|  |
+|TFormTabPageControl|  |
+|TFormTabPageControl|TdxLayoutGroup|
+|TFormButtonGroupControl|TdxLayoutGroup|
+|[TFormButtonControl](TFormButtonControl.md)|TcxButton|
+|[TFormMenuButtonControl](TFormMenuButtonControl.md)|TcxButton|
+|[TFormTimerControl](TFormTimerControl.md)|  |
+
+每个db控件均有对应的不带db的控件，如TFormRealControl,TFormIntControl,TFormDateControl,TFormTimeControl,TFormListBoxControl,TFormComBoBoxControl,TFormLookupComBoBoxControl,所有的控件均对应一个节点类，如
+
+TFormIntControl-> TFormIntControlNode
+
+
+### 窗体 ###
+|init| 在formcreated后，可用于设置缺省值|
+|:---|:--------------------------------------------|
+|run|在form show后|
+
+
+
+
+
+### FormQuery ###
+
+继承自TUniQuery，覆盖DoAfterOpen过程，增加从元数据设置数据集的功能,增加AutoAdaptive属性，指示是否从元数据设置数据集
+
+### FormLookupComboBox ###
+
+继承TcxDBLookupComboBox,增加以下特性
+
+BaseEnum 如果设置，则从元数据中获取值
+
+实现Onlookup 事件
+
+运行时设置下拉
+
+Lookup 值，如果设置，从元数据中获取值设置
+
+通过脚本定制

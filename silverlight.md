@@ -1,0 +1,38 @@
+本项目计划用silverlight 取代windows forms 的开发。
+
+silverlight和windows forms都是属于客户端开发技术。windows forms 应该属于.net 中不再发展的技术之一，ms的推荐是wpf。
+
+### silverlight 和windows forms的不同 ###
+
+1. silverlight 总是使用异步通讯
+
+2. silverlight最近的一些发展使其可以开发完全的本地应用。out-of-browser.数据库使用db4o/effiproz/sqlite之类的。但总体上silverlight 会强制你使用 分布式开发的观念，而不是类似windows forms或是传统的asp.net web程序可以不用分布式的观念进行开发
+
+
+3. silverlight 的组件还在发展过程中，目前没有达到windows forms的程度。但第三方组件开发商如componentone/devexpress/infragistics/telerik 可以解决这些问题。
+
+### 目标 ###
+
+本项目的目标是开发二个silverlight 例子程序，从中摸索出一套silverlight 的开发框架和手段。目前研究第三方程序是devforce /componentone,以及ms 的silverlight toolkit.
+
+
+### devforce 笔记 ###
+
+[devforce](devforce.md)
+### 组件评价 ###
+
+**C1TreeView**
+
+C1TreeVeiwItem有Click时间，对比toolkit的TreeViewItem有Selected事件，从性能上凭感觉C1TreeView要快许多
+
+
+1. 在调试器中运行时，执行id set 时会生成An entity with this key: Category: D already exists in this EntityManager， 实际运行中该错误没有出现
+
+
+1. 解决radSplitContainer中radPaneGroup的宽度问题  telerik:ProportionalStackPanel.RelativeSize="35, 0"
+
+2. 解决radGridView 的row 改变事件，跟踪绑定集合的 CurrentChanged
+
+
+3. xp  下字体有明暗
+http://www.microsoft.com/downloads/details.aspx?FamilyID=b15774c0-5b42-48b4-8ba8-9293fdc72099&displaylang=zh-cn

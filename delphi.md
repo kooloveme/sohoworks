@@ -1,0 +1,59 @@
+delphi 被使用在对性能要求较高，机器配置无法达到现行配置的场合
+
+通过为delphi 创建一个简单的框架，在不降低delphi 原来的rad开发的思维的情况下增进开发效率
+
+1. 一个内部的插件框架
+
+在单元的initialization 中注册窗体
+> registerClass(TCustomerManagementForm);
+
+在单元的finailization 中反注册窗体
+
+unregisterClass(TCustomerManagementForm);
+
+2. 提供一些基本的数据表和表单，包括
+
+
+SysUser 系统用户
+
+SysGroup 用户组
+
+SysDataArea 公司
+
+
+SysCurrency 货币
+
+SysCountry /SysState/SysCity 国家/省/市
+
+SysPermission 权限
+
+
+
+
+
+3. 一些实用类
+
+信息日志 infolog 单元
+
+提供一个mdi子窗口，无模式的信息对话框
+
+info(string)/info(exception)/error(string)
+
+
+
+[buttongroup](buttongroup.md)
+
+[activeform](activeform.md)
+
+
+## 编译 ##
+
+xlreport 请使用 VER150
+
+数组操作
+
+|上|high|
+|:--|:---|
+|下|low|
+|动态数组设置|setlength(array,length)|
+|数组拷贝|d=copy(s,start\_index,length),同类型才能拷贝|

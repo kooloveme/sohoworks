@@ -1,0 +1,91 @@
+
+### 主要对象 ###
+
+TDADataTable/TDAMemDataTable
+DataParameter/DataParameterArray
+TSql
+TBaseForm/TBasePluginForm/TDialogForm
+
+
+### 可用单元 ###
+|SysUtils|
+|:-------|
+|StrUtils|
+|DateUtils|
+|TypInfo|
+|Classes|
+|Variants|
+|Graphics|
+|activeX|
+|Forms|
+|ImgList|
+|Controls|
+|StdCtrols|
+|contnrs|
+|match|
+|Menus|
+|IniFiles|
+|ComCtrls|
+|dialogs|
+|db|
+|Uni|直连数据库支持|
+|VirtualTable|内存dataset|
+
+
+### 函数-杂项 ###
+
+|procedure ParseURL(const url : String;var Proto, User, Pass, Host, Port, Path : String);|解析url|
+|:---------------------------------------------------------------------------------------|:--------|
+|function FormShowModal(Form: TForm): integer;|ie兼容|
+|function DosCommand(const CommandLine: WideString; const aLocal: boolean = false): WideString;|执行dos命令|
+|function DataSetToExcel( DataSet: TDataSet;   FieldTagMax: Integer;   Visible: Boolean;  ExcelFileName: string = ''  ): Boolean;|导出excel|
+|function _(const s:string):string;_|多语言处理|
+|function GetTheComputerName: string;|  |
+|procedure chat(const msg:string);|  |
+|function md5(const s:string):string;|  |
+
+
+### 函数-权限 ###
+|function HasSecurityKeyByName(const key: string): boolean;|安全键按名称|
+|:---------------------------------------------------------|:-----------------|
+|function hasSecurityKey(const key: integer): boolean;|安全键按id|
+|function checkPassword(const password:string):boolean;|检查口令是否等同登录口令|
+
+
+### 函数-消息 ###
+
+|procedure info(const s: string); overload;|
+|:-----------------------------------------|
+|procedure info(const s: string;const args:array of const); overload;|
+|procedure info(ex: Exception); overload;|
+|procedure info(const s:variant); overload;|
+|procedure error(const s: string);|
+|procedure error(const s:string;const args:array of const);overload;|
+|function YesNo(s:string):integer;|
+
+
+### 数据访问 ###
+|function ExecScalar(const aSQltext: string; const aParams: DataParameterArray = nil): variant;|返回null表示无返回或null|
+|:---------------------------------------------------------------------------------------------|:-------------------------------|
+|function ExecuteScalar(const aSqlText:string;const args:array of const):variant;|兼容性保留|
+|function ExecSQL(const aSQLText: string;const aParams: DataParameterArray=nil): integer;|
+|function ExecuteCommand(const aCommandName: string; aParamNames: array of string; aParamValues: array of variant): integer; overload;|
+|function ExecuteCommand(const aCommandName: string; aInputParameters: DataParameterArray): integer; overload;|
+|procedure ExecDataTable(dt: TDADataTable; const aSQLText: string; const aParams: DataParameterArray = nil; const isOpen: boolean = true);|
+|function GetDataTable(const logicalName: string; const owner: TComponent = nil): TDAMemDataTable;|
+|function GetFormQuery(const logicalName: string; const owner: TComponent = nil): TFormQuery;|
+|function GetFormDataTable(const logicalName: string; const owner: TComponent = nil): TFormDataTable;|
+|procedure FillDataTable(dt: TDAMemDataTable; const sql: string; const isOpen: Boolean = true);|兼容性保留|
+|function ApplyUpdates(aTables: array of TDADataTable; aRefetchAll: boolean = false): boolean;|同一事务更新|
+|procedure Fill(aTables: array of TDADataTable; aSaveCursor: boolean; aIncludeSchema: boolean; aAppendMode: Boolean = False);|批量填充|
+
+
+### 全局变量 ###
+
+|curUserid|用户id|
+|:--------|:-------|
+|CurUserFullName|用户姓名|
+|CurUserName|用户登录名|
+|Host|  |
+|SiMain|调试对象|
+|RODataModule|  |

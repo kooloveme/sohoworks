@@ -1,0 +1,22 @@
+按钮组是一个flowPanel
+
+flowDirection 为 fsTopBottomLeftRight
+
+bevelOuter bvNone
+
+alignWithMargins
+
+Margins 为3
+
+column sizeStyle ssAbsolute
+
+value 88
+
+
+下拉菜单按钮使用Tcxbutton
+
+Kind cxbkDropDownButton
+
+设定DropDownMenu
+
+LockandFeel.Kind可选lfStandard

@@ -1,0 +1,108 @@
+
+
+ebf 为每个窗体生成代码，代码的结构大致如下
+```
+
+class Form1(FormRun):  # 所有窗体继承自FormRun
+
+# 窗体的事件和方法
+
+# datasource 的事件
+
+# 控件的事件
+
+```
+
+当在aot 中写事件时，ebf 会自动为你建立事件和控件之间的连接,仅form对象可同时覆盖和添加事件，对于datasource和控件，只能使用事件
+
+
+
+
+### form 方法 ###
+
+|方法|说明|
+|:-----|:-----|
+|Init|初始化|
+|Print|打印|
+|PrintPreview|打印预览|
+|Run|run|
+|Wait|Thread.Sleep|
+|LoadUserSetting|todo|
+|SaveUserSetting|todo|
+|ClosedCancel|相当于DialogResult==DialogResult.Cancel|
+|CloseCancel|关闭窗体，DialogResult设置为Cancel|
+|ClosedOk|相当于DialogResult==DialogResult.OK|
+|CloseOk|关闭窗体，DialogResult设置为OK|
+
+
+### formdatasource ###
+
+每个datasource都会有三个对应的变量
+
+formdatasourcename\_ds formdatasource 对象
+formdatasourcename\_table datatable对象
+
+formdatasourcename datarow 对象
+
+
+### 控件事件 ###
+
+controlName\_eventname
+
+|FormButtonControl|Click|
+|:----------------|:----|
+
+#### FormCheckedControl ####
+
+EditValueChanged
+
+
+### 控件 ###
+
+目前，使用devexpress.xtraeditor. 这个控件的继承体系的基类是BaseEdit 。有一个重要的属性EditValue和事件EditValueChanged，具体的类有特定的属性表示其特定类型的值，如CheckEdit有Checked,CheckState,DateEdit有DateTime,TextEdit有Text.CalcEdit有Value(decimal).TimeEdit有Time(datetime)
+
+|build control|ebf 中的控件|继承自|RepositoryItem|
+|:------------|:---------------|:--------|:-------------|
+|FormBuildGridControl|FormGridControl|GridControl|  |
+|FormBuildStaticStringControl|FormStaticStringControl|LabelControl|
+|FormBuildStringControl|FormStringControl|TextEdit|RepositoryItemTextEdit|
+|FormBuildRealControl|FormRealControl|CalcEdit|REpositoryItemCalcEdit|
+|FormBuildIntControl|FormIntControl|SpinEdit|RepositoryItemSpinEdit|
+|FormBuildInt64Control|FormInt64Control| SpinEdit,IsFloating=false,EditMask=N00,MinValue,MaxValue|RepositoryItemSpinEdit|
+|FormBuildComboBoxControl|FormComboBoxControl|LookUpEdit|RepositoryItemLookUpEdit|
+|FormBuildCheckBoxControl|FormCheckBoxControl|CheckEdit|RepositoryItemCheckEdit|
+|无，动态选择|FormLookUpControl|GridLookUpEdit|RepositoryItemGridLookUpEdit|
+|FormBuildDateControl|FormDateControl|DateEdit|RepositoryItemDateEdit|
+|FormBuildDateTimeControl|FormDateTimeControl|DateEdit|RepositoryItemDateEdit|
+|FormBuildTimeControl|FormTimeControl|TimeEdit|RepositoryItemTimeEdit|
+|FormBuildTabPageControl|FormTabPageControl|LayoutControlGroup|  |
+|FormBuildTabControl|FormTabControl|TabbedControlGroup|  |
+|FormBuildGroupControl|FormGroupControl|LayoutControlGroup|  |
+|FromBuildButtonGroupControl|FormButtonGroupControl|LayoutControlGroup|  |
+|FormBuildButtonControl|FormButtonControl|SimpleButton|  |
+|FormBuildMenuButtonControl|FormMenuButtonControl|DropDownButton|  |
+|FormBuildMenuItemButtonControl|FormMenuItemButtonControl|FormButtonControl|  |
+|FormBuildCommandButtonControl|FormCommandButtonControl|FormButtonControl|  |
+|FormBuildRadioControl|FormRadioControl|RadioGroup|RepositoryItemRadioGroup|
+|FormBuildTreeViewControl|FormTreeViewControl|System.Windows.Forms.TreeView|  |
+|FormBuildListViewControl|FormListViewControl|System.Windows.Forms.ListView|  |
+|FormBuildListBoxControl|FormListBoxControl|ListBoxControl|  |
+
+
+#### FormLookupControl ####
+
+如果一个控件（通常是int,int64,string) 实现了LookUp 方法签名，则系统使用FormLookUpControl来显示。你可以使用SysLookupTable 类来组装lookup内容，或是简单的设置sender.DataSource,sender.DisplayMember,sender.ValueMember,sender.View.Columns 等属性来控制LookUp内容
+
+LookUp方法在Init过程中被调用，如果有多个控件需要lookup内容，请将获取该内容的代码放在Init过程前
+```
+def Init(self):
+  self.departments=Department.Find()
+  super(CashBankForm,self).Init()
+  
+
+def IntEdit1_LookUp(self,sender,e):
+  sender.DataSource=self.departments
+  sender.ValueMember="RecId"
+  sender.DisplayMember="name"
+
+```

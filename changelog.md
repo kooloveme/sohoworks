@@ -1,0 +1,365 @@
+-
+
+### 2010-11-21 ###
+
+1. 增加对strUtils的支持，移除原来的leftstr等全局注册函数
+
+2. TDABaseField增加AsSmallInt注册
+
+
+### 2010-11-23 ###
+
+1. 字段增加regexpression,decimalPrecision,decimalScale,Calculated ,sqlexpression,expression属性
+
+2. 增加对menus 单元的支持
+
+3. 报告paxcompiler bug http://www.paxcompiler.com/phpbb/viewtopic.php?f=3&t=739&sid=5808351310801f45c82eb68409cdf042
+
+
+### 2010-11-24 ###
+
+1. 将DoInit以后的处理过程从DoCreate中移到DoShow,这样能使用args属性传递参数
+
+2. SizableHorz/SizableVert 控制增加到控件节点
+
+3. fix 当窗体数据改变关闭窗体 会确认两次
+
+
+### 2010-3-3 ###
+
+代码编辑窗口find/replace
+
+sql /help编辑窗口find/replace
+
+4. 同步窗体和aot中form的version\_number,modified\_date属性，使用version\_number来判断是否需要重新load设置
+
+5. 保存读取窗体customProperties到本地,例子 日数据中的树状查看的状态保存功能
+
+6. import\_sysUtils增加strtobool
+
+7. 增加每个控件所在的layoutItem自动声明，形式如 control\_name\_item:TdxLayoutitem;
+
+### 2010-11-25 ###
+
+1. 同步formid和aot form id
+
+2. 修改Tbaseform/tbasepluginform .
+
+将formclose/formshow等事件移动到DoClose/DoShow过程，空出事件处理或避免原先的一些处理被覆盖
+
+同步窗体的menuitem 的安全键，同步安全键和访问级，没有安全键触发异常，有安全键访问级为NoAccess触发异常。 否则同步数据源的allowCreate,allowEdit,allowDelete属性
+
+3. host.execute 加入对安全键和访问级的判断
+
+
+### 2010-11-28 ###
+
+1.  字段增加isreadonly属性，同savecontents 区分开来，参考blog
+
+2. tformdbRaidoGroupControl/formraidoGroupControl 增加items和columns属性,当使用items时，对应值从0开始
+
+### 2010-11-30 ###
+
+1. 更新paxcompiler
+
+2. 更新devexpress vcl 5.4,  应该已经解决窗口关闭时grid报av的错误
+
+
+### 2010-1-25 ###
+
+1. 增加ExecScalar, 切换ExecuteScalar调用此方法
+
+2. 切换FillDataTable调用ExecDataTable方法
+
+3. [TSql](TSql.md) 调整
+
+### 2011-2-19 ###
+
+补充dataparameterarray注册
+
+修正aot index fields 创建
+
+tformdatatable增加table\_id私有字段
+
+增加对index allowduplicates=false 的检查
+
+改进tformdatatable.internalbeforepost
+
+修正ie 刷新后aot 窗口会av异常问题。原因是刷新后aot窗口已经释放，但assigned还是返回true,因为aotform没有设置为null,解决方法是在dodestroy中是指aotform为nil,singleton非模态窗口可使用这种模式
+
+### 2011-2-20 ###
+
+1. 删除记录前检查从表记录
+
+2. 修正index allow\_duplicates问题
+
+3. 修正开发模式查询执行环境问题
+
+4. 修正 字段节点 readonly 属性的装载错误
+
+### 2011-2-22 ###
+
+1. 修正清空查找缓存的bug
+
+2. 修正buildlayout没有安全键控件创建问题
+
+3. tbaseform 添加firstfield
+
+
+### 2011-2-25 ###
+
+1. 编译完成后加提示
+
+### 2011-3-13 ###
+
+1. aot 中增加views 节点
+
+2. grid 增加ShowFooter,ShowGroupByBox
+
+3. 框架更新 -分离table和view
+
+4. 框架更新 - 升级高级查询 ctrl+f3
+
+5. 框架更新 - 对网格中的下拉选择进行缓存
+
+6. 框架更新 - 修正table 浏览器
+
+7. 框架更新- 在状态栏显示版本号和build number
+
+8. 框架更新 -从数据库同步字段到aot
+
+
+### 3月17日 ###
+
+1. 框架更新： 提供在ie 显示模态窗口的能力
+
+2. 修正: 公司账户在使用模态窗口时和ie的兼容问题
+
+
+
+### 3月18日 ###
+
+1. 框架更新 导出表和字段，baseenum定义
+
+2. 框架更新，修正报表系统处理多工作表的bug
+
+### 3月19日 ###
+
+1. 框架更新，允许重新定义8099端口
+
+2. 框架更新 使能会话时间和会话检查间隔
+
+3. 框架更新 允许一应用服务器服务多个企业客户，saas
+
+
+
+### 3月21日 ###
+
+
+
+
+1. 应用程序服务器关闭时提示
+
+2. 调整应用程序服务器窗口界面
+
+3. 状态栏显示应用程序服务器地址
+
+4. aot增加table relations 节点
+
+
+### 3 月25日 ###
+
+3. 框架更新-增加 separator/emptyspace/labeled等布局控件
+
+4. 框架更新 - 组增加ShowExpandButton 属性
+
+### 3 月27日 ###
+
+1. 框架更新-开发模式下避免重复编译
+
+
+4. 框架更新- 对源代码进行加密
+
+### 3 月28日 ###
+
+1. TFormComboBoxControl增加Items/DropDownListStyle 设定
+
+2. TFormMemoControl增加ScrollBars设定
+
+### 3 月29日 ###
+
+1. 框架更新：在aot 中保存时检查名称重复
+
+2. 框架更新：导入编程定义时更新权限
+
+3. 框架更新： 转到主表窗体 生效
+
+4. 框架更新，提供自动更新下拉项的手段，earrow例子，当前仪表类别,线路,tcp链接，仪表等下拉项随更新而更新，下拉项同时提供刷新功能(概览). 改进重置查找缓存，不用关闭窗口
+
+5. 增加升级wizard
+
+6. 框架更新：允许定义按钮组宽度，允许定义按钮组layout direction
+
+### 3月30日 ###
+
+1. 增加三种风格，桌面风格生效，ie 端使用build with runtime packages风格生效
+
+2. 处理tab 标题可能乱码问题
+
+### 3月31日 ###
+
+1. 修正 检查logo文件是否存在
+
+2. 完成 按网格过滤
+
+
+3. 桌面客户端skin生效，目前使用office2007blue/office2010blue/office2010silver
+
+
+3. 修正安装文件 uninstall guid一致的问题
+
+4. 更新进度条组件
+
+5. untitled.ini 生成到运行程序目录
+
+### 4月1日 ###
+
+1. ie客户端改变编译方式和安装文件
+
+2. 网格增加卡片视图
+
+3. 代码清理，减少marsxserver.exe 体积到4M
+
+4. 代码情理，移除大部分全局变量，增进ie客户端稳定性
+
+### 4月2日 ###
+
+
+1.框架更新：引入tms plugin framework 取代原有的插件机制
+
+2. 框架更新： 当前ie/桌面客户端使用build with runtime packages 编译
+
+3. 框架更新： 完全分离marsx 和应用系统的代码
+
+4. 安装文件更新- 安装包目前增大1倍
+
+5. 桌面客户端安装文件增强，允许在安装时指定应用程序服务器地址
+
+
+### 4 月3日 ###
+
+1. 修正 layout 状态保存
+
+2. 重构 aot 窗体控件图标，增加NodeImageIndex到基础类
+
+### 4 月 4日 ###
+
+
+1. 改进 如果创建窗体时出错，不保存布局定义，避免下次进入空白屏幕
+
+2. 将TcxViewParams移动到Import\_graphics 中注册，能正确获得Tcolor/tfont/tbitmap类型id,tcxGridTablleDataCellViewInfo.Parmas获取现在正常
+
+### 4 月5日 ###
+
+1. 增加tdamemdatatable/tdadatatable 方法声明
+
+2. 将GetDevelopModeLogicalName移到 Tbaseform 类protected
+
+3. tbaseform.createtable增加到protected ,方便插件开发使用createtable
+
+4. 修正sp\_getnextvalue 1跳到3的问题
+
+5. 工具菜单增加 清除个性化数据问题
+
+6. 增加对unique/index-allowduplicates=false的唯一性检查
+
+### 4 月6日 ###
+
+1. 增加正则检查和最大值，最小值检查
+
+2. 字段增加blank属性，待用
+
+
+### 4 月8 ###
+
+增加checkpassword 方法
+
+
+### 4月10日 ###
+
+删除前先post改变
+
+按钮增加autopost 属性，如果设置为true,则在执行前先post活动数据源
+
+增加默认的工具- 选项，允许重定义，通过uMxInterfaces.OptionsMenuItemName
+
+增加TFormDBStaticTextControl
+
+### 4月11日 ###
+
+1. 增加TFormDBCurrencyControl/TFormCurrencyControl,TFormDBHyperLinkControl/TFormHyperLinkControl,TFormDBImageControl/TFormImageControl,TFormDBColorComboBoxControl/TFormColorComboBoxControl ,TFormDBProgressBarControl
+
+2. 修正TBaseDesignForm遵循FLoadSettings设定
+
+### 4-14 ###
+
+控件增加 neededAccessLevel属性
+
+### 4-15 ###
+
+增加服务器端脚本能力
+
+### 4-17 ###
+
+支持job 在menuitem/menu中使用
+
+### 4-23 ###
+
+修正delete actions /delete action属性保存问题
+
+实现delete action
+
+
+### 5-24 ###
+
+
+增加数据库备份，数据库脚本执行功能
+
+升级到paxcompiler 2.9 2011-5-23日版本
+
+修正开发模式下编译list out index的问题
+
+修正级联删除时target\_table空白的问题
+
+分离devexpress 注册
+
+升级到devexpress 5.6
+
+### 5-26 ###
+
+更新到paxcompiler 2.9 2011-5-25 版本
+
+重构 分离tee 注册到import\_tee
+
+
+### 6-3日 ###
+更新到paxcompiler 6-2版本
+
+### 6-12 ###
+
+更新到paxcompiler 6-9日版本
+
+
+### 6-20 ###
+
+修正表浏览器
+
+
+### 6-29 ###
+
+更新到 6-28日版本
+
+
+### 7-16 ###
+
+增强grid 列的配置功能

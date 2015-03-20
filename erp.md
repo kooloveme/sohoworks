@@ -1,0 +1,379 @@
+
+
+## 特征 ##
+
+1. 分布式应用(完成)
+
+2. 内置工作流
+
+3. 支持二次开发
+
+4. 允许按用户，用户组，角色设置权限(完成)
+
+5. 自动更新或手动更新支持(完成)
+
+6. 记录级安全
+
+7. 多账套技术
+
+8. 安全，除了Login/Logout,其它调用均需要会话
+
+
+
+
+
+
+## 模块 ##
+
+|SL|销售|
+|:-|:-----|
+|PC|采购|
+|MS|维护|
+|DA|基础数据|
+|FN|财务|
+|YD|生产|
+|ST|仓库|
+|SR|工资|
+|FA|资产|
+|EG|工程项目|
+|OA|办公|
+|通讯| |
+|ws|工作流|
+
+
+## 表 ##
+
+### 命名规范 ###
+
+1. 所有表以模块名为前缀
+
+2. 命名主要采用单数，如MSUSER
+
+3. 主键均命名为id,identity
+
+4. master -detail 表加上Master,Detail后缀，如SLOrderMaster,SLOrderDetail 表示销售订单和销售订单明细
+
+5. 所有表格CreateUserId/CreateDate(getdate()默认值) 字段
+
+5.1 所有单据表均包括RecordState 字段
+
+6. 明细表引用主表字段强制为MasterId ,int not null
+
+7. 单据类主表均有Code字段（varchar(20)),用GetMaxCode('Code',表名Master,TFlag.Number) 取值，ModeC字段(-1为红字),ModeDC (负操作时为-1,如销售退货或采购退货) . **在求值时通常需要用ModeC\*ModeDC\*Quantity/ModeC\*ModeDC\*Amount之类的操作获取正确的值**
+
+
+### RecordState 字段 ###
+|取值|说明|
+|:-----|:-----|
+|临时|新增加|
+|提交|编辑-提交|
+|审批|  |
+|注销|  |
+|删除|已经被删除|
+|复核|复核|
+
+
+提交-审批-注销 均视为递交状态 保存时会检查此状态
+
+
+### 包装单位和标准单位支持 ###
+
+为了支持包装单位和标准单位，设计货品数量的地方均按如下设计
+
+|quantity|数量，按包装单位统计的数量|
+|:-------|:--------------------------------------|
+|PackUnitId|包装单位|
+|PriceBase|按包装单位统计的单价|
+|Amount|quantity\*PriceBase|
+|GoalQuantity|标准数量|
+|GoalUnitId|标准单位|
+|PriceGoal|标准单价|
+|PriceCost|成本，标准成本.money 缺省0|
+
+
+### 数据维护 ###
+|MSApplication|应用程序|
+|:------------|:-----------|
+|MSMenu|导航菜单|
+|MSUser|用户|
+|MSUnit|单位|
+|MSEmployee|员工|
+|mscompanyuser|请理解成company,TGuarder.GetCompanyUserName 取其名称|
+|MSPostionClass|职位类别|
+|mscurrency|货币，默认为插入人民币,isLocation=true|
+|mssysparameter|系统参数|
+
+
+#### msapplication ####
+保存应用程序定义
+|name|应用程序名|
+|:---|:--------------|
+|text|应用程序详细描述|
+|version|应用程序当前版本，系统将依次对比文件版本以提示是否自动更新,约定用x.x.x.x格式|
+|helpFile|帮助文件路径|
+|copyright|版权|
+|author|作者|
+|email|联系邮件|
+|supportUrl|技术支持url|
+|upgradeUrl|自动更新文件的url 如[file:///c:\e6\update\e6.inf](file:///c:\e6\update\e6.inf)|
+
+
+#### MsMenu ####
+
+导航菜单
+
+|Text|nvarchar(255)|菜单文本，使用/分隔|
+|:---|:------------|:---------------------------|
+|SecurityKeyId|int null|菜单对应的安全键，允许为空|
+|menuItemId|int null|菜单对应的菜单项，允许为空|
+|HelpText|nvarchar(255)| 菜单帮助文本|
+
+#### MSMenuItem ####
+菜单项
+|Text|菜单项文本|
+|:---|:--------------|
+|MenuItemType|int |0 - 窗体，1-报表 2- action|
+|MenuItemTypeName|nvarchar(255)|窗体名或报表名或脚本名|
+|HelpText|nvarchar(255)|帮助文本|
+
+
+```
+
+总账
+
+总账/设置
+
+总账/设置/期限
+
+```
+
+
+
+#### MSUser ####
+
+系统用户
+
+|UserName|nvarchar(50) not null|用户名，唯一 |
+|:-------|:--------------------|:------------------|
+|Password|nvarchar(50) not null|口令，用md5加密|
+|Email|nvarchar(255)|电子邮件|
+
+#### MSRole ####
+角色
+
+|Name|nvarchar(50) not null |角色名称|
+|:---|:---------------------|:-----------|
+
+#### MSUserRole ####
+
+用户角色对应关系
+|UserId|用户编号|
+|:-----|:-----------|
+|RoleId|角色id|
+
+UserId+RoleId 为unique
+
+#### MSSecurityKey ####
+|Name|用/分隔|
+|:---|:---------|
+
+#### MSPermission ####
+用户权限设定
+|userid|用户id|
+|:-----|:-------|
+|securityKeyId|安全键id|
+#### MSRolePermission ####
+角色权限设定
+|roleId|角色id|
+|securityKeyId|安全键id|
+
+#### MSGroupPermission ####
+组权限设定
+|groupId|组id|
+|:------|:----|
+|securityKeyId|安全键id|
+
+### 基本数据 ###
+|DAGoods|货品|
+|:------|:-----|
+|DAClient|客户 clientType<>'厂商'|
+|DAExpenseClass|费用类别，如果为空，默认为插入费用项目|
+|dagoodsclass|默认为插入商品分类|
+|DAArea|区域，默认会插入所有地区|
+
+
+### 销售模块 ###
+
+|表|说明|
+|:--|:-----|
+|SLContract|销售合同|
+|SLOrderMaster/SLOrderDetail|销售订单和明细,销售退货 billmode为销售退货modedc为-1|
+|SLSaleMaster/SLSaleDetail|销售开单和明细|
+|FNClearSLMaster/FNClearSLDetail|销售结算|
+|SLGoodsOutMaster/SLGoodsOutDetail|销售出库，库存统计表|
+|SLSaleClientMaster/SLSaleClientDetail|连锁加盟销售|
+
+### 采购 ###
+
+|PCGoodsInMaster/PcgoodsInDetail|采购入库，库存统计表|
+|:------------------------------|:-----------------------------|
+|PCPurchaseMaster/PcPurchaseDetail|采购开单，采购退货 billMode为采购退货,modedc为-1|
+
+### 财务模块 ###
+
+|FNAccount|科目|
+|:--------|:-----|
+
+|FNAccounts|资金账户,默认为插入1,业主资金帐户，业主资金，但这里硬编码货币编号为1,可能存在问题|
+|:---------|:----------------------------------------------------------------------------------------------------------------------|
+
+
+### 仓库模块 ###
+
+|STWareHouse|仓库|
+|:----------|:-----|
+|STGoodsOutInMaster/STGoodsOutInDetail|库存调拨|
+|STGoodsCountOffMaster/STGoodsCountOffDetail|盘盈盘亏，依赖billmode 区分库存库存盘盈和不为库存盘盈|
+
+### 生产 ###
+
+|YDGoodsInMaster/YDGoodsInDetail|生产入库|
+|:------------------------------|:-----------|
+|YDGoodsOutMaster/YDGoodsOutDetail|生产出库|
+
+
+
+
+
+
+
+## 表单 ##
+
+### 表单继承体系 ###
+
+TBaseForm-> TEditForm -> TVoucherEditForm -> TBaseVoucherEditForm
+
+#### TBaseForm ####
+
+实现OnClose事件，如果FormStyle为 fsMdiChild,则 action为faFree
+
+实现OnKeyPress事件，将回车转换为tab
+
+
+
+#### TWSEditForm ####
+
+增加Edit/Enter(重载)方法
+
+#### TWSVoucherEditForm ####
+
+属性 MasterDataSet,DetailDataSet TADODataSet类型，从MasterDataSource,DetailDataSource 的DataSet属性而来
+
+VoucherIDField 注意默认取MasterDataSet的第一个字段,按命名规范通常是ID
+
+VoucherTableName 不包括前后缀的表名，如销售开单就是SLSale(自动转换为SLSaleMaster,SLSaleDetail按命名规范)
+
+新增，删除明细操作DetailDataSet.append,DetailDataSet.delete
+
+保存操作 首先检查RecordState是否提交，然后调用InternalSave,将InternalSave操作包装在一次事务中。
+
+InternalSave很重要，为子类覆盖，在其中执行业务逻辑
+
+新增操作 New ,MasterDataSet.append,DetailDataSet.open ,注意Code在这里已经被设置
+```
+ FieldByName('Code').AsString := GetMaxCode('Code', VoucherTableName + 'Master', number);
+   
+```
+
+MasterDataSet commandText规范
+```
+select * from {voucherTableName}Master where {voucherIdField} = :{vocherIdField}
+
+select * from {voucherTableName}Detail where  MasterId=:{vocherIdField}
+
+```
+
+实现MasterDetaset的AfterPost事件MasterDatasetAfterPost  ，将主表的Idx循环填充到明细表所有记录的MasterId字段
+
+
+
+#### TBaseVoucherEditForm ####
+
+红字 -将BillMode 加上`[红字]`后缀，ModeC修改为-1
+
+复核 - 将RecordState 设置为复核
+
+
+
+
+①引用
+
+
+### 销售模块 ###
+
+#### 销售开单 ####
+
+将记录插入到销售出库表 SLGoodsOutMaster/SLGoodsOutDetail)
+
+当核选 收现款和现款折扣时 ，会将billMode修改为 现款销售 对于该类单据，会自动将记录插入到销售结算表中 (FNClearSLMaster/FNClearSLDetail). 收款账户默认为accountsId科目表中的accounttype=现金科目
+
+有权限判断
+
+如果userid为1,有所有权限，不好
+
+用userid为roleid查询MSRolePermissions表，有则有权限，否则无
+
+
+
+
+
+TGuarder.GetUsername  对于userid为-1从 msrole中取，否则从msuser中取
+
+部门窗体在打开时会检查msdepartment是否存在记录，如果不存在，则插入以公司名为部门名的记录
+（CreateUserId=1,upid=-1)
+
+属性词典窗体在打开时如果检查为无记录，会自动插入商品属性资料，学历属性资料
+
+职位类别窗体无记录时会自动插入职别工种记录
+
+## 已知问题 ##
+
+1.部门编辑点击确定没有关闭？
+
+2. msbremployee窗口部门和员工变量名称不规范 tblgoods,tblDaGoods
+
+3. 职别工种点击确定无效
+
+4. 生产入库提示缺少标准单位成本字段(PriceCost)
+
+5. 提交后 界面记录还是可以修改，只是在保存时才提示不能修改
+
+6. 子类中New方法重复设置代码
+
+SLEdGoodsOut
+
+
+
+
+
+## 改进 ##
+
+### 从一个元数据库自动生成导航 ###
+
+原系统有一个MainMenu,ActionList 每个功能需要手动添加到MainMenu和在actionList中添加action,并将menu的Action设置为 ActionList 中的action
+
+outlookbar是遍历actionList中的 action,根据action的category和caption生成page和item
+
+
+②添加自动更新
+
+1. 读取当前文件版本
+
+2. 读取msapplication.upgradeUrl
+
+3. 读取msapplication.version,比较1,如果大于，提示是否自动更新
+
+4. 注意，打包upgrade4.exe
+
+
+③添加工作流

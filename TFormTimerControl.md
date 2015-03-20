@@ -1,0 +1,30 @@
+属性
+enabled/interval
+
+事件
+property OnTimer: TNotifyEvent;
+
+由于未知原因，定时器目前不能工作，用SetTimeOut 代替
+```
+
+
+procedure SetTimeout(const callback:string;const interval:Integer;const once:Boolean=false);
+procedure TCustomProductionWatch2Form.TimerOnTimer(sender:TObject);
+begin
+    coils.DisableControls;
+    coils.Execute;
+    coils.EnableControls;
+end;
+
+调用
+
+    if menuIndex=0 then begin
+        
+        SetTimeout('TimerOnTimer',intervalEdit.Value);
+ 
+    end else if menuIndex=1 then begin
+     
+        SetTimeout('TimerOnTimer',0);
+    end;
+
+```

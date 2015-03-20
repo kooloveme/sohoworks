@@ -1,0 +1,19 @@
+enums.cs
+
+
+|FormWidth|
+|:--------|
+|FormHeight|
+|LinkType|
+|StartPosition|
+|JoinMode|
+|ObjectType|
+|MenuItemType|
+|ArrangeMethod|排列方向，水平，垂直,对应layoutControl的layoutType,TabPage和Group默认为垂直，而Design默认为水平|
+|AutoMode|长度或高度模式，有自动，固定两值|
+|FormControlType|Grid/StringEdit.../Group|
+|BaseEnumStyle|ComboBox,RadioButton|
+|AccessLevel|访问级别|
+|SortOrder|排序方向|
+|SelectionField|选择字段类型,database或是统计字段|
+|RangeStauts|Hide,Lock,Open 默认是Open|

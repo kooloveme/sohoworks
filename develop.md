@@ -1,0 +1,134 @@
+
+
+### 代码生成 ###
+
+ebf 的代码生成是用户透明的，用户感觉不到代码生成的存在。 应用程序元素(form,job,table)在新增，更新，删除时，系统将自动生成代码并编译。用户的自定义代码将无缝的连接到生成的代码中。
+
+代码生成使用部分使用nvelocity. 鉴于python 是个缩进敏感的语言，要求如下
+
+1.指令，顶格写。不过在嵌套时可能不那么易读
+
+2.if 判断，同python中类似，有值为true ，其它 为false
+
+3. 缩进使用空格，约定为2个空格1缩进
+
+4. velocity中null为false,其它值均为true
+
+
+### 代码编译下载原理 ###
+
+1. 检查时间戳，源代码是否更新
+
+2. 下载代码，调用clr.CompileModule进行编译
+
+3. clr.AddReference/import
+
+4. 不要在一个返回中返回null,如
+
+5. 使用windows cr/lf 行格式
+
+```
+$control.BuildSource()
+
+如果BuildSource返回null, $control.BuildSource()将存在而不是被替换为空白
+```
+
+
+### TreeNode 体系 ###
+
+1. GroupTreeNode
+|
+FormsTreeNode ,TablesTreeNode,ClassesTreeNode,JobsTreeNode,SecurityKeysTreeNode,
+
+GroupTreeNode 有Add,Refresh,ObjectName等方法，有strip protected 上下文菜单字段
+
+2. ElementTreeNode
+
+FormTreeNode,TableTreeNode,ClassTreeNode,JobTreeNode,SecurityKeyTreeNode
+
+所有节点必须支持Clone
+
+仅ElementTreeNode支持拖放
+
+### aos ###
+
+AOTNode 是根对象，AOTSourceNode 说明这个节点可以用源代码表示,实现AOTSourceNode的有Form,Class,Job ,Report,Query
+
+
+AOTNode 的方法和属性
+
+
+所有派生类必须实现Serializable attribute
+
+同一类别名称相同将视为一致
+
+### db4o ###
+
+不正确的关系存储可能导致不可思议的问题
+
+### form ###
+
+动态form创建
+```
+def job1(args):
+  form=Form()
+  ds=form.AddDataSource('Table1')
+  tab=form.Design.AddControl(FormControlType.Tab,'Tab')
+  tabpage=tab.AddControl(FormControlType.TabPage,'OverviewTabPage')
+  grid=tabpage.AddControl(FormControlType.Grid,'Grid')
+  grid.AddDataField(ds,ds.Table.Fields[0])
+  grid.AddDataField(ds,ds.Table.Fields[1])
+  
+  args=Args()
+  args.Object=form
+  
+  formrun=ClassFactory.FormRunClass(args)
+  formrun.Init()
+  formrun.Run()
+  formrun.Wait()
+  
+```
+
+
+### FormBuildDatasource 转换到QueryBuildDataSource的流程 ###
+
+1. 设置FormDataSource的BuildDataSource属性
+
+2. 如果AutoQuery为true，为FormDataSource创建查询对象
+
+3. 增加QueryBuildDataSource，table为formbuilddatasource的table
+
+4. 遍历formbuildDatasource的DataSources属性，查看是否存在join类型的formdatasource，如果存在，则加为子querydatasource,并且设置子querybuilddatasource的joinMode属性（根据formbuilddatasource的linktype中的join部分)
+
+查询aot 中的关系，将关系内容添加为QueryBuildLink(仅为标准关系)
+
+
+
+### linktype  Delayed, Active ###
+
+1. 目前仅支持active
+
+2. 挂接 CurrentChanged事件
+3. 查询formbuilddatasource的datasources,查看是否存在delayed,active的linktype的datasource,如果存在，则查找对应的FormDataSource,取出关系字段的值，添加hidden querybuildRange,并执行其ExecuteQuery
+
+4. 在新建记录时，从关系datasource获取关系值，自动增加到当前datasource新记录中
+
+### form 状态 ###
+
+1. 如果没有记录，所有控件enabled=false
+
+2. 新建记录，控件状态按AllowEditOnCreate 设定
+
+3. 保存记录，控件状态按AllowEdit设定
+
+4. 删除记录，重新按当前记录设定控件状态
+
+5. formrun init 后，按当前记录设定控件状态
+
+### 核心服务 ###
+
+1. LoginService
+
+2. SqlService
+
+3. MetaService

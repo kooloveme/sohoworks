@@ -1,0 +1,585 @@
+
+
+### 编程规范 ###
+
+1. 始终用用error(ex:exception);
+
+
+
+### AOT 开发 ###
+
+使用ctrl+d 可进入aot 界面
+
+
+aot开发语言使用内置的编译器，现在允许使用javascript/vb.net/pascal三种语法，但实际上你只应使用pascal,因为当前代码生成仅对pascal语法有效。
+
+
+
+aot 开发包括两个部分，元数据的定义和程序代码的编写，这两个都整合在一个叫application object tree的环境中。
+
+在aot中，class/job/form/table/report 等都是可编程节点，双击该节点会进入代码编辑器界面
+
+
+
+
+
+
+
+### 插件开发 ###
+
+插件开发是marsx 另一种开发形式，这种方式主要用于系统级的开发，开发工具使用delphi而不是marsx内置的aot 环境
+
+在以下情形时使用插件开发
+  1. 向marsx内置编译器注册新类型
+  1. 扩展marsx 客户端的菜单/工具条
+  1. 扩展aot 功能
+  1. 通过menuitem的objectname属性，用delphi开发marsx能识别的插件
+  1. 其它
+
+插件部分使用的是tms plugin framework ，TBaseDesignForm实现了IpfPlugin，TBasePlugin则继承了TBaseDesignForm 和aot 固有的iplugin接口，能够兼容两者
+
+
+#### 创建插件开发环境 ####
+
+  1. delphi 7
+  1. cnpack
+  1. devexpress 5.5
+  1. tms component 6.0.20
+  1. paxcompiler 2.8
+  1. flexcel 3.4
+  1. xlreport 4/ProOption
+  1. unidac
+  1. avlock 4.1.0
+  1. teechart 8.06
+  1. tms plugin framework
+  1. OverbyteIcsV7
+  1. tms workflow
+  1. econtrol
+  1. dcpcrypt2
+  1. barcode
+  1. doscommand
+
+#### 向编译器注册 ####
+
+参考paxcompiler注册过程
+
+
+
+
+#### 扩展aot ####
+
+##### 为节点增加处理插件 #####
+
+##### 创建自己的元数据节点 #####
+
+
+##### 增加控件 #####
+增加新控件,要求
+
+  1. 以TFormxxxControl模式命名
+  1. 实现IControlConfig接口，根据元数据配置控件
+
+  1. 在initialization中注册类类型
+
+```
+
+registerClass(TFormXXControl);
+
+```
+
+增加新控件对应的aot 节点类型
+
+  1. 以TformXXXControlNode模式命名
+  1. 在initialization中注册类类型
+  1. 必须从TFormControlNode/TFormControlContainerNode/TFormDBControlNode等继承
+
+```
+
+RegisterClass(TFormXXControlNode);
+
+```
+
+向aot 注册
+```
+uses mxNodes;
+```
+
+```
+
+RegisterFormControlClass(TFormXXXControl);
+
+
+```
+
+
+#### 扩展图标 ####
+
+导航图标
+
+```
+
+Host.findComponent('NavPaneImageList') as TImageList //组图标
+
+Host.findComponent('TreeViewImageList') as TImageList //树图标
+
+```
+
+工具条/菜单
+```
+
+Host.findComponent('ToolBarImageList') as TImageList
+
+```
+
+TbaseForm
+
+```
+
+self.ImageList ; //findComponent('ImageList9')
+
+```
+
+TBaseDesignForm 层图标
+
+```
+
+self.findComponent('LayoutControlImageList')
+
+```
+
+#### 扩展工具条/菜单 ####
+
+可以通过host全局对象的toolbar/menu属性来访问工具条和菜单，将tms plugin frmaework command转换为toolbar 按钮和menuitem
+
+```
+
+uses uMXInterfaces,advToolBar ;
+
+```
+
+```
+
+var
+   b:TAdvToolbarButton;
+
+begin
+    b:=TAdvToolBarButton.Create(host);
+
+    b.Caption:=aPlugin.Commands[0].Caption;
+    b.OnClick:=aPlugin.Commands[0].OnExecute;
+    b.Picture.Bitmap.Assign(aPlugin.Commands[0].Bitmap);
+
+    host.ToolBar.InsertToolBarControl(9,b);
+
+end;
+
+```
+
+#### 扩展窗体 ####
+
+  1. 继承TBaseDesignForm
+
+  1. 编写代码
+
+  1. 注册
+
+  1. 创建MenuItem ,objectName为插件名称
+
+  1. 创建菜单项
+
+
+
+
+### 窗体 ###
+
+布局
+  1. 当子控件布局为client时，才能无限缩小
+
+### 图表 ###
+对象TFormDBChartControl/TFormChartControl
+
+TSeries 对象和派生TLineSeries
+
+遍历
+```
+
+for i:=0 to chart.SeriesCount-1 do begin
+  chart.Series[i];
+end;
+
+
+或直接访问SeriesList属性
+
+```
+
+清除某一类型
+```
+chart.FreeAllSeries(TSeriesClass);
+```
+### 数据访问 ###
+
+对aot table/view的访问
+
+①引用单元
+
+②创建对象
+
+③设置Where条件，Open
+
+sql 查询
+
+通过execDataTable,execScalar,execSql进行操作
+
+helper 类TSql
+
+```
+
+
+
+```
+
+
+### 报表 for earrow ###
+
+
+#### 明确需求 ####
+
+1. 统计范围，是月报表还是合计报表
+
+2. 查询条件，是日期范围还是需要按类别，线路等条件
+
+3. 是否需要输出全部仪表，包括没有记录
+
+4. 作用于原始数据还是当前数据
+
+5. 排序等其它条件
+
+以遵义报表为例，我们可以明确
+
+
+月报表，查询条件是按月，仅作用有数据的报表，按类别和电压等级排序，同类单元格合并，计算分类合格率和综合合格率
+
+
+#### 全部数据约束 ####
+
+1. 用户只能查看自己所在单位下属线路的仪表记录
+
+2. 如果定义了线路权限，则只能查看该线路权限下的记录
+
+3. 仪表的参与统计为1
+
+4. 仪表所在类别的排除为0
+
+下面是例子的sql
+```
+
+declare @user_id int
+
+select @user_id=1
+select  * from devices 
+
+inner join circuitry on devices.circuitry_id=circuitry.id
+
+inner join dataarea on circuitry.dataarea_id=dataarea.id
+where device_report_status=1 and devices.category_id in (select id from category where exclude=0)     and dataarea.lcode like (select lcode from users inner join dataarea on users.dataarea_id=dataarea.id where users.id=@user_id)+'%'  and 
+ (not exists(select * from circuitry_permission where user_id=@user_id) or 
+ (devices.circuitry_id in (select circuitry_id from circuitry_permission where user_id=@user_id)))
+
+```
+
+
+#### 约定 ####
+
+1. 综合电压合格率运算按仪表类别中设定的比率进行
+
+2. 城市、农村的区分按仪表定义中的城市农村的设定进行
+
+#### 流程 ####
+
+1. aot - reports - 新建
+
+设置name/template 属性，如 TutorialReport/reports/tutorial.xls
+
+编辑代码，将TReportRun修改为TFlexReportRun,表示使用flexcel 引擎
+
+2. 点击querites, -新建 创建查询 months
+```
+select * from months order by year,month
+```
+
+
+3.  创建tutorial.xls excel文件并定义模板
+
+.net <#数据集名称.字段名>  <#变量名>
+
+marsx <##数据集名称##字段名> <#.变量名>
+
+名称 数据集名称
+
+注：如果使用报表变量，则报表变量必须在一个名称中，一般建议使用main
+
+4.  在BeforeRun中写代码
+```
+
+var
+    sql:TSql;   
+    dt:TDAMemDataTable;
+begin
+    inherited;
+    sql:=GetSql('months');
+    dt:=TDAMemDataTable.Create(self);  
+    sql.ExecDataTable(dt);          
+    dt.Dataset.name:='months';
+    DataModule.insertComponent(dt.dataSet); 
+    addReportVariable('test1','this is test1');
+
+```
+
+5. 创建menuitem,如TutorialReportMenuItem, ObjectType为otReport,ObjectId 引用该报表
+
+6. 创建menu ,menuItemId引用TutorialReportMenuitem
+
+7. 刷新导航，测试
+
+#### 对话框 ####
+
+1. 从TDialogForm继承
+
+```
+
+TVoltageQualifiedRateStatisticsReportDialog=class(TDialogForm)
+    dateRange:TDateRangePicker;
+    category:TFormLookupComboBoxControl;
+    chkOriginal:TFormCheckBoxControl;
+    chkShowNull:TFormCheckBoxControl;
+    
+    constructor Create(owner:TComponent);override;    
+end;
+
+
+
+
+constructor  TVoltageQualifiedRateStatisticsReportDialog.Create(owner:TComponent);
+begin
+    inherited;
+    Caption:='供电电压合格率报表';
+    dateRange:=TDateRangePicker.Create(self);
+    dateRange.Caption:='日期';
+    dateRange.Mandatory:=true;
+    category:=TFormLookupComboBoxControl.Create(self);
+    category.Lookup:='category_lookup';
+    category.Caption:='类别'; 
+    category.Mandatory:=true;      
+    
+    chkOriginal:=TFormCheckBoxControl.Create(self);
+    chkOriginal.Caption:='原始数据';
+    chkShowNull:=TFormCheckBoxControl.Create(self);
+    chkShowNull.Caption:='显示空白记录';
+    AddField(dateRange);
+    AddField(category);
+    AddField(chkOriginal);
+    AddField(chkShowNull);
+    
+    
+    
+end;
+
+用对话框
+procedure TVoltageQualifiedRateStatisticsReport.BeforeRun(var cancel:boolean);
+var
+    dlg:TVoltageQualifiedRateStatisticsReportDialog;
+    sql:TSql;
+    dt:TDAMemDataTable;
+begin
+    inherited;  
+    dlg:=TVoltageQualifiedRateStatisticsReportDialog.Create(nil);
+    try
+      if FormShowModal(dlg)<>mrOK then begin
+          cancel:=true;
+          exit;
+      end;  
+      
+      sql:=GetSql('months');
+      
+      sql.ParamByName('year').value:=dlg.dateRange.StartYear;
+      sql.ParamByName('month').value:=dlg.dateRange.StartMonth;
+      sql.ParamByName('category_id').value:=dlg.category.value;
+      
+      dt:=TDAmemDataTable.Create(self);
+      sql.execDataTable(dt);
+      
+      dt.dataset.name:='months';
+      DataModule.insertComponent(dt.dataset);
+      
+      
+        
+      
+      
+    finally
+        dlg.Free;
+    end;     
+    
+end;
+
+
+
+```
+
+
+注意事项
+
+  1. 选择日期使用TDateRangePicker ，当前引用uDateOptions,能分辨翻月日
+  1. 控件有Caption/Mandatory 属性，Mandatory表示必须输入
+  1. 对话框名用报表名+Dialog 约定
+  1. 原始数据和显示空白用chkOriginal,chkShowNull约定
+  1. 用FormShowModal显示对话框，保持ie客户端兼容性
+
+
+
+
+
+#### 可用变量 ####
+
+DataAreaName 用户所属单位
+
+CurUserFullName 用户姓名
+
+CurUserName 用户登录名
+
+-- CurUserId 用户id
+
+当使用TDateRangePicker时，可以使用
+
+StartYear/StartMonth/EndYear/EndMonth/StartDate/EndDate等变量
+
+例子
+```
+
+  AddReportVariable('start_date',datetostr(dlg.DateRange.StartDate));
+     AddReportVariable('end_date',datetostr(dlg.DateRange.EndDate));
+     addReportVariable('Company',DataAreaName);  
+     addReportVariable('user',CurUserFullName);     
+                                               
+     sql:=GetSql('general_qualified_rate');                  
+     sql.ParamByName('user_id').value:=curuserId;
+      sql.ParamByName('start_year').value:=dlg.DateRange.StartYear;
+      sql.ParamByname('start_month').value:=dlg.DateRange.StartMonth;   
+     addReportVariable('general_qualifed_rate',sql.execScalar);
+```
+
+#### 原始数据和显示空记录 ####
+
+建议使用macroAsRawString来解决
+
+在sql 中使用{months} 和 {show\_null},然后再代码中进行替换
+
+```
+
+ if dlg.chkShowNull.checked then begin
+          sql.MacroAsRawString('{show_null}','1=1');
+      end else begin
+          sql.MacroAsRawString('{show_null}','months.device_id is not null');
+          
+      end;  
+      
+      if dlg.chkOriginal.checked then begin
+          sql.macroAsRawString('{months}','original_months');
+      end else
+        sql.macroAsRawString('{months}','months');
+      
+```
+
+#### master/detail 报表 ####
+
+1. 定义name 范围
+
+2. 代码
+```
+
+       ds:=TFormDataSource.Create(self);
+        ds.DataTable:=dt1; //master;
+        
+        dt2.MasterSource:=ds;    //detail
+        dt2.MasterFields:='id';
+        dt2.DetailFields:='category_id';
+        
+        DataModule.InsertComponent(dt1.DataSet);
+        DataModule.InsertComponent(dt2.DataSet);
+         
+```
+
+
+#### 日期范围条件写法 ####
+```
+
+(a.year>@start_year or (a.year=@start_year and a.month>=@start_month)) and (a.year<@end_year or (a.year=@end_year and a.month<=@end_month))
+
+```
+
+#### 建议 ####
+
+1. 不建议在sql 中计算超限率和合格率
+
+如果在sql 中计算，则必须判断运行总时为零的情况
+
+月报表时
+
+```
+
+ (case when total_time=0 then 0 else (total_time-hi_time-low_time)/total_time end ) as pass_rate
+
+```
+
+或汇总时
+
+```
+
+(case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time end ) as pass_rate
+
+```
+
+
+2. 显示所有仪表，则必须将数据部分放到子查询中,然后用left outer join去处理，如果仅仅针对月数据汇总，则可能不在子查询中进行安全相关的过滤，因为所能查看到的仪表在最外层会被过滤掉，但如果是进行类别数据汇总，则数据部分要同样进行过滤以避免汇总到不能查看的仪表
+
+这种sql ，从思路上是简单的，但sql 代码是很长的
+
+电压统计表的例子，子查询部分没有过滤
+
+```
+
+select  months.*,devices.display_name,devices.category_id,add_up_months.qualified_rate as add_up_qualified_rate from devices left outer join 
+--- 月数据
+(select * from months where year=:start_year and month=:start_month) as months
+on devices.id=months.device_id  left outer join
+
+--- 累计合格率
+ (select device_id,(case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time) end) as qualified_rate from months where year=:start_year and (month>=1 and month<=:start_month) group by device_id) as add_up_months
+ on devices.id=add_up_months.device_id
+ 
+inner join circuitry on devices.circuitry_id=circuitry.id
+inner join dataarea on circuitry.dataarea_id=dataarea.id
+where device_report_status=1 and devices.category_id in (select id from category where exclude=0)     and dataarea.lcode like (select lcode from users inner join dataarea on users.dataarea_id=dataarea.id where users.id=:user_id)+'%'  and 
+ (not exists(select * from circuitry_permission where user_id=:user_id) or 
+ (devices.circuitry_id in (select circuitry_id from circuitry_permission where user_id=:user_id)))
+
+```
+
+
+计算综合电压合格率例子,先计算每个类别的合格率，然后再按仪表类别设定汇总，这里月数据需要过滤
+
+select sum(t.qualified_rate*category.rate) 
+
+from category inner join (
+select (case when sum(total_time)=0 then 0 else (sum(total_time)-sum(hi_time)-sum(low_time))/sum(total_time) end ) as qualified_rate,devices.category_id
+from months inner join devices on months.device_id=devices.id
+inner join circuitry on devices.circuitry_id=circuitry.id
+inner join dataarea on circuitry.dataarea_id=dataarea.id
+where device_report_status=1 and devices.category_id in (select id from category where exclude=0)     and dataarea.lcode like (select lcode from users inner join dataarea on users.dataarea_id=dataarea.id where users.id=:user_id)+'%'  and 
+ (not exists(select * from circuitry_permission where user_id=:user_id) or 
+ (devices.circuitry_id in (select circuitry_id from circuitry_permission where user_id=:user_id)))  and months.year=:start_year and months.month=:start_month
+ 
+ 
+  group by devices.category_id ) t
+ 
+ on category.id=t.category_id where category.exclude=0
+ ```

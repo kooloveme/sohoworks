@@ -1,0 +1,5 @@
+字符串函数
+
+|StrStartsWith|function StrStartsWith(const AText, ASubText: string): Boolean;|
+|:------------|:--------------------------------------------------------------|
+|StrEndsWith|function StrEndsWith(const AText,ASubText : string): Boolean;|
